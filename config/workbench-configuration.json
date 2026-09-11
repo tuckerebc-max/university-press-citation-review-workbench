@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "workbench_id": "UNIVERSITY-PRESS-CITATION-REVIEW-CODEX-0.1",
+  "status": "reviewed_codex_release",
+  "planning_model": "policy_bound",
+  "required_stage_order": [
+    "source_manifest",
+    "reference-citation-integrity",
+    "scholarly-editorial-integrity",
+    "author_packet",
+    "human_acceptance"
+  ],
+  "fixed_gates": [
+    "source hash and immutable manifest",
+    "per-run signed-in Codex account approval bound to the manifest",
+    "version-pinned skill packages",
+    "strict structured model output",
+    "no source-unavailable finding represented as verified",
+    "neutral signal language",
+    "source hash reconciliation before completion"
+  ],
+  "adaptive_ranges": {
+    "model": "Codex product default or a syntactically valid model identifier available to the signed-in account",
+    "parallel_chapters": {
+      "minimum": 1,
+      "maximum": 3,
+      "default": 1
+    },
+    "optional_checks": [
+      "Crossref candidate DOI metadata lookup"
+    ]
+  },
+  "outputs": [
+    "immutable plan",
+    "source manifest",
+    "run receipt",
+    "author-review chapter copy",
+    "author query sheet",
+    "HTML review",
+    "RCI and SEI run results",
+    "citation inventory",
+    "append-only observations"
+  ],
+  "automatic_text_changes": false,
+  "publication_authority": false
+}

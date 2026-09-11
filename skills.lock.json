@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "skills": {
+    "reference-citation-integrity": {
+      "commit": "a49e9f686898030684134ba7a7f84ac8b68fc4dc",
+      "package_version": "0.1.0",
+      "specification_version": "0.1.0-draft",
+      "source": "https://github.com/tuckerebc-max/reference-citation-integrity",
+      "tree_sha256": "762875bbd7c8a5a7e1884d18a6acabe096ff7a56a0b66a8ce7a1592f40c78732"
+    },
+    "scholarly-editorial-integrity": {
+      "commit": "098080247ab21173bbbe3da3ab90aa3cf860e38c",
+      "package_version": "0.1.0",
+      "specification_version": "0.1.0-draft",
+      "source": "https://github.com/tuckerebc-max/scholarly-editorial-integrity",
+      "local_patch": "Canonicalize CRLF to LF for the governing-spec hash in scripts/validate_package.py (Windows portability only).",
+      "tree_sha256": "3541c855b02635ea3a60a918ec354a0948e59ea32fba8462e049fc611738a655"
+    }
+  }
+}
