@@ -50,3 +50,58 @@ The live test also exposed two Windows path-length defects before release. The w
 5. Review licensing before granting rights beyond the owner and invited collaborators; neither vendored upstream repository contains a public license file.
 
 The current limits are deliberate: DOCX, Markdown, and UTF-8 text only; no PDF or OCR; no arbitrary URL fetches; no full-text source verification unless evidence is supplied; no automatic acceptance; and no publication action.
+
+## ERI-38 revision 2 incremental verification — September 18, 2026
+
+This section records the implementation work on branch
+`eri-38-revision-2-build`, based on the plain
+`university-press-citation-review-workbench` `main` commit
+`86ca82c2ff02f8bb4af1de73813cacf2783b1863`. The separate Lunaroute edition
+was inspected and left unchanged. The imported candidate archive SHA-256 is
+`053EDD5753A6FAA766A090B8BF772A4EB9FD8EDF37B3880C57EDD36B650B4A28`;
+`design/eri-38/VERIFICATION.json` was intentionally withheld from the
+repository and the generated run evidence remains in private evidence
+storage.
+
+The exact captured house contract is
+`design/eri-38/upstream/navy_yard.workbench_contract.v1.json`, SHA-256
+`9517D8CFEE285694AC50AA5053A34D60714598EBA4A0018387A64154077EAB73`.
+The candidate-to-house reconciliation remains `partial`; this is not a v1
+conformance claim. The upstream screen-measurement repository baseline ran
+115 tests with one pre-existing failure in its stored evidence brief
+canonicalization (`test_stored_brief_reemitted_when_rendering_differs`). That
+failure is recorded as an upstream baseline issue, not a University Press
+regression, and the upstream source was not modified.
+
+The new synthetic slice has been exercised with the following actual results:
+
+- 45 repository tests passed in the fresh full suite, including the legacy
+  13-test suite and ERI-38 contract, planning, capacity, adapter, and CLI
+  tests.
+- The candidate design validator passed all 48 checks; its production-ready
+  result remains false because runtime, family, house-conformance, live-parity,
+  and editorial-efficacy gates are not run.
+- The ten-piece stages-1/5/6 demonstration produced 10 RCI, 10 SEI, 10 CPR,
+  and 10 CE-gap nodes; two tasks were admitted with two available slots and
+  38 waited.
+- The one-piece style demonstration produced one RCI prerequisite and one SGI
+  target; both were admitted with three available slots.
+- Both demonstrations retained `execution_authorized: false`, made zero
+  model calls and zero network calls, and had no external effects.
+- Both generated stage plans and both review receipts passed validation
+  against the candidate JSON Schemas.
+
+The broader `scripts/Run-ReleaseGate.ps1` reached and passed application
+tests, compilation, JavaScript parsing, both vendored package validators and
+evaluation suites, and the secret scan, then stopped because `python -m ruff`
+was unavailable. Direct `ruff`, `bandit`, and `pip-audit` invocations were
+also unavailable in this environment, so the broader release gate is
+incomplete rather than claimed as passed.
+
+The implemented synthetic verbs are `declare`, `plan`, `review`, and
+`conform`. `seal`, `reconcile`, `record-decision`, and `inspect` are not live
+in this slice; the human-authority boundary is refused rather than simulated.
+The unresolved gates are owner adoption of the extension, authenticated
+route/Loading Bay integration, nine-local-tree/remote parity and collaborator
+access reconciliation, native adapter schemas and family efficacy fixtures,
+surface parity, and any real-manuscript authorization.

@@ -4,6 +4,32 @@ This is the shareable Codex edition of the University Press workbench. It turns 
 
 Each editor uses their own Codex login and model capacity. There is no LunaRoute dependency and no workbench API key.
 
+## ERI-38 revision 2 implementation slice
+
+The candidate design is imported under `design/eri-38/` and remains explicitly
+partial against the captured `navy_yard.workbench_contract.v1`. The existing
+browser workflow above remains the shipped legacy path; the new `upw.py` path
+is a deterministic, synthetic-only implementation slice for selective
+planning and capacity admission.
+
+Run the content-free demonstration with an output root outside this repository:
+
+```powershell
+python scripts/run_eri38_demo.py `
+  --output-root 'C:\Press\private-evidence\eri38-demo'
+```
+
+The demonstration covers ten opaque pieces requesting stages 1, 5, and 6 and
+one opaque piece requesting style review. It preserves explicit CE absence,
+adaptive 1–3 capacity, waiting under saturation, and nondispatchable human
+nodes. It makes no model or network calls and does not authorize a real plan.
+
+The implemented synthetic verbs are `declare`, `plan`, `review`, and
+`conform`. `seal`, `reconcile`, `record-decision`, and `inspect` remain
+refused or unimplemented until the upstream contract, route, and human-owner
+gates are adopted. No manuscript, author, credential, or runtime-output tree
+belongs in this repository.
+
 ## What it produces
 
 Every run creates a new folder in the output location you choose. For each chapter, the workbench produces a review copy with Word comments, an author query sheet, a browser-readable review, the two formal review records, a citation inventory, and a receipt tied to the source chapter's SHA-256 hash.

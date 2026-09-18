@@ -52,3 +52,26 @@ The workbench does not silently accept edits. When a finding has a safe paragrap
 ## Current boundary
 
 This release processes local DOCX, Markdown, and UTF-8 text files. It does not ingest PDFs, download manuscript-supplied URLs, inspect full cited articles, modify live editorial systems, accept edits, or publish. Model inference runs through the signed-in Codex service and is not offline. Those limits are part of the release contract, not unfinished background features.
+
+## ERI-38 revision 2 build boundary
+
+The ERI-38 candidate under `design/eri-38/` adds a separate implementation
+seam; it does not replace or modify the browser runner, vendored RCI/SEI
+packages, or `skills.lock.json`. The candidate is reconciled against the
+captured house contract in `design/eri-38/upstream/` and remains `partial`
+until the University Press extension is owner-adopted.
+
+The first executable slice is synthetic-only. A caller selects a named stage
+profile rather than a family, the planner adds only transitive prerequisites
+and explicit absent-capability gaps, and capacity admission can reduce
+parallelism or leave work waiting. The ten-piece stages-1/5/6 demonstration
+therefore shows RCI, SEI, CPR, and a visible CE gap; the one-piece style
+demonstration shows RCI followed by SGI. Candidate plans always retain
+`execution_authorized: false`.
+
+CPR and PPR adapters preserve upstream unknown, absent, and blocked states.
+PPR requires an accepted copyedited baseline and proof fixity before any
+substantive comparison; changed bindings require reproof and a successor plan.
+The `upw.py` wrapper emits the house reply envelope for `declare`, `plan`,
+synthetic `review`, and `conform`. Human-authority and release verbs are not
+fabricated by this slice.

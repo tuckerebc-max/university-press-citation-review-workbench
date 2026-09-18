@@ -183,6 +183,17 @@ class Eri38CliTests(unittest.TestCase):
         self.assertEqual(summary["network_call_count"], 0)
         self.assertFalse(summary["external_effects"])
 
+    def test_documentation_states_synthetic_boundary_and_private_verification_import(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        status = (ROOT / "design" / "eri-38" / "IMPLEMENTATION_STATUS.md").read_text(encoding="utf-8")
+        cli_source = (ROOT / "upress_workbench" / "eri38" / "cli.py").read_text(encoding="utf-8")
+
+        self.assertIn("upw.py", readme)
+        self.assertIn("synthetic", status.lower())
+        self.assertIn("execution_authorized: false", status)
+        self.assertFalse((ROOT / "design" / "eri-38" / "VERIFICATION.json").exists())
+        self.assertNotIn('"publish"', cli_source)
+
 
 if __name__ == "__main__":
     unittest.main()
