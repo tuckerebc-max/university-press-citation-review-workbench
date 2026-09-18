@@ -1,0 +1,114 @@
+{
+  "schema": "university_press.runtime_selective_profiles.draft1",
+  "status": "implementation_extension_not_owner_adopted",
+  "stage_catalog": {
+    "1": {
+      "family_id": "RCI",
+      "capability_id": "citation_identity",
+      "lane_class": "chat_reasoning",
+      "operation": "family_review",
+      "scope": "chapter",
+      "expected_output": "family_result",
+      "depends_on": [],
+      "hard_preconditions": ["source_digest_matches", "binding_matches"],
+      "claim_scope": "bounded_selective_review",
+      "kind": "machine",
+      "dispatchable": false
+    },
+    "2": {
+      "family_id": "SGI",
+      "capability_id": "adopted_style",
+      "lane_class": "chat_reasoning",
+      "operation": "family_review",
+      "scope": "chapter",
+      "expected_output": "family_result",
+      "depends_on": ["1"],
+      "hard_preconditions": ["source_digest_matches", "binding_matches"],
+      "claim_scope": "bounded_selective_review",
+      "kind": "machine",
+      "dispatchable": false
+    },
+    "3": {
+      "family_id": "TE",
+      "capability_id": "technical_objects",
+      "lane_class": "chat_reasoning",
+      "operation": "family_review",
+      "scope": "chapter",
+      "expected_output": "family_result",
+      "depends_on": ["2"],
+      "hard_preconditions": ["source_digest_matches", "binding_matches"],
+      "claim_scope": "bounded_selective_review",
+      "kind": "machine",
+      "dispatchable": false
+    },
+    "4": {
+      "family_id": "CE",
+      "capability_id": "copyediting",
+      "lane_class": "offline_batch",
+      "operation": "record_gap",
+      "scope": "chapter",
+      "expected_output": "family_result",
+      "depends_on": [],
+      "hard_preconditions": ["absence_recorded"],
+      "claim_scope": "bounded_selective_review",
+      "kind": "machine",
+      "dispatchable": false,
+      "absent": true
+    },
+    "5": {
+      "family_id": "SEI",
+      "capability_id": "scholarly_integrity",
+      "lane_class": "chat_reasoning",
+      "operation": "family_review",
+      "scope": "chapter",
+      "expected_output": "family_result",
+      "depends_on": ["1"],
+      "hard_preconditions": ["source_digest_matches", "binding_matches"],
+      "claim_scope": "bounded_selective_review",
+      "kind": "machine",
+      "dispatchable": false
+    },
+    "6": {
+      "family_id": "CPR",
+      "capability_id": "component_readiness",
+      "lane_class": "offline_batch",
+      "operation": "family_review",
+      "scope": "chapter",
+      "expected_output": "family_result",
+      "depends_on": ["5", "4"],
+      "hard_preconditions": ["source_digest_matches", "binding_matches", "all_upstream_statuses_or_not_run_reasons"],
+      "claim_scope": "bounded_selective_review",
+      "kind": "machine",
+      "dispatchable": false
+    },
+    "7": {
+      "family_id": "PPR",
+      "capability_id": "proof_survival",
+      "lane_class": "chat_reasoning",
+      "operation": "family_review",
+      "scope": "chapter",
+      "expected_output": "family_result",
+      "depends_on": ["6"],
+      "hard_preconditions": ["baseline_approved", "proof_digest_matches"],
+      "claim_scope": "diagnostic_production_and_proof_review",
+      "kind": "machine",
+      "dispatchable": false
+    }
+  },
+  "profiles": {
+    "selective_stages_1_5_6": {
+      "target_stage_ids": ["1", "5", "6"],
+      "include_absent_prerequisites": ["4"],
+      "claim_scope": "bounded_selective_review",
+      "baseline": "not_applicable",
+      "proof": "not_applicable"
+    },
+    "single_piece_style_review": {
+      "target_stage_ids": ["2"],
+      "include_absent_prerequisites": [],
+      "claim_scope": "bounded_style_review",
+      "baseline": "not_applicable",
+      "proof": "not_applicable"
+    }
+  }
+}
