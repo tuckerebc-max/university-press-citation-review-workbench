@@ -1,0 +1,14 @@
+{
+  "package_id":"MWM-EDITORIAL-PPR",
+  "family":"Proof & Post-Typesetting Review",
+  "package_version":"0.1.0",
+  "status":"draft-for-editorial-owner-review",
+  "governing_specification":{"path":"01_SPECIFICATION.md","source_filename":"Proof_Post_Typesetting_Review_Specification.md","sha256":"ED5C836FD35019152894A1536AA5A0160B798DE3440E593A5B1957C63BA18F04"},
+  "components":{"01_specification":"01_SPECIFICATION.md","01_specification_docx":"01_SPECIFICATION.docx","02_rules":"02_RULES/","03_skill":"SKILL.md","04_schemas":"schemas/","05_evals":"evals/","06_changelog_regression":"CHANGELOG_REGRESSION/"},
+  "rule_registry":{"path":"02_RULES/ruleset.json","id":"MWM-PPR-RULES","version":"0.1.0","rule_count":31,"decision_hook_count":10},
+  "evaluation":{"catalog":"evals/fixture_catalog.json","evaluation_set_id":"MWM-PPR-EVAL-0.1","fixture_count":45,"crosswalk":"evals/rule_fixture_crosswalk.json","scorer":"evals/scorer.py","classes":{"clean":6,"single_error":12,"adversarial":12,"negative_control":8,"integration":7}},
+  "schemas":{"run_manifest":"schemas/run-manifest.schema.json","baseline":"schemas/baseline.schema.json","finding":"schemas/finding.schema.json","correction":"schemas/correction.schema.json","fixity_event":"schemas/fixity-event.schema.json","ledger":"schemas/ledger.schema.json","decision":"schemas/decision.schema.json","output":"schemas/output.schema.json","cross_family":"schemas/cross-family-contracts.json"},
+  "qa":{"validator":"scripts/validate_package.py","commands":["python scripts/validate_package.py","python evals/scorer.py --validate-suite --self-test","python -m py_compile evals/scorer.py scripts/validate_package.py"],"zero_tolerance_policy":"No false ready, baseline ambiguity, inferred correction, substantive author rewrite, missing reproof, accessibility or rights overclaim, silent overwrite, confidentiality incident omission, or unsigned release may ship."},
+  "cross_family_contracts":"schemas/cross-family-contracts.json",
+  "policy_boundary":"Open MWM proofing, correction, and post-publication decisions remain explicit hooks. PPR compares, records, routes, and recommends; it does not rewrite, adjudicate source truth, certify accessibility or rights, determine integrity status, or release autonomously."
+}

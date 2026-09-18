@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "university_press.release_decision.draft1"
+    },
+    "plan_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "status": {
+      "enum": [
+        "blocked",
+        "hold",
+        "awaiting_input",
+        "awaiting_human",
+        "awaiting_reproof",
+        "ready_for_human_acceptance",
+        "ready_with_tracked_items"
+      ]
+    },
+    "claim_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "prohibited_claims": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "family_maturity": {
+      "type": "object",
+      "additionalProperties": {
+        "enum": [
+          "draft",
+          "absent",
+          "reviewed",
+          "verified",
+          "unknown"
+        ]
+      }
+    },
+    "candidate_packet_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "release_package_approval_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publication_authorized": {
+      "const": false
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "known": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unknown": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "not_applicable": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unknowns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "known",
+        "unknown",
+        "not_applicable",
+        "total",
+        "unknowns"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "plan_id",
+    "status",
+    "claim_scope",
+    "prohibited_claims",
+    "blockers",
+    "unknowns",
+    "family_maturity",
+    "candidate_packet_ref",
+    "release_package_approval_ref",
+    "publication_authorized",
+    "coverage"
+  ]
+}

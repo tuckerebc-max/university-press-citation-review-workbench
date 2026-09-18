@@ -1,0 +1,16 @@
+{
+  "contract_set_id":"MWM-SGI-CROSS-FAMILY",
+  "version":"0.1.0",
+  "family":"style-guide-implementation",
+  "inbound":[
+    {"from":"Editorial QA & Orchestration","artifact":"run_manifest","schema":"run-manifest.schema.json","allowed_fields":["run_id","manuscript_file","manuscript_version","project_profile","rule_registry_version","exception_register","stage","surfaces","language_profile","prior_run_id"],"rci_may_reinterpret":false},
+    {"from":"Reference & Citation Integrity","artifact":"delegated_style_rules","schema":"rule-record.schema.json","allowed_fields":["rule_id","authority","scope","policy_status","lifecycle_state"],"consumer_may_reinterpret":false}
+  ],
+  "outbound":[
+    {"to":"Copyediting","artifact":"active_style_and_term_profile","schemas":["rule-record.schema.json","terminology-record.schema.json","exception-record.schema.json"],"consumer_may_use":["active_rules","policy_status","term_status","protected_contexts","exceptions"],"consumer_may_not_infer":["substantive_term_correctness","grammar_edits","author_voice_change"]},
+    {"to":"Technical Editing","artifact":"ownership_handoff","schema":"run-result.schema.json","consumer_may_use":["routed_findings","surfaces","stage"],"consumer_may_not_infer":["technical_object_correctness"]},
+    {"to":"Chapter Completeness & Production Readiness","artifact":"sgi_release_summary","schema":"run-result.schema.json","consumer_may_use":["release_status","summary","findings","decision_records"],"consumer_may_not_infer":["claim_support","citation_integrity","permissions"]},
+    {"to":"Editorial QA & Orchestration","artifact":"validated_run_result","schema":"run-result.schema.json","consumer_may_use":["release_status","findings","maintenance_changes","evaluation_set"],"consumer_may_not_reinterpret":["unresolved_hook_as_approved_policy"]}
+  ],
+  "boundary_invariants":["SGI applies adopted MWM rules; it does not silently import external conventions.","Preferred and permitted variation are not required violations.","Unknown domain terminology is routed, not replaced from model inference.","Any active rule change requires fixtures, impact review, and changelog capture."]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "agents",
+    "humans",
+    "entry_points",
+    "exit_codes",
+    "rules",
+    "state_layout",
+    "ledgers",
+    "emits",
+    "invariants",
+    "non_claims",
+    "extensions"
+  ],
+  "properties": {
+    "schema": {
+      "const": "navy_yard.workbench_contract.v1"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "humans": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "entry_points": {
+      "type": "object"
+    },
+    "exit_codes": {
+      "type": "object",
+      "required": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "text"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "schema": "university_press.stage_profiles.draft1",
+  "status": "provisional_EQA_DH_001_not_owner_adopted",
+  "profiles": [
+    {
+      "profile_id": "citation_integrity_review",
+      "version": "design-draft1",
+      "purpose": "bounded_review_only",
+      "required_capabilities": [
+        "citation_identity",
+        "scholarly_integrity"
+      ],
+      "edges": [
+        [
+          "citation_identity",
+          "scholarly_integrity"
+        ]
+      ],
+      "required_context": [
+        "manifest",
+        "rules",
+        "source_permissions",
+        "integrity_protocol",
+        "exception_register"
+      ],
+      "excluded_claims": [
+        "copyedited",
+        "style_compliant",
+        "production_ready",
+        "proof_cleared",
+        "publication_authorized"
+      ]
+    },
+    {
+      "profile_id": "production_proof_review",
+      "version": "design-draft1",
+      "purpose": "diagnostic_production_and_proof_review",
+      "required_capabilities": [
+        "citation_identity",
+        "adopted_style",
+        "technical_objects",
+        "copyediting",
+        "scholarly_integrity",
+        "component_readiness",
+        "proof_survival"
+      ],
+      "edges": [
+        [
+          "citation_identity",
+          "adopted_style"
+        ],
+        [
+          "adopted_style",
+          "technical_objects"
+        ],
+        [
+          "technical_objects",
+          "copyediting"
+        ],
+        [
+          "copyediting",
+          "scholarly_integrity"
+        ],
+        [
+          "citation_identity",
+          "scholarly_integrity"
+        ],
+        [
+          "technical_objects",
+          "scholarly_integrity"
+        ],
+        [
+          "scholarly_integrity",
+          "component_readiness"
+        ],
+        [
+          "copyediting",
+          "component_readiness"
+        ],
+        [
+          "component_readiness",
+          "proof_survival"
+        ]
+      ],
+      "required_context": [
+        "manifest",
+        "rules",
+        "source_permissions",
+        "component_profile",
+        "volume_order",
+        "baseline",
+        "baseline_approval_receipt",
+        "accepted_copyedited_baseline_receipt",
+        "proof",
+        "variation_log",
+        "correction_log",
+        "format_targets",
+        "signatory_map"
+      ],
+      "excluded_claims": [
+        "publication_authorized"
+      ],
+      "missing_ce_behavior": "Emit explicit absence and hold copyediting/full-production claims. CPR can inventory the gap. PPR may compare only if its hard baseline, accepted-copyedited-version, proof, and authority prerequisites are independently satisfied; otherwise defer PPR as blocked_input."
+    }
+  ],
+  "control_spine": [
+    {
+      "node_id": "source",
+      "operation": "inventory",
+      "scope": "batch",
+      "lane_class": "offline_batch",
+      "depends_on": [],
+      "hard_preconditions": [
+        "source_digest_matches",
+        "private_output_root"
+      ]
+    },
+    {
+      "node_id": "context",
+      "operation": "resolve_context",
+      "scope": "batch",
+      "lane_class": "offline_batch",
+      "depends_on": [
+        "source"
+      ],
+      "hard_preconditions": [
+        "approved_policy_or_explicit_unknown"
+      ]
+    },
+    {
+      "node_id": "independent_review",
+      "operation": "compare_reports",
+      "scope": "chapter",
+      "lane_class": "chat_reasoning",
+      "depends_on": [
+        "$all_domain_nodes"
+      ],
+      "hard_preconditions": [
+        "independent_reviewer_identity",
+        "no_self_acceptance"
+      ]
+    },
+    {
+      "node_id": "critical_gates",
+      "operation": "evaluate_conformance",
+      "scope": "batch",
+      "lane_class": "offline_batch",
+      "depends_on": [
+        "independent_review"
+      ],
+      "hard_preconditions": [
+        "named_critical_cases_checked"
+      ]
+    },
+    {
+      "node_id": "packet",
+      "operation": "assemble_candidate",
+      "scope": "batch",
+      "lane_class": "offline_batch",
+      "depends_on": [
+        "critical_gates"
+      ],
+      "hard_preconditions": [
+        "source_digest_matches",
+        "packet_complete_or_gaps_explicit"
+      ]
+    },
+    {
+      "node_id": "recommendation",
+      "operation": "reconcile_release",
+      "scope": "batch",
+      "lane_class": "offline_batch",
+      "depends_on": [
+        "packet"
+      ],
+      "hard_preconditions": []
+    },
+    {
+      "node_id": "human_acceptance",
+      "operation": "approve_release_package",
+      "scope": "batch",
+      "lane_class": "human",
+      "depends_on": [
+        "recommendation"
+      ],
+      "hard_preconditions": [
+        "authenticated_human_authority",
+        "current_candidate_digest",
+        "blocking_gates_clear"
+      ]
+    }
+  ],
+  "routing": {
+    "strategy": "capability_match_then_stable_topological_sort",
+    "ties": "retain_all_candidates_and_await_human",
+    "absent": "deterministic_gap_node",
+    "cycle": "refuse_no_partial_dispatch",
+    "ready_queue_order": "capability_id_lexicographic_only_after_dependencies",
+    "model_selected_family": false
+  },
+  "hard_preconditions_vs_handoffs": "Directed handoff declarations are not all precedence edges. Pre-existing approved context is distinct from same-attempt reports; feedback opens a successor plan and invalidates affected descendants."
+}

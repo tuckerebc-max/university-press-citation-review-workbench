@@ -1,0 +1,243 @@
+{
+  "schema": "university_press.stage_plan.draft1",
+  "status": "candidate",
+  "execution_authorized": false,
+  "mode": "design_simulation",
+  "profile_id": "citation_integrity_review",
+  "bindings": {
+    "manifest": "1ef9887a72535c0b4ad244b44c364aa81b6fcc3b5ad86d2a2343903a199392ee",
+    "capability_map": "924379ec933401283140c7882159eedb03ccb0198e03acd6d754223df57ded73",
+    "profile": "8d293994adefd5ffb2b496c04e74d28468c7dcff8c1feb017a64dade21cc13c2",
+    "source_bundle": "7325dfae5d0d854a4832f52ad15ba867823a1f6716797afcf4b8d14adc15f38d",
+    "rules": "99ab2d29141c9d4d1dd84c3003fd4002479a1eff88dbb42ccc02cf5d70ef59a4",
+    "policy": "9b3e94e2d12cdf0799f698a8b63044790afb5b10467fef62e632a50f019096a7",
+    "route": "a5078a4e957d5618c306b54ad942fde65543361aa696c08c5ac20f57853cd27a",
+    "specification": "ee0e0bab76c15f5365ae655492d95b9c32ac15007060e0c7771d7e88b984689f",
+    "lock": "785a99825f53ffab6030bf6ea593f64a9afb2e9579c12eacbda9ef7d159bf753",
+    "authority": "e620df007bd84a0729a3bc0cf72f4db560880631c1f3f281d2dc9d9d85ca62af",
+    "format_targets": "a49812e6b6769284703c616659ca15995cecf0f7b8f3a31a18840b6ea9858b34",
+    "baseline": null,
+    "proof": null
+  },
+  "binding_states": {
+    "manifest": "known",
+    "capability_map": "known",
+    "profile": "known",
+    "source_bundle": "known",
+    "rules": "known",
+    "policy": "known",
+    "route": "known",
+    "specification": "known",
+    "lock": "known",
+    "authority": "known",
+    "format_targets": "known",
+    "baseline": "not_applicable",
+    "proof": "not_applicable"
+  },
+  "parent_plan_id": null,
+  "proof_cycle": 0,
+  "reuse_descriptors": [],
+  "chapter_ids": [
+    "SYN-V1-001",
+    "SYN-V2-001"
+  ],
+  "nodes": [
+    {
+      "node_id": "source",
+      "family_id": "EQA",
+      "capability_id": "editorial_control",
+      "scope": "batch",
+      "depends_on": [],
+      "hard_preconditions": [
+        "source_digest_matches",
+        "private_output_root"
+      ],
+      "expected_output": "family_result",
+      "claim_scope": [
+        "bounded_review_only"
+      ],
+      "kind": "machine",
+      "lane_class": "offline_batch",
+      "operation": "inventory",
+      "dispatchable": false
+    },
+    {
+      "node_id": "context",
+      "family_id": "EQA",
+      "capability_id": "editorial_control",
+      "scope": "batch",
+      "depends_on": [
+        "source"
+      ],
+      "hard_preconditions": [
+        "approved_policy_or_explicit_unknown"
+      ],
+      "expected_output": "family_result",
+      "claim_scope": [
+        "bounded_review_only"
+      ],
+      "kind": "machine",
+      "lane_class": "offline_batch",
+      "operation": "resolve_context",
+      "dispatchable": false
+    },
+    {
+      "node_id": "citation_identity",
+      "family_id": "RCI",
+      "capability_id": "citation_identity",
+      "scope": "chapter",
+      "depends_on": [
+        "context"
+      ],
+      "hard_preconditions": [
+        "source_digest_matches",
+        "binding_matches",
+        "route_approved",
+        "skill_lock_verified"
+      ],
+      "expected_output": "family_result",
+      "claim_scope": [
+        "bounded_review_only"
+      ],
+      "kind": "machine",
+      "lane_class": "chat_reasoning",
+      "operation": "family_review",
+      "dispatchable": false
+    },
+    {
+      "node_id": "scholarly_integrity",
+      "family_id": "SEI",
+      "capability_id": "scholarly_integrity",
+      "scope": "chapter",
+      "depends_on": [
+        "context",
+        "citation_identity"
+      ],
+      "hard_preconditions": [
+        "source_digest_matches",
+        "binding_matches",
+        "route_approved",
+        "skill_lock_verified"
+      ],
+      "expected_output": "family_result",
+      "claim_scope": [
+        "bounded_review_only"
+      ],
+      "kind": "machine",
+      "lane_class": "chat_reasoning",
+      "operation": "family_review",
+      "dispatchable": false
+    },
+    {
+      "node_id": "independent_review",
+      "family_id": "EQA",
+      "capability_id": "editorial_control",
+      "scope": "chapter",
+      "depends_on": [
+        "citation_identity",
+        "scholarly_integrity"
+      ],
+      "hard_preconditions": [
+        "independent_reviewer_identity",
+        "no_self_acceptance"
+      ],
+      "expected_output": "family_result",
+      "claim_scope": [
+        "bounded_review_only"
+      ],
+      "kind": "machine",
+      "lane_class": "chat_reasoning",
+      "operation": "compare_reports",
+      "dispatchable": false
+    },
+    {
+      "node_id": "critical_gates",
+      "family_id": "EQA",
+      "capability_id": "editorial_control",
+      "scope": "batch",
+      "depends_on": [
+        "independent_review"
+      ],
+      "hard_preconditions": [
+        "named_critical_cases_checked"
+      ],
+      "expected_output": "family_result",
+      "claim_scope": [
+        "bounded_review_only"
+      ],
+      "kind": "machine",
+      "lane_class": "offline_batch",
+      "operation": "evaluate_conformance",
+      "dispatchable": false
+    },
+    {
+      "node_id": "packet",
+      "family_id": "EQA",
+      "capability_id": "editorial_control",
+      "scope": "batch",
+      "depends_on": [
+        "critical_gates"
+      ],
+      "hard_preconditions": [
+        "source_digest_matches",
+        "packet_complete_or_gaps_explicit"
+      ],
+      "expected_output": "family_result",
+      "claim_scope": [
+        "bounded_review_only"
+      ],
+      "kind": "machine",
+      "lane_class": "offline_batch",
+      "operation": "assemble_candidate",
+      "dispatchable": false
+    },
+    {
+      "node_id": "recommendation",
+      "family_id": "EQA",
+      "capability_id": "editorial_control",
+      "scope": "batch",
+      "depends_on": [
+        "packet"
+      ],
+      "hard_preconditions": [],
+      "expected_output": "family_result",
+      "claim_scope": [
+        "bounded_review_only"
+      ],
+      "kind": "machine",
+      "lane_class": "offline_batch",
+      "operation": "reconcile_release",
+      "dispatchable": false
+    },
+    {
+      "node_id": "human_acceptance",
+      "family_id": "EQA",
+      "capability_id": "editorial_control",
+      "scope": "batch",
+      "depends_on": [
+        "recommendation"
+      ],
+      "hard_preconditions": [
+        "authenticated_human_authority",
+        "current_candidate_digest",
+        "blocking_gates_clear"
+      ],
+      "expected_output": "human_receipt",
+      "claim_scope": [
+        "bounded_review_only"
+      ],
+      "kind": "human",
+      "lane_class": "human",
+      "operation": "approve_release_package",
+      "dispatchable": false
+    }
+  ],
+  "missing_capabilities": [],
+  "awaiting_inputs": [
+    "real_execution_authorization",
+    "approved_skill_pins",
+    "authenticated_routes"
+  ],
+  "promotion": "none",
+  "plan_id": "659666ef044931fb555691c9cc01dcbb71440bb9467c5da3b5a85ee2bbf7740b"
+}

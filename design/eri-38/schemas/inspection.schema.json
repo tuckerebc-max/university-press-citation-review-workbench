@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "university_press.inspection.draft1"
+    },
+    "run_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "capture_uri": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "capture_uri",
+          "sha256"
+        ]
+      }
+    },
+    "pending_human_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kata_projection": {
+      "enum": [
+        "pending",
+        "acknowledged",
+        "failed",
+        "unknown"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "run_ref",
+    "state",
+    "result_refs",
+    "pending_human_refs",
+    "next_action",
+    "kata_projection"
+  ]
+}

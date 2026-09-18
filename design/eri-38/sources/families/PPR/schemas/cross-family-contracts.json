@@ -1,0 +1,30 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/ppr/cross-family-contracts.json",
+  "contract_id":"MWM-PPR-CONTRACTS",
+  "version":"0.1.0",
+  "inbound":[
+    {"family":"Reference & Citation Integrity","ids":["RCI"],"required_fields":["run_id","visible_reference_status","finding_ids","release_effect"],"ownership":"RCI retains source and citation integrity."},
+    {"family":"Style-Guide Implementation","ids":["SGI"],"required_fields":["run_id","approved_style_status","exceptions"],"ownership":"SGI retains style authority."},
+    {"family":"Technical Editing","ids":["TE"],"required_fields":["run_id","object_status","cross_reference_status","finding_ids"],"ownership":"TE retains technical-object semantics."},
+    {"family":"Copyediting","ids":["CE"],"required_fields":["run_id","approved_copyedit_version","meaning_preservation_status"],"ownership":"CE retains prose intervention authority."},
+    {"family":"Scholarly/Editorial Integrity","ids":["SEI"],"required_fields":["run_id","source_status","integrity_findings","release_effect"],"ownership":"SEI retains integrity status."},
+    {"family":"Chapter Completeness & Production Readiness","ids":["CPR"],"required_fields":["run_id","package_version","asset_manifest","release_recommendation"],"ownership":"CPR retains package completeness judgment."},
+    {"family":"Editorial QA & Orchestration","ids":["EQA"],"required_fields":["orchestration_run_id","stage","dependency_graph_status"],"ownership":"EQA retains orchestration authority."}
+  ],
+  "outbound":[
+    {"family":"Editorial QA & Orchestration","fields":["baseline_id","proof_id","fixity_events","findings","corrections","release_decision","signatory"]},
+    {"family":"Technical Editing","fields":["visual_object_findings","navigation_findings","reproof_scope"]},
+    {"family":"Reference & Citation Integrity","fields":["visible_reference_survival_findings","upstream_route_ids"]},
+    {"family":"Chapter Completeness & Production Readiness","fields":["final_output_identity","package_delta","release_effect"]},
+    {"family":"Scholarly/Editorial Integrity","fields":["status_issue_routes","protected_record_incident_ids"]}
+  ],
+  "boundary_invariants":[
+    "PPR compares approved baselines with proof/output and records visible differences; it does not rewrite or adjudicate substantive content.",
+    "A difference is not a defect without baseline and approved-variation context.",
+    "An accepted correction is not resolved without incorporation and reproof evidence.",
+    "PPR cannot certify legal permissions, source validity, accessibility conformance, or integrity from visual review alone.",
+    "Original released records and fixity remain preserved for post-publication updates.",
+    "Release requires a named human signatory and final fixity/provenance."
+  ]
+}

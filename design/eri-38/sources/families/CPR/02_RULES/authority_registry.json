@@ -1,0 +1,13 @@
+{
+  "registry_id": "MWM-CPR-AUTHORITY",
+  "version": "0.1.0",
+  "tiers": [
+    {"tier":1,"name":"MWM governing authority","examples":["MWM contract","chapter guidance","approved volume decisions","release policy"],"can_create_gate":true},
+    {"tier":2,"name":"Current local configuration","examples":["component profile","template","metadata record","decision log","production instructions"],"can_create_gate":true},
+    {"tier":3,"name":"Explicitly delegated specialist rule","examples":["APA","discipline","publisher","accessibility","permissions","metadata rule"],"can_create_gate":true,"condition":"Delegation and owner must be recorded."},
+    {"tier":4,"name":"Structured-content and implementation exemplar","examples":["NISO JATS/JATS4R","WCAG/WAI","publisher checklist"],"can_create_gate":false,"condition":"May inform a local adoption decision only."},
+    {"tier":5,"name":"Generic model or external expectation","examples":["generic checklist","another publisher's practice","model expectation"],"can_create_gate":false,"condition":"May generate a question only."}
+  ],
+  "conflict_policy":"Record conflicting authorities and apply the highest applicable tier; do not silently overwrite records.",
+  "formal_boundary":"CPR determines presence, applicability, linkage, version lineage, dependencies, and stage readiness. It does not certify truth, style, technical correctness, legal sufficiency, accessibility conformance, or substantive approval."
+}

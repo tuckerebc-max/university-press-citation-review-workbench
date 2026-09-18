@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "capture_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "capture_uri",
+        "sha256"
+      ]
+    },
+    "seal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "capture_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "capture_uri",
+        "sha256"
+      ]
+    },
+    "scope_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "resume_after_event": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "plan",
+    "seal",
+    "scope_ids",
+    "resume_after_event"
+  ]
+}

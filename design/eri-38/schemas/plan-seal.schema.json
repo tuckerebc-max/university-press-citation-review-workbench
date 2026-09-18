@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "university_press.plan_seal.draft1"
+    },
+    "seal_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "capture_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "capture_uri",
+        "sha256"
+      ]
+    },
+    "approval_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "capture_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "capture_uri",
+        "sha256"
+      ]
+    },
+    "verified_authority_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dock_lineage_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "G0_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "G1_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "route_approval_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pin_approval_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expires_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema",
+    "seal_id",
+    "plan",
+    "approval_receipt",
+    "verified_authority_ref",
+    "dock_lineage_ref",
+    "G0_ref",
+    "G1_ref",
+    "route_approval_ref",
+    "pin_approval_ref",
+    "expires_at"
+  ]
+}

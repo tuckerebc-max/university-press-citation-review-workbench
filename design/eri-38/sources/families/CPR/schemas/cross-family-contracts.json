@@ -1,0 +1,29 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/cross-family-contracts.json",
+  "contract_id":"MWM-CPR-CONTRACTS",
+  "version":"0.1.0",
+  "inbound":[
+    {"family":"Reference & Citation Integrity","ids":["RCI"],"required_fields":["run_id","chapter_version","citation_reference_status","finding_ids","release_effect"],"ownership":"RCI retains citation/source judgment."},
+    {"family":"Style-Guide Implementation","ids":["SGI"],"required_fields":["run_id","rule_version","status","exceptions"],"ownership":"SGI retains style-rule judgment."},
+    {"family":"Technical Editing","ids":["TE"],"required_fields":["run_id","object_registry_status","cross_reference_status","finding_ids","release_effect"],"ownership":"TE retains technical-object and structural judgment."},
+    {"family":"Copyediting","ids":["CE"],"required_fields":["run_id","handoff_status","meaning_preservation_status","finding_ids","release_effect"],"ownership":"CE retains prose intervention judgment."},
+    {"family":"Scholarly/Editorial Integrity","ids":["SEI"],"required_fields":["run_id","disclosure_status","source_status","finding_ids","release_effect"],"ownership":"SEI retains integrity-signal and routing judgment."},
+    {"family":"Editorial QA & Orchestration","ids":["EQA"],"required_fields":["orchestration_run_id","dependency_graph_status","stage"],"ownership":"EQA retains orchestration authority."}
+  ],
+  "outbound":[
+    {"family":"Editorial QA & Orchestration","fields":["run_id","profile_id","component_summary","file_manifest","finding_ids","upstream_statuses","release_recommendation","human_signatory_state"]},
+    {"family":"Reference & Citation Integrity","fields":["reference_component_presence","citation_target_presence","upstream_gap_ids"]},
+    {"family":"Technical Editing","fields":["asset_component_records","cross_reference_presence","file_version_status"]},
+    {"family":"Copyediting","fields":["clean_package_status","handoff_version","open_dependency_ids"]},
+    {"family":"Scholarly/Editorial Integrity","fields":["declaration_component_status","integrity_dependency_ids","protected_record_access_status"]}
+  ],
+  "boundary_invariants":[
+    "CPR owns presence, applicability, linkage, version lineage, and stage readiness only.",
+    "present_unverified cannot become verified or approved without the owning downstream evidence.",
+    "not_applicable requires a condition, rationale, and authority.",
+    "CPR cannot invent metadata, select a final file, silently repair conflicts, or certify legal, accessibility, substantive, citation, or integrity status.",
+    "A material unresolved upstream dependency prevents ready or ready_with_tracked_items.",
+    "Release or handoff requires a named human signatory unless MWM explicitly delegates authority."
+  ]
+}

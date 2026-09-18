@@ -1,0 +1,629 @@
+{
+  "schema": "university_press.capacity_stress_spec.draft1",
+  "mode": "synthetic_design_only",
+  "real_batch_authorized": false,
+  "volume_count": 2,
+  "chapter_count": 100,
+  "author_count_assumption": 100,
+  "chapters": [
+    {
+      "chapter_id": "SYN-V1-001",
+      "volume_id": "SYN-V1",
+      "order": 1,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-002",
+      "volume_id": "SYN-V1",
+      "order": 2,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-003",
+      "volume_id": "SYN-V1",
+      "order": 3,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-004",
+      "volume_id": "SYN-V1",
+      "order": 4,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-005",
+      "volume_id": "SYN-V1",
+      "order": 5,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-006",
+      "volume_id": "SYN-V1",
+      "order": 6,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-007",
+      "volume_id": "SYN-V1",
+      "order": 7,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-008",
+      "volume_id": "SYN-V1",
+      "order": 8,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-009",
+      "volume_id": "SYN-V1",
+      "order": 9,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-010",
+      "volume_id": "SYN-V1",
+      "order": 10,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-011",
+      "volume_id": "SYN-V1",
+      "order": 11,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-012",
+      "volume_id": "SYN-V1",
+      "order": 12,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-013",
+      "volume_id": "SYN-V1",
+      "order": 13,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-014",
+      "volume_id": "SYN-V1",
+      "order": 14,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-015",
+      "volume_id": "SYN-V1",
+      "order": 15,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-016",
+      "volume_id": "SYN-V1",
+      "order": 16,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-017",
+      "volume_id": "SYN-V1",
+      "order": 17,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-018",
+      "volume_id": "SYN-V1",
+      "order": 18,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-019",
+      "volume_id": "SYN-V1",
+      "order": 19,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-020",
+      "volume_id": "SYN-V1",
+      "order": 20,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-021",
+      "volume_id": "SYN-V1",
+      "order": 21,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-022",
+      "volume_id": "SYN-V1",
+      "order": 22,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-023",
+      "volume_id": "SYN-V1",
+      "order": 23,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-024",
+      "volume_id": "SYN-V1",
+      "order": 24,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-025",
+      "volume_id": "SYN-V1",
+      "order": 25,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-026",
+      "volume_id": "SYN-V1",
+      "order": 26,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-027",
+      "volume_id": "SYN-V1",
+      "order": 27,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-028",
+      "volume_id": "SYN-V1",
+      "order": 28,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-029",
+      "volume_id": "SYN-V1",
+      "order": 29,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-030",
+      "volume_id": "SYN-V1",
+      "order": 30,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-031",
+      "volume_id": "SYN-V1",
+      "order": 31,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-032",
+      "volume_id": "SYN-V1",
+      "order": 32,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-033",
+      "volume_id": "SYN-V1",
+      "order": 33,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-034",
+      "volume_id": "SYN-V1",
+      "order": 34,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-035",
+      "volume_id": "SYN-V1",
+      "order": 35,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-036",
+      "volume_id": "SYN-V1",
+      "order": 36,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-037",
+      "volume_id": "SYN-V1",
+      "order": 37,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-038",
+      "volume_id": "SYN-V1",
+      "order": 38,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-039",
+      "volume_id": "SYN-V1",
+      "order": 39,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-040",
+      "volume_id": "SYN-V1",
+      "order": 40,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-041",
+      "volume_id": "SYN-V1",
+      "order": 41,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-042",
+      "volume_id": "SYN-V1",
+      "order": 42,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-043",
+      "volume_id": "SYN-V1",
+      "order": 43,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-044",
+      "volume_id": "SYN-V1",
+      "order": 44,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-045",
+      "volume_id": "SYN-V1",
+      "order": 45,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-046",
+      "volume_id": "SYN-V1",
+      "order": 46,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-047",
+      "volume_id": "SYN-V1",
+      "order": 47,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-048",
+      "volume_id": "SYN-V1",
+      "order": 48,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-049",
+      "volume_id": "SYN-V1",
+      "order": 49,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V1-050",
+      "volume_id": "SYN-V1",
+      "order": 50,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-001",
+      "volume_id": "SYN-V2",
+      "order": 1,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-002",
+      "volume_id": "SYN-V2",
+      "order": 2,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-003",
+      "volume_id": "SYN-V2",
+      "order": 3,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-004",
+      "volume_id": "SYN-V2",
+      "order": 4,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-005",
+      "volume_id": "SYN-V2",
+      "order": 5,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-006",
+      "volume_id": "SYN-V2",
+      "order": 6,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-007",
+      "volume_id": "SYN-V2",
+      "order": 7,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-008",
+      "volume_id": "SYN-V2",
+      "order": 8,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-009",
+      "volume_id": "SYN-V2",
+      "order": 9,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-010",
+      "volume_id": "SYN-V2",
+      "order": 10,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-011",
+      "volume_id": "SYN-V2",
+      "order": 11,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-012",
+      "volume_id": "SYN-V2",
+      "order": 12,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-013",
+      "volume_id": "SYN-V2",
+      "order": 13,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-014",
+      "volume_id": "SYN-V2",
+      "order": 14,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-015",
+      "volume_id": "SYN-V2",
+      "order": 15,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-016",
+      "volume_id": "SYN-V2",
+      "order": 16,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-017",
+      "volume_id": "SYN-V2",
+      "order": 17,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-018",
+      "volume_id": "SYN-V2",
+      "order": 18,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-019",
+      "volume_id": "SYN-V2",
+      "order": 19,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-020",
+      "volume_id": "SYN-V2",
+      "order": 20,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-021",
+      "volume_id": "SYN-V2",
+      "order": 21,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-022",
+      "volume_id": "SYN-V2",
+      "order": 22,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-023",
+      "volume_id": "SYN-V2",
+      "order": 23,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-024",
+      "volume_id": "SYN-V2",
+      "order": 24,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-025",
+      "volume_id": "SYN-V2",
+      "order": 25,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-026",
+      "volume_id": "SYN-V2",
+      "order": 26,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-027",
+      "volume_id": "SYN-V2",
+      "order": 27,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-028",
+      "volume_id": "SYN-V2",
+      "order": 28,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-029",
+      "volume_id": "SYN-V2",
+      "order": 29,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-030",
+      "volume_id": "SYN-V2",
+      "order": 30,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-031",
+      "volume_id": "SYN-V2",
+      "order": 31,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-032",
+      "volume_id": "SYN-V2",
+      "order": 32,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-033",
+      "volume_id": "SYN-V2",
+      "order": 33,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-034",
+      "volume_id": "SYN-V2",
+      "order": 34,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-035",
+      "volume_id": "SYN-V2",
+      "order": 35,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-036",
+      "volume_id": "SYN-V2",
+      "order": 36,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-037",
+      "volume_id": "SYN-V2",
+      "order": 37,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-038",
+      "volume_id": "SYN-V2",
+      "order": 38,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-039",
+      "volume_id": "SYN-V2",
+      "order": 39,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-040",
+      "volume_id": "SYN-V2",
+      "order": 40,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-041",
+      "volume_id": "SYN-V2",
+      "order": 41,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-042",
+      "volume_id": "SYN-V2",
+      "order": 42,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-043",
+      "volume_id": "SYN-V2",
+      "order": 43,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-044",
+      "volume_id": "SYN-V2",
+      "order": 44,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-045",
+      "volume_id": "SYN-V2",
+      "order": 45,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-046",
+      "volume_id": "SYN-V2",
+      "order": 46,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-047",
+      "volume_id": "SYN-V2",
+      "order": 47,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-048",
+      "volume_id": "SYN-V2",
+      "order": 48,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-049",
+      "volume_id": "SYN-V2",
+      "order": 49,
+      "size_assumption_bytes": 4194304
+    },
+    {
+      "chapter_id": "SYN-V2-050",
+      "volume_id": "SYN-V2",
+      "order": 50,
+      "size_assumption_bytes": 4194304
+    }
+  ],
+  "aggregate_bytes_assumption": 419430400,
+  "batch_ceiling_bytes": 524288000,
+  "per_chapter_ceiling_bytes": 20971520,
+  "max_parallel_chapters": 3,
+  "review_budget_per_day": 12,
+  "minimum_review_days_at_one_item_per_chapter": 9,
+  "actual_unit_and_acceptance_classes": "inherit owner policy; no change proposed",
+  "model_call_ceiling_inherited": 600,
+  "model_calls_estimate": "Must compute by authorized adapter/subskill plan, including independent review and retries; no automatic increase.",
+  "wave_policy": "First real bounded sample requires Eric selection and authorization. Subsequent waves require accepted sample and capacity/budget plan.",
+  "shared_volume_invalidation": [
+    "table_of_contents",
+    "chapter_order",
+    "shared_terms",
+    "cross_chapter_references",
+    "index",
+    "pagination"
+  ],
+  "over_limit_outcome": "reject or owner-approved smaller independent batches; never truncate or silently split approval scope"
+}

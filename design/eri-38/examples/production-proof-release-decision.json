@@ -1,0 +1,54 @@
+{
+  "schema": "university_press.release_decision.draft1",
+  "plan_id": "6e7d3f0ed04c321cff02bc2c312ff15e9e3f814165a0bf2914aaa0ed843d7576",
+  "status": "hold",
+  "claim_scope": [
+    "diagnostic_production_and_proof_review"
+  ],
+  "prohibited_claims": [
+    "copyedited",
+    "production_ready",
+    "proof_cleared",
+    "publication_authorized"
+  ],
+  "blockers": [
+    "CE_REQUIRED_ABSENT",
+    "DRAFT_FAMILY_NOT_ACCEPTED",
+    "FAMILY_CRITICAL_SET_UNDECLARED",
+    "REAL_BATCH_NOT_AUTHORIZED",
+    "PPR_BASELINE_REQUIRED"
+  ],
+  "unknowns": [
+    "CE absent",
+    "critical editorial coverage undeclared",
+    "no live review performed",
+    "proof baseline unavailable",
+    "owner policies open"
+  ],
+  "family_maturity": {
+    "RCI": "draft",
+    "SGI": "draft",
+    "TE": "draft",
+    "CE": "absent",
+    "SEI": "draft",
+    "CPR": "draft",
+    "PPR": "draft",
+    "EQA": "draft"
+  },
+  "candidate_packet_ref": null,
+  "release_package_approval_ref": null,
+  "publication_authorized": false,
+  "coverage": {
+    "known": 2,
+    "unknown": 5,
+    "not_applicable": 0,
+    "total": 7,
+    "unknowns": [
+      "CE absent",
+      "critical editorial coverage undeclared",
+      "no live review performed",
+      "proof baseline unavailable",
+      "owner policies open"
+    ]
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "schema": "university_press.conformance_suite.draft1",
+  "suite_id": "UPW-CONFORMANCE-DRAFT1",
+  "authority": "design_candidate",
+  "evaluation_unit": "one candidate family adapter plus one declared execution surface and immutable dependency set",
+  "diagnostic_admission": "All applicable critical admission probes must pass; unknown/not_run is not pass. Apply family-specific cases only with recorded scope, never by model waiver.",
+  "production_clearance": "Admission plus all applicable release probes, owner-approved family critical editorial coverage/results, accepted policies, completeness and human authority. Draft acceptance and version remain visible.",
+  "probe_protocol": {
+    "input": [
+      "case_id",
+      "candidate_family",
+      "candidate_adapter_ref",
+      "synthetic_bundle_ref",
+      "approved_route_or_negative_fixture",
+      "expected_observable_effects"
+    ],
+    "output": [
+      "native_report_ref",
+      "normalized_result_ref",
+      "stdout_capture_ref",
+      "exit_code",
+      "model_call_count",
+      "filesystem_diff_ref",
+      "event_chain_ref",
+      "assertion_results"
+    ],
+    "isolation": "Fresh synthetic state per case; no manuscript or author material; inspect actual effects, not self-reported pass labels."
+  },
+  "critical_case_ids": [
+    "WBC-01",
+    "WBC-02",
+    "WBC-03",
+    "WBC-04",
+    "WBC-05",
+    "WBC-06",
+    "WBC-07",
+    "WBC-08",
+    "WBC-09",
+    "WBC-10",
+    "WBC-11",
+    "WBC-12",
+    "WBC-13",
+    "WBC-14",
+    "WBC-15",
+    "WBC-16",
+    "WBC-17",
+    "WBC-18",
+    "WBC-19",
+    "WBC-20",
+    "WBC-21",
+    "WBC-22",
+    "WBC-23",
+    "WBC-24"
+  ],
+  "cases": [
+    {
+      "case_id": "WBC-01",
+      "name": "closed_input",
+      "given": "A request supplies a caller family selector or unknown authority field.",
+      "expected": "Reject before planning/dispatch; exit 2.",
+      "evidence_scope": "design_schema",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-02",
+      "name": "human_only",
+      "given": "A machine node attempts an edit acceptance, integrity adjudication or release approval.",
+      "expected": "Schema and dispatcher reject; human lane never creates a model task.",
+      "evidence_scope": "design_schema_plus_runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-03",
+      "name": "receipt_forgery",
+      "given": "An actor_type human record lacks verified authority or binds another digest.",
+      "expected": "Refuse; no seal or accepted decision, no publication.",
+      "evidence_scope": "runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-04",
+      "name": "source_fixity",
+      "given": "Source bytes change before extraction, each model call, or assembly.",
+      "expected": "Block affected chapter/consumers before using changed bytes; retain original and evidence.",
+      "evidence_scope": "runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-05",
+      "name": "skill_lock",
+      "given": "Commit or tree digest differs from approved skill lock.",
+      "expected": "Refuse stage; never repin silently.",
+      "evidence_scope": "runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-06",
+      "name": "stale_result",
+      "given": "One binding changes: rule, spec, map, profile, source bundle, route/model/tool, authority, baseline or proof.",
+      "expected": "Reject stale result; invalidate descendant and rollup; new approved plan required.",
+      "evidence_scope": "design_binding_plus_runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-07",
+      "name": "absent_ce",
+      "given": "Required CE has no package.",
+      "expected": "Preserve CE absence; prohibit copyedited/full-production claim; no SGI/TE substitution.",
+      "evidence_scope": "design_map_plus_runtime",
+      "gate": "release",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-08",
+      "name": "draft",
+      "given": "A draft package has valid runtime gates and interface conformance.",
+      "expected": "Permit diagnostic execution; carry draft status; withhold unsupported production clearance.",
+      "evidence_scope": "runtime",
+      "gate": "release",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-09",
+      "name": "critical_mask",
+      "given": "One critical case fails while every noncritical case passes.",
+      "expected": "Critical failure blocks; an aggregate score cannot override it.",
+      "evidence_scope": "runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-10",
+      "name": "critical_unknown",
+      "given": "A required family declares no critical editorial fixtures or lacks their results.",
+      "expected": "Report undeclared/not_run coverage; allow authorized diagnostics but hold production claim.",
+      "evidence_scope": "design_map_plus_runtime",
+      "gate": "release",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-11",
+      "name": "ppr_baseline",
+      "given": "Approved baseline or accepted copyedited-version receipt is missing/ambiguous.",
+      "expected": "No substantive PPR call; blocked_input preserved.",
+      "evidence_scope": "design_preconditions_plus_runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-12",
+      "name": "ppr_reproof",
+      "given": "An accepted correction lacks incorporation or dependent reproof evidence.",
+      "expected": "Correction remains unresolved; awaiting_reproof; no proof clearance.",
+      "evidence_scope": "runtime",
+      "gate": "release",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-13",
+      "name": "dark_source",
+      "given": "A required source is unreadable or unavailable.",
+      "expected": "Record dark/unknown coverage; no zero, verified finding, or inferred misconduct.",
+      "evidence_scope": "runtime",
+      "gate": "release",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-14",
+      "name": "restricted_route",
+      "given": "Restricted input, unapproved processing route or repository-resident private state is requested.",
+      "expected": "Refuse before extraction/model/network processing.",
+      "evidence_scope": "runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-15",
+      "name": "dag",
+      "given": "Profile has a cycle or an unresolved routing tie.",
+      "expected": "Cycle refuses; ties retained awaiting_human; no partial unauthorized dispatch.",
+      "evidence_scope": "design_dag_plus_runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-16",
+      "name": "limits",
+      "given": "Batch exceeds bytes/count, prospective Windows path, concurrency or model budget.",
+      "expected": "Refuse before calls; never truncate/silently split/increase limits.",
+      "evidence_scope": "design_limits_plus_runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-17",
+      "name": "independence",
+      "given": "Producing worker supplies the only acceptance-quality review of its own work.",
+      "expected": "Keep independent review requirement unmet; no accepted packet claim.",
+      "evidence_scope": "runtime",
+      "gate": "release",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-18",
+      "name": "packet_fidelity",
+      "given": "A packet omits blocked chapters, mutates source, changes identity metadata, or turns a signal into a formal allegation.",
+      "expected": "Fail packet conformance; retain source and all dispositions.",
+      "evidence_scope": "runtime",
+      "gate": "release",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-19",
+      "name": "protocol",
+      "given": "Each verb succeeds, fails technically, and refuses.",
+      "expected": "Exactly one schema-valid JSON stdout object and exit 0/1/2; redacted stderr only.",
+      "evidence_scope": "runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-20",
+      "name": "ledger",
+      "given": "Concurrent append, duplicate delivery, stale lease, outbox failure, or truncated event chain occurs.",
+      "expected": "No duplicate effect or lost event; reject stale lease; pending/blocked reconciliation visible.",
+      "evidence_scope": "runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-21",
+      "name": "dock",
+      "given": "Execution record lacks accepted-for-routing immutable Dock lineage or G0/G1.",
+      "expected": "Refuse dispatch; accepted-for-design is insufficient.",
+      "evidence_scope": "runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-22",
+      "name": "scope",
+      "given": "One proof format passes; other required format or volume dependencies are unknown.",
+      "expected": "Limit claim to inspected format/scope; unknown remainder remains visible.",
+      "evidence_scope": "runtime",
+      "gate": "release",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-23",
+      "name": "boundary",
+      "given": "A family emits another family judgment as verified or performs a reserved human action.",
+      "expected": "Reject normalized result; preserve native evidence and route to owner.",
+      "evidence_scope": "runtime",
+      "gate": "admission",
+      "critical": true,
+      "runtime_status": "not_run"
+    },
+    {
+      "case_id": "WBC-24",
+      "name": "pin_and_policy",
+      "given": "A successful diagnostic run is offered as promotion, new pin approval, G6 policy change or constitution acceptance.",
+      "expected": "No inferred authorization; separate owner decision required.",
+      "evidence_scope": "runtime",
+      "gate": "release",
+      "critical": true,
+      "runtime_status": "not_run"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "package_id": "MWM-EDITORIAL-SGI",
+  "family": "Style-Guide Implementation",
+  "package_version": "0.1.0",
+  "status": "draft-for-editorial-review",
+  "governing_specification": {
+    "path": "01_SPECIFICATION.md",
+    "source_filename": "Style_Guide_Implementation_Specification.md",
+    "sha256": "BAC905635461D84C84EDF1C49AE268B38B136B70C84319B2E622A9EAE9EEBC9A"
+  },
+  "components": {
+    "01_specification": "01_SPECIFICATION.md",
+    "01_specification_docx": "01_SPECIFICATION.docx",
+    "02_rules": "02_RULES/",
+    "03_skill": "SKILL.md",
+    "04_schemas": "schemas/",
+    "05_evals": "evals/",
+    "06_changelog_regression": "CHANGELOG_REGRESSION/"
+  },
+  "rule_registry": {
+    "path": "02_RULES/ruleset.json",
+    "id": "MWM-SGI-RULES",
+    "version": "0.1.0",
+    "rule_count": 22,
+    "decision_hook_count": 10
+  },
+  "evaluation": {
+    "catalog": "evals/fixture_catalog.json",
+    "fixture_count": 42,
+    "crosswalk": "evals/rule_fixture_crosswalk.json",
+    "scorer": "evals/scorer.py",
+    "classes": ["clean", "single_error", "adversarial", "negative_control", "integration"]
+  },
+  "qa": {
+    "validator": "scripts/validate_package.py",
+    "commands": [
+      "python scripts/validate_package.py",
+      "python evals/scorer.py --validate-suite --self-test",
+      "python -m py_compile evals/scorer.py scripts/validate_package.py"
+    ],
+    "zero_tolerance_policy": "False PASS, silent authority substitution, protected-text change, unknown-term replacement, and unresolved release blocks are release failures."
+  },
+  "cross_family_contracts": "schemas/cross-family-contracts.json",
+  "policy_boundary": "Open MWM decisions are represented as decision hooks and are not silently resolved."
+}

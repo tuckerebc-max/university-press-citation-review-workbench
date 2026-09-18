@@ -1,0 +1,13 @@
+{
+  "registry_id":"MWM-PPR-AUTHORITY",
+  "version":"0.1.0",
+  "tiers":[
+    {"tier":1,"name":"MWM approved content and decisions","examples":["approved manuscript","chapter profile","production decision","release policy"],"can_authorize_correction":true},
+    {"tier":2,"name":"Current production records","examples":["typesetter instructions","correction grid","query log","asset manifest","decision log"],"can_authorize_correction":true,"condition":"Within recorded owner scope."},
+    {"tier":3,"name":"Delegated specialist rule","examples":["style","technical","accessibility","rights","integrity","metadata"],"can_authorize_correction":true,"condition":"Delegation and owner are recorded."},
+    {"tier":4,"name":"External process exemplar","examples":["publisher proofing","Crossref/NISO","W3C","PREMIS"],"can_authorize_correction":false,"condition":"Process pattern only unless locally adopted."},
+    {"tier":5,"name":"Generic preference or model inference","examples":["proofreading preference","model suggestion"],"can_authorize_correction":false,"condition":"Question only."}
+  ],
+  "conflict_policy":"Record conflicts, consult approved variations, and route unresolved authority; do not silently choose a correction.",
+  "boundary":"PPR compares and routes visible proof/output differences. It does not rewrite, adjudicate source truth, decide rights or accessibility conformance, or determine post-publication status."
+}

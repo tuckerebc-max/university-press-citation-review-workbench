@@ -1,0 +1,620 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "university_press.stage_plan.draft1"
+    },
+    "plan_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "status": {
+      "enum": [
+        "candidate"
+      ]
+    },
+    "execution_authorized": {
+      "const": false
+    },
+    "mode": {
+      "enum": [
+        "design_simulation",
+        "diagnostic_review"
+      ]
+    },
+    "profile_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "manifest": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "capability_map": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "profile": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_bundle": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rules": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "policy": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "route": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "specification": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lock": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "authority": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "format_targets": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "baseline": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "proof": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "manifest",
+        "capability_map",
+        "profile",
+        "source_bundle",
+        "rules",
+        "policy",
+        "route",
+        "specification",
+        "lock",
+        "authority",
+        "format_targets",
+        "baseline",
+        "proof"
+      ]
+    },
+    "binding_states": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "manifest": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "capability_map": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "profile": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "source_bundle": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "rules": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "policy": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "route": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "specification": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "lock": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "authority": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "format_targets": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "baseline": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "proof": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        }
+      },
+      "required": [
+        "manifest",
+        "capability_map",
+        "profile",
+        "source_bundle",
+        "rules",
+        "policy",
+        "route",
+        "specification",
+        "lock",
+        "authority",
+        "format_targets",
+        "baseline",
+        "proof"
+      ]
+    },
+    "parent_plan_id": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "proof_cycle": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "reuse_descriptors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "prior_result_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "prior_plan_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "scope": {
+            "enum": [
+              "chapter",
+              "volume",
+              "batch"
+            ]
+          },
+          "scope_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "unchanged_dependency_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "prior_result_id",
+          "prior_plan_id",
+          "scope",
+          "scope_ids",
+          "unchanged_dependency_sha256",
+          "evidence_refs"
+        ]
+      }
+    },
+    "chapter_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "node_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "family_id": {
+                "enum": [
+                  "RCI",
+                  "SGI",
+                  "TE",
+                  "CE",
+                  "SEI",
+                  "CPR",
+                  "PPR",
+                  "EQA"
+                ]
+              },
+              "capability_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scope": {
+                "enum": [
+                  "chapter",
+                  "volume",
+                  "batch"
+                ]
+              },
+              "depends_on": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "hard_preconditions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "expected_output": {
+                "type": "string",
+                "minLength": 1
+              },
+              "claim_scope": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "kind": {
+                "const": "machine"
+              },
+              "lane_class": {
+                "enum": [
+                  "offline_batch",
+                  "internet",
+                  "chat_reasoning"
+                ]
+              },
+              "operation": {
+                "enum": [
+                  "inventory",
+                  "resolve_context",
+                  "family_review",
+                  "record_gap",
+                  "compare_reports",
+                  "evaluate_conformance",
+                  "assemble_candidate",
+                  "reconcile_release"
+                ]
+              },
+              "dispatchable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "node_id",
+              "family_id",
+              "capability_id",
+              "scope",
+              "depends_on",
+              "hard_preconditions",
+              "expected_output",
+              "claim_scope",
+              "kind",
+              "lane_class",
+              "operation",
+              "dispatchable"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "node_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "family_id": {
+                "enum": [
+                  "RCI",
+                  "SGI",
+                  "TE",
+                  "CE",
+                  "SEI",
+                  "CPR",
+                  "PPR",
+                  "EQA"
+                ]
+              },
+              "capability_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scope": {
+                "enum": [
+                  "chapter",
+                  "volume",
+                  "batch"
+                ]
+              },
+              "depends_on": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "hard_preconditions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "expected_output": {
+                "type": "string",
+                "minLength": 1
+              },
+              "claim_scope": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "kind": {
+                "const": "human"
+              },
+              "lane_class": {
+                "const": "human"
+              },
+              "operation": {
+                "enum": [
+                  "approve_plan",
+                  "record_edit_decision",
+                  "resolve_policy",
+                  "adjudicate_integrity",
+                  "approve_release_package"
+                ]
+              },
+              "dispatchable": {
+                "const": false
+              }
+            },
+            "required": [
+              "node_id",
+              "family_id",
+              "capability_id",
+              "scope",
+              "depends_on",
+              "hard_preconditions",
+              "expected_output",
+              "claim_scope",
+              "kind",
+              "lane_class",
+              "operation",
+              "dispatchable"
+            ]
+          }
+        ]
+      }
+    },
+    "missing_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "awaiting_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "promotion": {
+      "const": "none"
+    }
+  },
+  "required": [
+    "schema",
+    "plan_id",
+    "status",
+    "execution_authorized",
+    "mode",
+    "profile_id",
+    "bindings",
+    "binding_states",
+    "parent_plan_id",
+    "proof_cycle",
+    "reuse_descriptors",
+    "chapter_ids",
+    "nodes",
+    "missing_capabilities",
+    "awaiting_inputs",
+    "promotion"
+  ]
+}

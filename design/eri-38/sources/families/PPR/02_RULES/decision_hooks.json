@@ -1,0 +1,19 @@
+{
+  "registry_id":"MWM-PPR-DECISIONS",
+  "version":"0.1.0",
+  "status":"open-for-editorial-owner-review",
+  "specification_id":"MWM-PPR-SPEC",
+  "default_runtime":"Conservative proofing behavior; unresolved hooks remain explicit and never authorize a change.",
+  "hooks":[
+    {"hook_id":"PPR-DH-001","question":"What is the approved proof baseline and correction-grid/annotation protocol?","owner":"MWM editorial/production owner","default":"Missing baseline or protocol blocks substantive review."},
+    {"hook_id":"PPR-DH-002","question":"Which proof-stage corrections are allowed and which need senior approval?","owner":"MWM editorial owner","default":"Substantive or meaning-bearing changes route/hold."},
+    {"hook_id":"PPR-DH-003","question":"Who owns the approved variation/design log?","owner":"Production owner","default":"Differences without variation authority remain queries."},
+    {"hook_id":"PPR-DH-004","question":"Who collates contributor corrections and accepts/rejects them?","owner":"Volume editor/production coordinator","default":"No decision owner means correction remains open."},
+    {"hook_id":"PPR-DH-005","question":"Which final formats and accessibility targets are in scope?","owner":"Production/accessibility owner","default":"Check known formats; do not claim conformance without target and specialist evidence."},
+    {"hook_id":"PPR-DH-006","question":"How are proof previews compared with approved high-resolution final assets?","owner":"Production/technical owner","default":"Low-resolution proof preview does not establish final asset quality."},
+    {"hook_id":"PPR-DH-007","question":"What reproof scope is mandatory for page, index, TOC, and cross-reference changes?","owner":"Production owner","default":"Affected objects and dependent navigation are rechecked."},
+    {"hook_id":"PPR-DH-008","question":"What post-publication correction/version/status taxonomy and notice process apply?","owner":"Senior editorial/metadata owner","default":"Preserve original and route authorized decisions; do not adjudicate status."},
+    {"hook_id":"PPR-DH-009","question":"What fixity/provenance retention and access controls apply?","owner":"Production/records owner","default":"Record stable IDs and approved access; protect unpublished proofs."},
+    {"hook_id":"PPR-DH-010","question":"How are proof confidentiality incidents handled?","owner":"Security/editorial owner","default":"Contain, preserve evidence, and route as an incident before continuing."}
+  ]
+}

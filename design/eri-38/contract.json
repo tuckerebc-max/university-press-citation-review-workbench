@@ -1,0 +1,285 @@
+{
+  "schema": "navy_yard.workbench_contract.v1",
+  "workbench_id": "tt.university-press.review-release",
+  "version": "0.1.0-design-candidate",
+  "status": "design_only_not_implemented",
+  "agents": [
+    "codex",
+    "claude",
+    "hermes",
+    "gemini",
+    "glm"
+  ],
+  "humans": [
+    "named_review_owner",
+    "named_integrity_authority",
+    "named_release_signatory",
+    "Eric_owner_for_G5"
+  ],
+  "entry_points": {
+    "declare": {
+      "command": "upw declare --request <private-json-path>",
+      "lane_class": "offline_batch",
+      "input_schema": "schemas/empty-request.schema.json",
+      "output_schema": "schemas/capability-map.schema.json",
+      "semantics": "Read immutable capability and contract declarations.",
+      "implemented": false,
+      "reply_envelope": "schemas/reply.schema.json"
+    },
+    "plan": {
+      "command": "upw plan --request <private-json-path>",
+      "lane_class": "offline_batch",
+      "input_schema": "schemas/batch-request.schema.json",
+      "output_schema": "schemas/stage-plan.schema.json",
+      "semantics": "Resolve capabilities and construct a candidate plan; no model calls.",
+      "implemented": false,
+      "reply_envelope": "schemas/reply.schema.json"
+    },
+    "seal": {
+      "command": "upw seal --request <private-json-path>",
+      "lane_class": "human",
+      "input_schema": "schemas/plan-approval-request.schema.json",
+      "output_schema": "schemas/plan-seal.schema.json",
+      "semantics": "Verify a human execution-approval receipt and write a seal beside the unchanged plan.",
+      "implemented": false,
+      "reply_envelope": "schemas/reply.schema.json"
+    },
+    "review": {
+      "command": "upw review --request <private-json-path>",
+      "lane_class": "offline_batch",
+      "input_schema": "schemas/sealed-plan-request.schema.json",
+      "output_schema": "schemas/review-receipt.schema.json",
+      "semantics": "Emit eligible bounded family task requests to capacity routing; human nodes never dispatch.",
+      "implemented": false,
+      "reply_envelope": "schemas/reply.schema.json"
+    },
+    "reconcile": {
+      "command": "upw reconcile --request <private-json-path>",
+      "lane_class": "offline_batch",
+      "input_schema": "schemas/reconcile-request.schema.json",
+      "output_schema": "schemas/release-decision.schema.json",
+      "semantics": "Validate results and return diagnostic release recommendation, coverage and blockers.",
+      "implemented": false,
+      "reply_envelope": "schemas/reply.schema.json"
+    },
+    "record-decision": {
+      "command": "upw record-decision --request <private-json-path>",
+      "lane_class": "human",
+      "input_schema": "schemas/human-receipt-request.schema.json",
+      "output_schema": "schemas/human-receipt.schema.json",
+      "semantics": "Verify and append an externally authenticated human decision; cannot manufacture approval.",
+      "implemented": false,
+      "reply_envelope": "schemas/reply.schema.json"
+    },
+    "inspect": {
+      "command": "upw inspect --request <private-json-path>",
+      "lane_class": "offline_batch",
+      "input_schema": "schemas/run-ref.schema.json",
+      "output_schema": "schemas/inspection.schema.json",
+      "semantics": "Read state, result refs, pending human work and ledger reconciliation.",
+      "implemented": false,
+      "reply_envelope": "schemas/reply.schema.json"
+    },
+    "conform": {
+      "command": "upw conform --request <private-json-path>",
+      "lane_class": "offline_batch",
+      "input_schema": "schemas/conformance-request.schema.json",
+      "output_schema": "schemas/conformance-report.schema.json",
+      "semantics": "Evaluate workbench interface contract and named critical cases; editorial efficacy remains separate.",
+      "implemented": false,
+      "reply_envelope": "schemas/reply.schema.json"
+    }
+  },
+  "stdout": "Exactly one UTF-8 JSON object plus newline per verb, including refusal. Logs go to redacted stderr; no progress or manuscript text on stdout.",
+  "exit_codes": {
+    "0": "Operation evaluated successfully; inspect editorial status, which may be hold or awaiting_human.",
+    "1": "Technical failure without a valid completed evaluation; no release effect.",
+    "2": "Invalid request, denied authority/route, critical admission failure, or prohibited effect; canonical refusal document."
+  },
+  "rules": [
+    {
+      "id": "UPW-01",
+      "text": "Original bytes are read-only; derivatives live outside source and repository roots."
+    },
+    {
+      "id": "UPW-02",
+      "text": "Recheck source digests before extraction, every model stage, and packet assembly; bind processing to the verified bytes."
+    },
+    {
+      "id": "UPW-03",
+      "text": "Plan, family map, stage profile, rules, policies, routes, formats, skill pins and source bundle are content-addressed; approvals bind the exact plan digest."
+    },
+    {
+      "id": "UPW-04",
+      "text": "Capability routing uses the canonical map; capacity admission is performed by the Loading Bay."
+    },
+    {
+      "id": "UPW-05",
+      "text": "Human stages have lane human and no model dispatch object. Machine verbs cannot accept edits, adjudicate authorship, or approve a release package."
+    },
+    {
+      "id": "UPW-06",
+      "text": "No publication or external-distribution operation exists in this interface."
+    },
+    {
+      "id": "UPW-07",
+      "text": "Draft packages may produce labeled diagnostic results; draft is never implied acceptance or promotion."
+    },
+    {
+      "id": "UPW-08",
+      "text": "Missing CE remains absent; no substitution by SGI or TE. Required absence holds the relevant release claim."
+    },
+    {
+      "id": "UPW-09",
+      "text": "Unknown evidence is dark coverage, never pass, fail, zero, or misconduct. Claims need capture references; disagreements and ties survive."
+    },
+    {
+      "id": "UPW-10",
+      "text": "Critical conformance failure blocks admission or release regardless of scores. Undeclared family critical coverage prevents production clearance."
+    },
+    {
+      "id": "UPW-11",
+      "text": "Receipts require authenticated external human authority verification, exact object binding, expiry and scope checks; an actor_type field alone is insufficient."
+    },
+    {
+      "id": "UPW-12",
+      "text": "A new source, rule, map, schema, route, tool/model revision, baseline, proof, or approval invalidates affected results and opens a successor plan."
+    },
+    {
+      "id": "UPW-13",
+      "text": "Accepted proof correction is not closed until incorporation and dependent reproof evidence exist."
+    },
+    {
+      "id": "UPW-14",
+      "text": "Retain the RCI-before-SEI edge, commit-plus-tree-hash locks, source gates, author packets and independent human acceptance."
+    },
+    {
+      "id": "UPW-15",
+      "text": "No manuscript, author metadata, credentials or runtime output is written to a repository. Restricted input is refused pending separate handling policy."
+    },
+    {
+      "id": "UPW-16",
+      "text": "Kata is the execution ledger; receipt storage is subordinate evidence. Linear commitments and Notion knowledge are separate projections."
+    },
+    {
+      "id": "UPW-17",
+      "text": "Runtime dispatch requires immutable accepted-for-routing Dock ancestry, task envelope, G0/G1 authority, route approval and approved pins; a design candidate grants none."
+    },
+    {
+      "id": "UPW-18",
+      "text": "No package promotion, new execution pin, G3 external effect or G5/G6 change is inferred from a successful review or test."
+    }
+  ],
+  "state_layout": {
+    "root": "required operator-supplied absolute private directory outside every repository and source root",
+    "immutable": [
+      "manifests/<sha256>.json",
+      "plans/<sha256>.json",
+      "seals/<sha256>.json",
+      "results/<sha256>.json",
+      "receipts/<sha256>.json"
+    ],
+    "append_only": [
+      "events.jsonl",
+      "observations.jsonl"
+    ],
+    "derivatives": "derivatives/<run-id>/<opaque-chapter-id>/",
+    "human_queue": "human-queue/<packet-digest>.json",
+    "projection_outbox": "outbox/kata/<event-id>.json"
+  },
+  "ledgers": {
+    "format": "append-only JSONL",
+    "event_id": "sha256(canonical event excluding event_id)",
+    "chain": "prev_event_id bound inside event",
+    "writer": "single writer per run; exclusive append lock, flush+fsync before acknowledgment",
+    "replay": "same event_id is idempotent; conflicting duplicate or truncated chain blocks further dispatch",
+    "system_of_record": "Kata; local events are evidence/outbox only; failed acknowledgment is projection_pending, not execution success"
+  },
+  "emits": [
+    "source_manifest",
+    "stage_plan",
+    "family_result",
+    "decision_packet",
+    "candidate_review_packet",
+    "release_decision",
+    "decision_receipt",
+    "provenance_event",
+    "task_envelope_reference",
+    "result_envelope_reference"
+  ],
+  "invariants": [
+    "UPW-01",
+    "UPW-02",
+    "UPW-03",
+    "UPW-04",
+    "UPW-05",
+    "UPW-06",
+    "UPW-07",
+    "UPW-08",
+    "UPW-09",
+    "UPW-10",
+    "UPW-11",
+    "UPW-12",
+    "UPW-13",
+    "UPW-14",
+    "UPW-15",
+    "UPW-16",
+    "UPW-17",
+    "UPW-18"
+  ],
+  "non_claims": [
+    "No runtime implemented by this design packet",
+    "No family package promoted or repinned",
+    "No MWM chapter or author material processed",
+    "No editorial accuracy or production-readiness certification",
+    "No live Hermes/Claude/Gemini/GLM support proved",
+    "No remote/local tree parity attested",
+    "No external distribution or publication authority"
+  ],
+  "extensions": {
+    "university_press": {
+      "capability_map": "capability-map.json",
+      "stage_profiles": "stage-profiles.json",
+      "open_hooks": "open-hooks.json",
+      "schemas": "schemas/",
+      "protocol": "PROTOCOL.md",
+      "conformance_suite": "conformance/cases.json",
+      "maturity_axes": [
+        "presence",
+        "package_status",
+        "definition",
+        "activation",
+        "acceptance",
+        "critical_coverage"
+      ],
+      "legacy_limits": {
+        "chapter_bytes": 20971520,
+        "batch_bytes": 524288000,
+        "chapters": 250,
+        "parallel_chapters_min": 1,
+        "parallel_chapters_max": 3,
+        "windows_output_path_chars": 240,
+        "source_formats": [
+          ".docx",
+          ".md",
+          ".txt"
+        ]
+      },
+      "extensions_requiring_review": [
+        "capability and maturity declarations",
+        "sealed DAG and invalidation closure",
+        "human-only node sum type and verified receipts",
+        "proof baseline and reproof lineage",
+        "typed family payload adapters",
+        "coverage and claim-scoped release recommendation",
+        "Dock/Kata projection references"
+      ],
+      "house_conformance": {
+        "status": "commission_shape_checked_exact_upstream_unverified",
+        "evidence_gap": "HOUSE-V1",
+        "candidate_schema": "schemas/contract-candidate.schema.json",
+        "recommendation": "Keep one house v1; propose a named editorial extension and shared human-node/receipt semantics. Do not mint v2 before comparing the actual upstream schema."
+      }
+    }
+  }
+}

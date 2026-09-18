@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "family_id": {
+      "enum": [
+        "RCI",
+        "SGI",
+        "TE",
+        "CE",
+        "SEI",
+        "CPR",
+        "PPR",
+        "EQA"
+      ]
+    },
+    "candidate_adapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "capture_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "capture_uri",
+        "sha256"
+      ]
+    },
+    "suite": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "capture_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "capture_uri",
+        "sha256"
+      ]
+    },
+    "mode": {
+      "const": "synthetic_only"
+    }
+  },
+  "required": [
+    "family_id",
+    "candidate_adapter",
+    "suite",
+    "mode"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "schema": "navy_yard.workbench_contract.v1",
+  "workbench": "screen-measurement-instrument-quality",
+  "title": "Screen Measurement Instrument Quality",
+  "version": "0.1.0",
+  "schema_version": "screen-measurement-instrument-quality/0.1",
+  "purpose": "Screen a pinned corpus against a pluggable profile, direct internet lanes to collect criterion-bound evidence, verify it across vendors, and emit one screen table from which every view is rendered.",
+  "agents": ["claude", "codex", "hermes", "gemini", "glm"],
+  "humans": ["eric", "sheryl"],
+  "entry_points": {
+    "cli": "python screen.py <verb> [--state DIR] ...",
+    "tests": "python -m unittest discover -s tests"
+  },
+  "exit_codes": {
+    "0": "success",
+    "1": "checks failed, input rejected, or refused",
+    "2": "usage error: bad arguments, malformed argument value, or missing input file"
+  },
+  "output": "Every verb prints exactly one canonical JSON document (sorted keys, compact separators, UTF-8) to stdout.",
+  "verbs": {
+    "contract": {"args": [], "writes": [], "lane_class": "any"},
+    "doctor": {"args": ["--state"], "writes": [], "lane_class": "offline_batch"},
+    "profile validate": {"args": ["PATH"], "writes": [], "lane_class": "offline_batch", "rule": "R1"},
+    "pin": {"args": ["--state", "--items", "--corpus-id", "--source-repo", "--source-ref", "[--retrieved-from]", "[--retrieved-to]", "[--id-field]", "[--new-pin]"], "writes": ["pin.json", "items.jsonl", "pins/"], "lane_class": "offline_batch", "rule": "R5"},
+    "adapt edinstruments-csv": {"args": ["--csv", "--out", "[--fields]"], "writes": ["--out file"], "lane_class": "offline_batch"},
+    "briefs": {"args": ["--state", "--profile", "[--limit]", "[--lane-class internet]", "[--out]", "[--only-new]"], "writes": ["briefs.jsonl", "conflicts.jsonl", "--out file"], "lane_class": "offline_batch", "consumer_lane_class": "internet"},
+    "ingest": {"args": ["--state", "--kind claims|verifications", "--file"], "writes": ["claims.jsonl or verifications.jsonl"], "lane_class": "offline_batch", "all_or_nothing": true},
+    "verify": {"args": ["--state", "--vendor-of-verifier", "[--limit]", "[--out]"], "writes": ["--out file"], "lane_class": "offline_batch", "consumer_lane_class": "internet, different vendor from the claim"},
+    "check": {"args": ["--state", "--item", "--field", "--observed JSON", "[--claims]", "[--status]", "[--by]", "[--recorded-at]"], "writes": ["checks.jsonl"], "lane_class": "offline_batch", "rule": "R6"},
+    "conflicts": {"args": ["--state", "--profile", "[--packet]"], "writes": ["conflicts.jsonl"], "lane_class": "offline_batch", "packet_lane_class": "chat_reasoning", "rule": "R7"},
+    "rule": {"args": ["--state", "--conflict", "--decision JSON", "--rationale", "--by HUMAN", "[--supersedes]"], "writes": ["rulings.jsonl"], "lane_class": "human", "rule": "R7"},
+    "score": {"args": ["--state", "--profile", "[--out]"], "writes": ["conflicts.jsonl", "--out file"], "lane_class": "offline_batch", "rule": "R2 R3 R4"},
+    "export": {"args": ["--state", "--profile", "--out DIR", "[--as-of]"], "writes": ["conflicts.jsonl", "--out DIR"], "lane_class": "offline_batch"}
+  },
+  "global_options": {
+    "--state DIR": "state root; refused when inside this repository unless --allow-state-in-repo",
+    "--allow-state-in-repo": "permit a state root inside the repository tree (tests, demos)",
+    "--now ISO8601": "freeze the clock used for pinned_at, opened_at, recorded_at and ruled_at"
+  },
+  "lane_classes": {
+    "offline_batch": "deterministic, no internet, deferrable (LunaRoute GLM back lanes or any local driver)",
+    "internet": "evidence collection and verification (Gemini, Codex); verification must come from a different vendor than the claim",
+    "chat_reasoning": "attended drafting of ruling packets (Claude, Hermes)",
+    "human": "rulings; only ids listed in humans"
+  },
+  "rules": {
+    "R1": "Criteria are data. Adding or removing a criterion never requires a code change.",
+    "R2": "Missing is not failing. Unknown contributes nothing, is reported as coverage, and widens the score range.",
+    "R3": "Stated restrictions outrank the score. A restricted item is never ranked above a clear item; an unknown restriction is flagged, not treated as a restriction.",
+    "R4": "Ties are kept. Competition ranking (1, 1, 3), no hidden tie-breaker, rank stability reported.",
+    "R5": "The corpus is pinned. Every run names a pin; pinned records are read-only.",
+    "R6": "Outside checks are appended, never overwritten. Outputs show pinned and observed values side by side.",
+    "R7": "Disagreements go to a human. Only a human ruling closes a conflict; models may draft packets."
+  },
+  "state_layout": {
+    "pin.json": "current corpus pin",
+    "items.jsonl": "pinned records, byte-for-byte copy, read-only",
+    "pins/": "archived earlier pins and their records, never overwritten",
+    "briefs.jsonl": "briefs handed to internet lanes",
+    "claims.jsonl": "ingested claims (found and not_found)",
+    "verifications.jsonl": "ingested cross-vendor verifications",
+    "checks.jsonl": "outside checks against pinned values",
+    "conflicts.jsonl": "opened conflicts",
+    "rulings.jsonl": "human rulings, append-only, may supersede"
+  },
+  "ledger_format": "JSON Lines, append-only, one canonical JSON object per line, no NaN or Infinity; IDs are content hashes so exact replays are idempotent and a conflicting replay under the same ID is refused.",
+  "emits": {
+    "screen-table.csv": "one row per item in rank order, restricted last",
+    "screen-table.json": "header (pin id, profile digest, ledger digests) and rows with ratings",
+    "passports/<item>.md": "per-item fields, ratings with evidence and grades, checks beside pinned values, conflicts, rulings",
+    "linear-item.json": "run summary for a driver to post",
+    "notion-summary.md": "run summary page",
+    "export-manifest.json": "sha256 of every written file plus pin id, profile digest and ledger digests"
+  },
+  "json_schemas": "profiles/schema/*.schema.json (documentation-grade; validation is hand-written)",
+  "invariants": [
+    "An absent or null field never fires a rule; unknown adds 0 to score and its weight to score_max.",
+    "A stated restriction is listed after every ranked row and is never ranked.",
+    "Equal scores (6 dp) share a rank; no tie-breaker is applied.",
+    "Pinned records are never edited; doctor detects a digest mismatch; re-pin with a different digest requires --new-pin and archives the old pin.",
+    "A claim counts toward a rating only if verified by a different vendor, matched exact or probable, relevance direct, credibility 1-3, and mapped to a level.",
+    "Every ingest file is all-or-nothing.",
+    "Verified claims that disagree with a pinned field leave the criterion conflicted until a human rules; they never override the pin alone.",
+    "No --out path may resolve inside a state root.",
+    "Brief priority is recomputed at render time and is never stored or hashed into brief_id.",
+    "Only a human id listed in humans can record a ruling.",
+    "No network call, no model call, no subprocess of user data; standard library only.",
+    "Export bytes depend only on state, profile and --as-of."
+  ],
+  "non_claims": [
+    "Not an authority: a screen table ranks against the profile it was given, nothing more.",
+    "Provisional profiles are provisional; their weights are not the owner's method.",
+    "Does not browse, fetch or call models; it emits packets and ingests returns.",
+    "A passing test suite is not evidence that any real claim is true."
+  ]
+}

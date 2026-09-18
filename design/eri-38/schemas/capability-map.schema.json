@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "map_id",
+    "status",
+    "authority",
+    "domain_families",
+    "control_family",
+    "counts",
+    "families"
+  ],
+  "properties": {
+    "schema": {
+      "const": "university_press.capability_map.draft1"
+    },
+    "authority": {
+      "const": false
+    },
+    "families": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "family_id",
+          "repository",
+          "package",
+          "specification",
+          "covers",
+          "refuses",
+          "inbound",
+          "outbound",
+          "maturity",
+          "runtime_targets",
+          "open_hook_ids",
+          "evaluation",
+          "execution_pin"
+        ]
+      }
+    }
+  }
+}

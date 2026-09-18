@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "university_press.review_receipt.draft1"
+    },
+    "plan_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "run_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "human_wait_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "blocked_node_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "outcome": {
+      "enum": [
+        "partial",
+        "blocked",
+        "submitted",
+        "waiting"
+      ]
+    },
+    "kata_projection": {
+      "enum": [
+        "pending",
+        "acknowledged",
+        "failed"
+      ]
+    },
+    "event_head": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema",
+    "plan_id",
+    "run_ref",
+    "task_refs",
+    "human_wait_refs",
+    "blocked_node_ids",
+    "outcome",
+    "kata_projection",
+    "event_head"
+  ]
+}

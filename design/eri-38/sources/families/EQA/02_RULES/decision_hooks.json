@@ -1,0 +1,23 @@
+{
+  "registry_id":"MWM-EQA-DECISIONS",
+  "version":"0.1.0",
+  "status":"open-for-editorial-owner-review",
+  "specification_id":"MWM-EQA-SPEC",
+  "default_runtime":"Use conservative orchestration; unresolved hooks produce explicit awaiting/hold states.",
+  "hooks":[
+    {"hook_id":"EQA-DH-001","question":"What is the canonical editorial stage model and dependency graph?","owner":"MWM editorial owner","default":"Use proposed graph provisionally; material uncertainty blocks release routing."},
+    {"hook_id":"EQA-DH-002","question":"What is the approved authority-precedence table among MWM and delegated sources?","owner":"MWM editorial owner","default":"Report material conflict; do not infer precedence."},
+    {"hook_id":"EQA-DH-003","question":"Who owns volume, chapter, family, production, QA, and final release decisions?","owner":"MWM editorial owner","default":"Owner may be pending at intake; release owner is required before release."},
+    {"hook_id":"EQA-DH-004","question":"Which local or external model and tool routes are approved for which data classes?","owner":"Editorial/security owner","default":"Unapproved route is refused and escalated."},
+    {"hook_id":"EQA-DH-005","question":"What manuscript confidentiality, retention, and access rules apply?","owner":"MWM/security owner","default":"Minimize evidence and use approved local route until decided."},
+    {"hook_id":"EQA-DH-006","question":"How are confidence, disagreement, severity, and residual-risk thresholds calibrated?","owner":"EQA owner/editorial owner","default":"Use categorical conservative escalation for high-risk objects."},
+    {"hook_id":"EQA-DH-007","question":"Which findings require independent review?","owner":"EQA owner/editorial owner","default":"Independent review for high-risk, high-uncertainty, or disagreement-sensitive issues."},
+    {"hook_id":"EQA-DH-008","question":"What output formats and accessibility targets are required?","owner":"Production/accessibility owner","default":"State format-specific coverage; no generalization."},
+    {"hook_id":"EQA-DH-009","question":"Which findings block release versus permit tracked residual risk?","owner":"Editorial/release owner","default":"Critical blocks always hold; tracked items require policy and owner acceptance."},
+    {"hook_id":"EQA-DH-010","question":"What proof correction, reproof, and post-publication status policies apply?","owner":"Production/senior editorial owner","default":"PPR and post-publication cases retain separate states."},
+    {"hook_id":"EQA-DH-011","question":"How are fixity, provenance, and retention implemented?","owner":"Records/production owner","default":"Retain IDs, events, hashes/stable identifiers, access, and supersession."},
+    {"hook_id":"EQA-DH-012","question":"What evaluation cadence and regression rule apply?","owner":"EQA owner","default":"Regress on every material spec/interface/rule/route/format/failure change."},
+    {"hook_id":"EQA-DH-013","question":"What editor-facing and author-facing report formats are required?","owner":"MWM editorial owner","default":"Output coverage, evidence, open blocks, next actions, and owner language."},
+    {"hook_id":"EQA-DH-014","question":"How do appeals and accepted exceptions enter continuous improvement?","owner":"EQA/editorial owner","default":"Append appeal/exception, fixture/regression impact, and approval; do not erase prior decision."}
+  ]
+}

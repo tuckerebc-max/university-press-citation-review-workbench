@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "university_press.conformance_report.draft1"
+    },
+    "family_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "suite_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "case_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "not_run",
+              "unknown"
+            ]
+          },
+          "evidence_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "case_id",
+          "status",
+          "evidence_ref"
+        ]
+      }
+    },
+    "diagnostic_admission": {
+      "enum": [
+        "eligible",
+        "refused",
+        "unknown"
+      ]
+    },
+    "production_clearance": {
+      "enum": [
+        "eligible_for_human_review",
+        "hold",
+        "blocked"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "family_id",
+    "suite_digest",
+    "case_results",
+    "diagnostic_admission",
+    "production_clearance"
+  ]
+}

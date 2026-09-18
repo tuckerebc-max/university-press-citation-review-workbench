@@ -1,0 +1,16 @@
+{
+  "registry_id":"MWM-EQA-AUTHORITY",
+  "version":"0.1.0",
+  "tiers":[
+    {"tier":1,"name":"Explicit current MWM editorial-owner decision","can_govern":true},
+    {"tier":2,"name":"Approved MWM volume or chapter rule","can_govern":true},
+    {"tier":3,"name":"Approved in-scope exception or author convention","can_govern":true,"condition":"Scoped and time-bound."},
+    {"tier":4,"name":"Current family specification and rule/authority ledger","can_govern":true,"condition":"Within family boundary."},
+    {"tier":5,"name":"Supplied MWM template/guidance/style source","can_govern":true,"condition":"Not superseded by local decision."},
+    {"tier":6,"name":"Adopted external standard or publisher requirement","can_govern":true,"condition":"MWM explicitly designates applicability."},
+    {"tier":7,"name":"External research exemplar","can_govern":false,"condition":"Provisional context only."},
+    {"tier":8,"name":"Model general knowledge or stylistic preference","can_govern":false,"condition":"Suggestion only."}
+  ],
+  "conflict_policy":"The exact precedence among the first six levels remains an owner decision; unresolved material conflict returns awaiting_human.",
+  "formal_boundary":"EQA coordinates and routes; it does not replace family judgment or make formal misconduct, authorship, legal, ethical, accessibility, or public-status findings."
+}

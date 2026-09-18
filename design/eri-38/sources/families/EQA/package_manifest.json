@@ -1,0 +1,14 @@
+{
+  "package_id":"MWM-EDITORIAL-EQA",
+  "family":"Editorial QA & Orchestration",
+  "package_version":"0.1.0",
+  "status":"draft-for-editorial-owner-review",
+  "governing_specification":{"path":"01_SPECIFICATION.md","source_filename":"Editorial_QA_Orchestration_Specification.md","sha256":"DA00567892A41E8ABB4EF441A43D696F89A3754FF88A19C8856D8EF6703A54C0"},
+  "components":{"01_specification":"01_SPECIFICATION.md","01_specification_docx":"01_SPECIFICATION.docx","02_rules":"02_RULES/","03_skill":"SKILL.md","04_schemas":"schemas/","05_evals":"evals/","06_changelog_regression":"CHANGELOG_REGRESSION/"},
+  "rule_registry":{"path":"02_RULES/ruleset.json","id":"MWM-EQA-RULES","version":"0.1.0","rule_count":33,"decision_hook_count":14},
+  "evaluation":{"catalog":"evals/fixture_catalog.json","evaluation_set_id":"MWM-EQA-EVAL-2026-08","fixture_count":50,"crosswalk":"evals/rule_fixture_crosswalk.json","scorer":"evals/scorer.py","classes":{"clean":8,"single_error":16,"adversarial":14,"negative_control":6,"integration":6},"named_critical_fixtures":["EQA-11","EQA-17","EQA-19","EQA-25","EQA-27","EQA-36","EQA-43","EQA-46","EQA-50"]},
+  "schemas":{"envelope":"schemas/invocation-envelope.schema.json","node":"schemas/dependency-node.schema.json","route":"schemas/route-decision.schema.json","family_result":"schemas/family-result.schema.json","finding":"schemas/finding.schema.json","comparison":"schemas/comparison.schema.json","confidence":"schemas/confidence.schema.json","receipt":"schemas/decision-receipt.schema.json","provenance":"schemas/provenance-event.schema.json","release_package":"schemas/release-package.schema.json","ledger":"schemas/ledger.schema.json","output":"schemas/output.schema.json","cross_family":"schemas/cross-family-contracts.json"},
+  "qa":{"validator":"scripts/validate_package.py","commands":["python scripts/validate_package.py","python evals/scorer.py --validate-suite --self-test","python -m py_compile evals/scorer.py scripts/validate_package.py"],"zero_tolerance_policy":"No false clearance, authority override, missing precondition, stale dependency, unsafe route, family-boundary breach, lost disagreement, unsupported confidence, critical-score masking, receipt/provenance gap, post-publication bypass, or unsigned release may ship."},
+  "cross_family_contracts":"schemas/cross-family-contracts.json",
+  "policy_boundary":"Open MWM orchestration decisions remain explicit hooks. EQA coordinates, compares, routes, records, and gates; family Skills retain domain judgment and EQA does not invent policy, adjudicate formal status, silently overwrite records, or release without a human receipt."
+}

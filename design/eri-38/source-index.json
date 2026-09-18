@@ -1,0 +1,438 @@
+{
+  "captured_date": "2026-09-18",
+  "execution_pin_change": false,
+  "captures_are_not_activation_pins": true,
+  "sources": [
+    {
+      "evidence_id": "RCI:package_manifest.json",
+      "path": "sources/families/RCI/package_manifest.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794b2cc8191851957119352a89b/package_manifest.json",
+      "repository": "https://github.com/tuckerebc-max/reference-citation-integrity",
+      "sha256": "35bf8117950588c3bd52ee001d8a187e5eeed38eadc6fa08ee3b2b5fd768a114",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "RCI:schemas/cross-family-contracts.json",
+      "path": "sources/families/RCI/schemas/cross-family-contracts.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794b2cc8191851957119352a89b/schemas/cross-family-contracts.json",
+      "repository": "https://github.com/tuckerebc-max/reference-citation-integrity",
+      "sha256": "ce9610e308a3cf552df5253bb01f095e055036fdea2cca8726033e8d8de3fb34",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "RCI:02_RULES/decision_hooks.json",
+      "path": "sources/families/RCI/02_RULES/decision_hooks.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794b2cc8191851957119352a89b/02_RULES/decision_hooks.json",
+      "repository": "https://github.com/tuckerebc-max/reference-citation-integrity",
+      "sha256": "448f6c35b9c52e74860168080c25b6071c1c43d0f20e8c3d5f28e373080c1dca",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "RCI:02_RULES/authority_registry.json",
+      "path": "sources/families/RCI/02_RULES/authority_registry.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794b2cc8191851957119352a89b/02_RULES/authority_registry.json",
+      "repository": "https://github.com/tuckerebc-max/reference-citation-integrity",
+      "sha256": "ff7f8b5b605a590b8633eceecc6defee50546375baacba5b3d48df1c880aba81",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "RCI:01_SPECIFICATION.md",
+      "path": "sources/families/RCI/01_SPECIFICATION.md",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794b2cc8191851957119352a89b/01_SPECIFICATION.md",
+      "repository": "https://github.com/tuckerebc-max/reference-citation-integrity",
+      "sha256": "1da26a4d698478c34dc733b79009295efc40f3837b0484a6691c63ed3a3dbbff",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SGI:package_manifest.json",
+      "path": "sources/families/SGI/package_manifest.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79506e88191a9f92733ea8504d1/package_manifest.json",
+      "repository": "https://github.com/tuckerebc-max/style-guide-implementation",
+      "sha256": "8ba1d76cf96c948cecb89ef09f28d2380c2ecde32f3fc01e685ae372d639a75c",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SGI:schemas/cross-family-contracts.json",
+      "path": "sources/families/SGI/schemas/cross-family-contracts.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79506e88191a9f92733ea8504d1/schemas/cross-family-contracts.json",
+      "repository": "https://github.com/tuckerebc-max/style-guide-implementation",
+      "sha256": "87461c433367468683eedfac74e6695328467c66b3019f5e7c5b44ae5a5a8385",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SGI:02_RULES/decision_hooks.json",
+      "path": "sources/families/SGI/02_RULES/decision_hooks.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79506e88191a9f92733ea8504d1/02_RULES/decision_hooks.json",
+      "repository": "https://github.com/tuckerebc-max/style-guide-implementation",
+      "sha256": "0fcb64ce075caf5d82daa505e42bec7f2c20f635a26645a7a5937e29a0a062e9",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SGI:02_RULES/authority_registry.json",
+      "path": "sources/families/SGI/02_RULES/authority_registry.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79506e88191a9f92733ea8504d1/02_RULES/authority_registry.json",
+      "repository": "https://github.com/tuckerebc-max/style-guide-implementation",
+      "sha256": "ea5fe1c7ad429987ac42ef365ab17ff4099c2325fb9c941f39f95fd84f8c8925",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SGI:01_SPECIFICATION.md",
+      "path": "sources/families/SGI/01_SPECIFICATION.md",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79506e88191a9f92733ea8504d1/01_SPECIFICATION.md",
+      "repository": "https://github.com/tuckerebc-max/style-guide-implementation",
+      "sha256": "f6912ccda00ac0ced6fc166e5f7c7bc7f7c04c2d98d33c72052b17be061b2313",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "TE:package_manifest.json",
+      "path": "sources/families/TE/package_manifest.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79566b08191be3f6be5b614146b/package_manifest.json",
+      "repository": "https://github.com/tuckerebc-max/technical-editing",
+      "sha256": "03cd8e34c41a9896566bc9f046d3819d0b9589ca444496493f01a74a836282e7",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "TE:schemas/cross-family-contracts.json",
+      "path": "sources/families/TE/schemas/cross-family-contracts.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79566b08191be3f6be5b614146b/schemas/cross-family-contracts.json",
+      "repository": "https://github.com/tuckerebc-max/technical-editing",
+      "sha256": "3488f24b37f8430ef02e50c13ef54aa26dd02421640193edc1d54d33298aeeb4",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "TE:02_RULES/decision_hooks.json",
+      "path": "sources/families/TE/02_RULES/decision_hooks.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79566b08191be3f6be5b614146b/02_RULES/decision_hooks.json",
+      "repository": "https://github.com/tuckerebc-max/technical-editing",
+      "sha256": "e5f9c9c4d635aac32d0b57ac3578e06ea27ba3dd0553a8a2cab4e34feae6783f",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "TE:02_RULES/authority_registry.json",
+      "path": "sources/families/TE/02_RULES/authority_registry.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79566b08191be3f6be5b614146b/02_RULES/authority_registry.json",
+      "repository": "https://github.com/tuckerebc-max/technical-editing",
+      "sha256": "95f4fb714229dc117fc0e2d9aa36f46921b463bccd6ff4b13de95bd7aa133e86",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "TE:01_SPECIFICATION.md",
+      "path": "sources/families/TE/01_SPECIFICATION.md",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79566b08191be3f6be5b614146b/01_SPECIFICATION.md",
+      "repository": "https://github.com/tuckerebc-max/technical-editing",
+      "sha256": "4ed5958ace355bab4205b1a11a44855ee86def5d9360fafdc687d9dc712701e0",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SEI:package_manifest.json",
+      "path": "sources/families/SEI/package_manifest.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794a6ec8191acf03f2fe1ecc78a/package_manifest.json",
+      "repository": "https://github.com/tuckerebc-max/scholarly-editorial-integrity",
+      "sha256": "8618414143aa26afc8402dbd80c33ad8eb5c91e3fd2bfe4ca4fe8df7252c65cb",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SEI:schemas/cross-family-contracts.json",
+      "path": "sources/families/SEI/schemas/cross-family-contracts.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794a6ec8191acf03f2fe1ecc78a/schemas/cross-family-contracts.json",
+      "repository": "https://github.com/tuckerebc-max/scholarly-editorial-integrity",
+      "sha256": "694480f5ed773d959d6ccb9362462c24577684132c74c1ab5dbfac4fc21b389a",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SEI:02_RULES/decision_hooks.json",
+      "path": "sources/families/SEI/02_RULES/decision_hooks.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794a6ec8191acf03f2fe1ecc78a/02_RULES/decision_hooks.json",
+      "repository": "https://github.com/tuckerebc-max/scholarly-editorial-integrity",
+      "sha256": "5f758713d541a39052ba5c736458ecafce5f42b6f8899c3bb9a5474cac58113e",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SEI:02_RULES/authority_registry.json",
+      "path": "sources/families/SEI/02_RULES/authority_registry.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794a6ec8191acf03f2fe1ecc78a/02_RULES/authority_registry.json",
+      "repository": "https://github.com/tuckerebc-max/scholarly-editorial-integrity",
+      "sha256": "f4e5232f231c94535cf112b888b5700d3abb4e65dd52ddbe979e56b2f4ed9f2d",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "SEI:01_SPECIFICATION.md",
+      "path": "sources/families/SEI/01_SPECIFICATION.md",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a794a6ec8191acf03f2fe1ecc78a/01_SPECIFICATION.md",
+      "repository": "https://github.com/tuckerebc-max/scholarly-editorial-integrity",
+      "sha256": "09ba870077d191afe5cece45f2ca5de0b370d11bae175bfe6b524e66aecc6927",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "CPR:package_manifest.json",
+      "path": "sources/families/CPR/package_manifest.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79551b08191bb40f608aeee5793/package_manifest.json",
+      "repository": "https://github.com/tuckerebc-max/chapter-completeness-production-readiness",
+      "sha256": "b07f549c5f748e72fba2f0e1168ba6c9fa4a513fd368c95e2d3839325a345dba",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "CPR:schemas/cross-family-contracts.json",
+      "path": "sources/families/CPR/schemas/cross-family-contracts.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79551b08191bb40f608aeee5793/schemas/cross-family-contracts.json",
+      "repository": "https://github.com/tuckerebc-max/chapter-completeness-production-readiness",
+      "sha256": "db537f9d79cff663eb9804257abf17a41015bf69af0d174aaf23b0b83e7c6f22",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "CPR:02_RULES/decision_hooks.json",
+      "path": "sources/families/CPR/02_RULES/decision_hooks.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79551b08191bb40f608aeee5793/02_RULES/decision_hooks.json",
+      "repository": "https://github.com/tuckerebc-max/chapter-completeness-production-readiness",
+      "sha256": "56c801551c8ba6c9f7e2cee72782cc0781ee533ff4411701d1f747dcd99a1101",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "CPR:02_RULES/authority_registry.json",
+      "path": "sources/families/CPR/02_RULES/authority_registry.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79551b08191bb40f608aeee5793/02_RULES/authority_registry.json",
+      "repository": "https://github.com/tuckerebc-max/chapter-completeness-production-readiness",
+      "sha256": "53d3aa1bfbd96def9f1f64bb3c619b5470d58d72af81cca0bb404c66cf75c1a7",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "CPR:01_SPECIFICATION.md",
+      "path": "sources/families/CPR/01_SPECIFICATION.md",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79551b08191bb40f608aeee5793/01_SPECIFICATION.md",
+      "repository": "https://github.com/tuckerebc-max/chapter-completeness-production-readiness",
+      "sha256": "24f790b87364aafa4b2a738209e91964370978892c2e6c4c0c80dc8e5da64492",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "PPR:package_manifest.json",
+      "path": "sources/families/PPR/package_manifest.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79543bc8191ab6efadb732df812/package_manifest.json",
+      "repository": "https://github.com/tuckerebc-max/proof-post-typesetting-review",
+      "sha256": "9f9e858123b14fa3192109314512804f448d851875baee178858837921ad5b37",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "PPR:schemas/cross-family-contracts.json",
+      "path": "sources/families/PPR/schemas/cross-family-contracts.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79543bc8191ab6efadb732df812/schemas/cross-family-contracts.json",
+      "repository": "https://github.com/tuckerebc-max/proof-post-typesetting-review",
+      "sha256": "cd6d9e98e0c84ae6e90ca28825c93b680d251dbe30ec18a64b93c5c3ab5dc6aa",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "PPR:02_RULES/decision_hooks.json",
+      "path": "sources/families/PPR/02_RULES/decision_hooks.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79543bc8191ab6efadb732df812/02_RULES/decision_hooks.json",
+      "repository": "https://github.com/tuckerebc-max/proof-post-typesetting-review",
+      "sha256": "6f706cb02e2fa78f8247ea12dde549acd644e293745c293f57c30f54271b289b",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "PPR:02_RULES/authority_registry.json",
+      "path": "sources/families/PPR/02_RULES/authority_registry.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79543bc8191ab6efadb732df812/02_RULES/authority_registry.json",
+      "repository": "https://github.com/tuckerebc-max/proof-post-typesetting-review",
+      "sha256": "33ef8831d6e6da38888ad750a12bf2580982ae53f79a2eab6eb67b92a1ba3563",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "PPR:01_SPECIFICATION.md",
+      "path": "sources/families/PPR/01_SPECIFICATION.md",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a79543bc8191ab6efadb732df812/01_SPECIFICATION.md",
+      "repository": "https://github.com/tuckerebc-max/proof-post-typesetting-review",
+      "sha256": "e9c8ad5ad85109f94e6ff02be3c49c20fedb585c53bfe2873763105f7ae2f043",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "EQA:package_manifest.json",
+      "path": "sources/families/EQA/package_manifest.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a7957060819184bd252728bb0601/package_manifest.json",
+      "repository": "https://github.com/tuckerebc-max/editorial-qa-orchestration",
+      "sha256": "97eb16a8168dd11c1d037893f773930c1f6ec0885affcba30a3b435a4514049d",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "EQA:schemas/cross-family-contracts.json",
+      "path": "sources/families/EQA/schemas/cross-family-contracts.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a7957060819184bd252728bb0601/schemas/cross-family-contracts.json",
+      "repository": "https://github.com/tuckerebc-max/editorial-qa-orchestration",
+      "sha256": "909b5c52a6d08e20b0c74a287877097e15c74a8cc74318c4234b08cffedae936",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "EQA:02_RULES/decision_hooks.json",
+      "path": "sources/families/EQA/02_RULES/decision_hooks.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a7957060819184bd252728bb0601/02_RULES/decision_hooks.json",
+      "repository": "https://github.com/tuckerebc-max/editorial-qa-orchestration",
+      "sha256": "94ed1e3beeb7781b320324879ed7f33f2e55960e87b94e398873892fd44eca46",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "EQA:02_RULES/authority_registry.json",
+      "path": "sources/families/EQA/02_RULES/authority_registry.json",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a7957060819184bd252728bb0601/02_RULES/authority_registry.json",
+      "repository": "https://github.com/tuckerebc-max/editorial-qa-orchestration",
+      "sha256": "603385d669503e2b8a52cb0d36e74d92ca0dd03887700ed62a462de4df97fecf",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "EQA:01_SPECIFICATION.md",
+      "path": "sources/families/EQA/01_SPECIFICATION.md",
+      "source_uri": "skill://flora-skills/root/.codex/skills/remote-skills/skill-6aa4a7957060819184bd252728bb0601/01_SPECIFICATION.md",
+      "repository": "https://github.com/tuckerebc-max/editorial-qa-orchestration",
+      "sha256": "5051f54ee181a5a356a01a89cbdf869c73f75e4b196b254ddb537a390bf8185a",
+      "git_revision": null,
+      "basis": "installed_package_snapshot",
+      "remote_alignment": "not_checked"
+    },
+    {
+      "evidence_id": "wb/skills.lock.json",
+      "path": "sources/workbench/skills.lock.json",
+      "source_uri": "https://github.com/tuckerebc-max/university-press-citation-review-workbench/blob/86ca82c2ff02f8bb4af1de73813cacf2783b1863/skills.lock.json",
+      "sha256": "1e7e4944bf886d59f6435cfc8659a9768d5c428ba32eacc718519c3b3d5144c9",
+      "git_revision": "86ca82c2ff02f8bb4af1de73813cacf2783b1863",
+      "basis": "GitHub_read",
+      "remote_alignment": "not_compared_to_commission_clones"
+    },
+    {
+      "evidence_id": "wb/config/company-constitution.json",
+      "path": "sources/workbench/company-constitution.json",
+      "source_uri": "https://github.com/tuckerebc-max/university-press-citation-review-workbench/blob/86ca82c2ff02f8bb4af1de73813cacf2783b1863/config/company-constitution.json",
+      "sha256": "a6c39ba346ff6855b56ef01ffef28b56c353f43975d805b89e54fd455a0541ec",
+      "git_revision": "86ca82c2ff02f8bb4af1de73813cacf2783b1863",
+      "basis": "GitHub_read",
+      "remote_alignment": "not_compared_to_commission_clones"
+    },
+    {
+      "evidence_id": "wb/config/workbench-configuration.json",
+      "path": "sources/workbench/workbench-configuration.json",
+      "source_uri": "https://github.com/tuckerebc-max/university-press-citation-review-workbench/blob/86ca82c2ff02f8bb4af1de73813cacf2783b1863/config/workbench-configuration.json",
+      "sha256": "b4c055c205d1d3505a8ba099e181dd058afda8c4ef7d7238b8adde79a9e1e6de",
+      "git_revision": "86ca82c2ff02f8bb4af1de73813cacf2783b1863",
+      "basis": "GitHub_read",
+      "remote_alignment": "not_compared_to_commission_clones"
+    },
+    {
+      "evidence_id": "wb/upress_workbench/config.py",
+      "path": "sources/workbench/config.py",
+      "source_uri": "https://github.com/tuckerebc-max/university-press-citation-review-workbench/blob/86ca82c2ff02f8bb4af1de73813cacf2783b1863/upress_workbench/config.py",
+      "sha256": "94ac4cbe73ad3badfdc4473c75a2c73b928bd3bf79b2d07ede6b85e6cf2af2ca",
+      "git_revision": "86ca82c2ff02f8bb4af1de73813cacf2783b1863",
+      "basis": "GitHub_read",
+      "remote_alignment": "not_compared_to_commission_clones"
+    },
+    {
+      "evidence_id": "architecture/02_workpiles/MODELING_WHAT_MATTERS_UNIVERSITY_PRESS_WORKPILE_DRAFT.md",
+      "path": "sources/architecture/MWM_WORKPILE.md",
+      "source_uri": "https://github.com/tuckerebc-max/navy-yard-tech-triangle-architecture/blob/4727e7295f80527165ea479f0b26030a778aafac/02_workpiles/MODELING_WHAT_MATTERS_UNIVERSITY_PRESS_WORKPILE_DRAFT.md",
+      "sha256": "291c2b723530f32c7d5026806c5111ea8d06b9bafb6315530b22741b82aa9fd8",
+      "git_revision": "4727e7295f80527165ea479f0b26030a778aafac",
+      "basis": "GitHub_read",
+      "remote_alignment": "not_compared_to_commission_clones"
+    },
+    {
+      "evidence_id": "architecture/10_CONTROLLING_RELEASE/04_WORKPILE_AND_LIFECYCLE_CONTROLLING.md",
+      "path": "sources/architecture/LIFECYCLE.md",
+      "source_uri": "https://github.com/tuckerebc-max/navy-yard-tech-triangle-architecture/blob/4727e7295f80527165ea479f0b26030a778aafac/10_CONTROLLING_RELEASE/04_WORKPILE_AND_LIFECYCLE_CONTROLLING.md",
+      "sha256": "7d25427cdab63e44b8bb0a69e390d77401c51e181adc8937ea7c32af11e19fc5",
+      "git_revision": "4727e7295f80527165ea479f0b26030a778aafac",
+      "basis": "GitHub_read",
+      "remote_alignment": "not_compared_to_commission_clones"
+    },
+    {
+      "evidence_id": "COMMISSION-ERI38",
+      "path": "sources/commission/COMMISSION-UNIVERSITY-PRESS-WORKBENCH-2026-09-17.md",
+      "source_uri": "user_attachment:COMMISSION-UNIVERSITY-PRESS-WORKBENCH-2026-09-17.md",
+      "library_file_id": "libfile_91d013fb6590819185de569dffc779e8",
+      "sha256": "1aa3e35c59b5b08a4e61c9b1e2f514630ab4c6b5fcd15403fca629f30ff078b2",
+      "git_revision": null,
+      "basis": "supplied_commission",
+      "remote_alignment": "not_attested"
+    }
+  ],
+  "unavailable": [
+    {
+      "id": "HOUSE-V1",
+      "source": "https://github.com/tuckerebc-max/screen-measurement-instrument-quality",
+      "observation": "GitHub contents request returned 404; installed-repository searches returned no accessible match. Existence and exact contract shape remain unknown."
+    },
+    {
+      "id": "LUNAROUTE",
+      "source": "commission",
+      "observation": "Separate edition reported; source not read in this design."
+    },
+    {
+      "id": "LOCAL-REMOTE-PARITY",
+      "source": "commission local clones",
+      "observation": "Nine original local trees unavailable; alignment deliberately not attested."
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family_id": {
+          "enum": [
+            "RCI",
+            "SGI",
+            "TE",
+            "CE",
+            "SEI",
+            "CPR",
+            "PPR",
+            "EQA"
+          ]
+        },
+        "capability_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "enum": [
+            "chapter",
+            "volume",
+            "batch"
+          ]
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "hard_preconditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "expected_output": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "kind": {
+          "const": "machine"
+        },
+        "lane_class": {
+          "enum": [
+            "offline_batch",
+            "internet",
+            "chat_reasoning"
+          ]
+        },
+        "operation": {
+          "enum": [
+            "inventory",
+            "resolve_context",
+            "family_review",
+            "record_gap",
+            "compare_reports",
+            "evaluate_conformance",
+            "assemble_candidate",
+            "reconcile_release"
+          ]
+        },
+        "dispatchable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "node_id",
+        "family_id",
+        "capability_id",
+        "scope",
+        "depends_on",
+        "hard_preconditions",
+        "expected_output",
+        "claim_scope",
+        "kind",
+        "lane_class",
+        "operation",
+        "dispatchable"
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family_id": {
+          "enum": [
+            "RCI",
+            "SGI",
+            "TE",
+            "CE",
+            "SEI",
+            "CPR",
+            "PPR",
+            "EQA"
+          ]
+        },
+        "capability_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "enum": [
+            "chapter",
+            "volume",
+            "batch"
+          ]
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "hard_preconditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "expected_output": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "kind": {
+          "const": "human"
+        },
+        "lane_class": {
+          "const": "human"
+        },
+        "operation": {
+          "enum": [
+            "approve_plan",
+            "record_edit_decision",
+            "resolve_policy",
+            "adjudicate_integrity",
+            "approve_release_package"
+          ]
+        },
+        "dispatchable": {
+          "const": false
+        }
+      },
+      "required": [
+        "node_id",
+        "family_id",
+        "capability_id",
+        "scope",
+        "depends_on",
+        "hard_preconditions",
+        "expected_output",
+        "claim_scope",
+        "kind",
+        "lane_class",
+        "operation",
+        "dispatchable"
+      ]
+    }
+  ]
+}

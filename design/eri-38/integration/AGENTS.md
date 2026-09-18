@@ -1,0 +1,3 @@
+# Shared operating notes — proposed, not installed
+
+University Press is a Tech Triangle center of work. All agent surfaces use the same contract, map, profiles and CLI. Read the design and protocol before implementation. Treat sources as read-only; return evidence-linked review proposals. Do not invent editorial policy or human authority. Never accept edits, adjudicate authorship, approve release packages, publish, change pins or promote packages through a model operation. Human stages are nondispatchable. Runtime state stays outside repositories. This candidate provides no execution authorization.

@@ -1,0 +1,16 @@
+{
+  "registry_id":"MWM-SGI-AUTHORITY",
+  "version":"0.1.0",
+  "status":"source-locator-registry",
+  "tiers":[
+    {"tier":1,"name":"mwm_project_authority","sources":["MWM chapter guidance","approved MWM decisions"],"role":"controls MWM-specific style and release requirements"},
+    {"tier":2,"name":"mwm_global_or_volume_profile","sources":["active global style guide","volume/chapter profile"],"role":"controls adopted house style"},
+    {"tier":3,"name":"approved_chapter_exception","sources":["scoped decision record"],"role":"controls only the recorded scope and period"},
+    {"tier":4,"name":"delegated_external_rule","sources":["APA or other explicitly delegated authority"],"role":"controls only the delegated domain"},
+    {"tier":5,"name":"template_production_profile","sources":["approved template","production profile"],"role":"controls assigned layout/component behavior"},
+    {"tier":6,"name":"external_exemplar","sources":["research corpus exemplars"],"role":"informs architecture without controlling MWM output"},
+    {"tier":7,"name":"author_convention","sources":["author decision or consistent convention"],"role":"preserved when permitted and compatible"},
+    {"tier":8,"name":"model_inference","sources":[],"role":"candidate explanation only; never authority"}
+  ],
+  "source_boundary":"External spelling, terminology, capitalization, and tone choices are not MWM rules until adopted. Capture source locators and access/version information for every material rule."
+}

@@ -1,0 +1,19 @@
+{
+  "decision_register_id":"MWM-SGI-DECISIONS",
+  "version":"0.1.0",
+  "status":"open-decisions-preserved",
+  "principle":"Unresolved MWM policy is configuration, not model inference.",
+  "runtime_defaults":{"unknown_policy":"ESCALATE","unknown_term":"do_not_replace","external_rule":"informational_until_adopted","preferred_rule":"nonblocking","partial_coverage":"not_ready_for_release"},
+  "hooks":[
+    {"id":"SGI-DH-001","name":"language_profile","status":"unresolved","question":"What language/spelling profile applies by component?","default_behavior":"Require explicit profile before language-sensitive enforcement","required_for":["SGI-LANG-001"],"owner":"MWM editorial adjudication"},
+    {"id":"SGI-DH-002","name":"heading_capitalization","status":"unresolved","question":"What heading capitalization and formal-title exceptions does MWM adopt?","default_behavior":"Flag or escalate; do not infer from external guide","required_for":["SGI-02","SGI-PROT-001"],"owner":"MWM editorial adjudication"},
+    {"id":"SGI-DH-003","name":"dictionary_authority","status":"unresolved","question":"Which dictionary or spelling authority governs when the MWM profile is silent?","default_behavior":"Do not auto-fix language variants without an adopted authority","required_for":["SGI-LANG-001"],"owner":"MWM editorial adjudication"},
+    {"id":"SGI-DH-004","name":"terminology_register_process","status":"unresolved","question":"Who approves MWM terminology and how are domain experts involved?","default_behavior":"Unknown domain terms enter review queue; no model synonym replacement","required_for":["SGI-TERM-001","SGI-TERM-002"],"owner":"MWM editorial adjudication"},
+    {"id":"SGI-DH-005","name":"author_convention_boundary","status":"unresolved","question":"Which author conventions are permitted and how are they recorded?","default_behavior":"Preserve consistent conventions but escalate material ambiguity","required_for":["SGI-AUTHOR-001"],"owner":"MWM editorial adjudication"},
+    {"id":"SGI-DH-006","name":"technical_editing_ownership","status":"unresolved","question":"Which style decisions belong to Technical Editing rather than SGI?","default_behavior":"Route structural/technical ownership questions to Technical Editing","required_for":["SGI-ROUTE-001"],"owner":"MWM editorial adjudication"},
+    {"id":"SGI-DH-007","name":"exception_approval_path","status":"unresolved","question":"Who approves chapter exceptions and what is the review/expiry cadence?","default_behavior":"Unrecorded exceptions are not valid for release","required_for":["SGI-EXC-001"],"owner":"MWM editorial adjudication"},
+    {"id":"SGI-DH-008","name":"maintenance_impact_categories","status":"unresolved","question":"Which impact categories and cadence apply to rule changes?","default_behavior":"Require conservative impact review before activation","required_for":["SGI-CHANGE-001"],"owner":"MWM editorial adjudication"},
+    {"id":"SGI-DH-009","name":"quoted_cited_terminology","status":"unresolved","question":"How are terminology choices inside quotations and cited source titles handled?","default_behavior":"Protect source text and route explanatory questions","required_for":["SGI-PROT-001","SGI-TERM-002"],"owner":"MWM editorial adjudication"},
+    {"id":"SGI-DH-010","name":"external_delegation","status":"unresolved","question":"Which domains, if any, are delegated to APA or another external authority?","default_behavior":"External guidance remains noncontrolling until delegation is recorded","required_for":["SGI-AUTH-002"],"owner":"MWM editorial adjudication"}
+  ]
+}

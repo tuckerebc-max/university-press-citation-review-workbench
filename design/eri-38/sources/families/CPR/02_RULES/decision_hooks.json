@@ -1,0 +1,21 @@
+{
+  "registry_id": "MWM-CPR-DECISIONS",
+  "version": "0.1.0",
+  "status": "open-for-editorial-owner-review",
+  "specification_id": "MWM-CPR-SPEC",
+  "default_runtime": "Use conservative gate behavior; unresolved hooks remain explicit and do not become invented requirements.",
+  "hooks": [
+    {"hook_id":"CPR-DH-001","question":"What is the approved MWM component profile by chapter type and stage?","owner":"MWM editorial owner","default":"No profile means blocked_profile."},
+    {"hook_id":"CPR-DH-002","question":"Who owns metadata, front/back matter, biographies, and index terms?","owner":"MWM editorial owner","default":"Route unresolved ownership; do not infer an owner."},
+    {"hook_id":"CPR-DH-003","question":"Which abstract, keyword, and discoverability fields are required at chapter and full-work levels?","owner":"MWM editorial owner","default":"Check only explicitly required scope; later fields may track."},
+    {"hook_id":"CPR-DH-004","question":"Which author, affiliation, contact, ORCID/ROR, and contributor fields are required?","owner":"MWM editorial owner","default":"Record missing fields; never invent values."},
+    {"hook_id":"CPR-DH-005","question":"What accessibility target, alt-text policy, table requirement, and testing owner apply?","owner":"Accessibility/production owner","default":"Readiness records target and review status; no conformance claim without specialized evidence."},
+    {"hook_id":"CPR-DH-006","question":"What figure/table asset formats, resolution, color, and naming conventions are adopted?","owner":"Production/technical owner","default":"Check only a versioned local profile; otherwise route."},
+    {"hook_id":"CPR-DH-007","question":"What permission-log fields and evidence standards apply, and who decides rights sufficiency?","owner":"Rights/permissions owner","default":"Presence and linkage only; rights sufficiency remains routed."},
+    {"hook_id":"CPR-DH-008","question":"Which conditional data, software, AI, ethics, consent, funding, and supplement gates activate?","owner":"MWM editorial owner with SEI/production owners","default":"Require explicit activation condition and owner."},
+    {"hook_id":"CPR-DH-009","question":"What clean-file, version-naming, package-manifest, and supersession rules apply?","owner":"Production coordinator","default":"Ambiguous current file blocks the relevant handoff."},
+    {"hook_id":"CPR-DH-010","question":"Is a structured metadata export required beyond DOCX and companion sheets?","owner":"MWM editorial/production owner","default":"Do not require XML or another export without adoption decision."},
+    {"hook_id":"CPR-DH-011","question":"How do cross-family severities map to stage-specific release effects?","owner":"Editorial QA/orchestration owner","default":"Preserve upstream release effects; unresolved high-risk dependencies block readiness."},
+    {"hook_id":"CPR-DH-012","question":"Who is the human signatory for each handoff and final release?","owner":"MWM editorial owner","default":"No signatory means blocked_release."}
+  ]
+}

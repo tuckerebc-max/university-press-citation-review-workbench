@@ -1,0 +1,14 @@
+{
+  "package_id":"MWM-EDITORIAL-CPR",
+  "family":"Chapter Completeness & Production Readiness",
+  "package_version":"0.1.0",
+  "status":"draft-for-editorial-owner-review",
+  "governing_specification":{"path":"01_SPECIFICATION.md","source_filename":"Chapter_Completeness_Production_Readiness_Specification.md","sha256":"F8223A92CBBF8F6047321E63633F5202FEC14478CE26282DAF3801094D992CE1"},
+  "components":{"01_specification":"01_SPECIFICATION.md","01_specification_docx":"01_SPECIFICATION.docx","02_rules":"02_RULES/","03_skill":"SKILL.md","04_schemas":"schemas/","05_evals":"evals/","06_changelog_regression":"CHANGELOG_REGRESSION/"},
+  "rule_registry":{"path":"02_RULES/ruleset.json","id":"MWM-CPR-RULES","version":"0.1.0","rule_count":30,"decision_hook_count":12},
+  "evaluation":{"catalog":"evals/fixture_catalog.json","evaluation_set_id":"MWM-CPR-EVAL-0.1","fixture_count":38,"crosswalk":"evals/rule_fixture_crosswalk.json","scorer":"evals/scorer.py","classes":{"clean":6,"single_error":12,"adversarial":10,"negative_control":6,"integration":4}},
+  "schemas":{"manifest":"schemas/run-manifest.schema.json","profile":"schemas/profile.schema.json","component":"schemas/component.schema.json","evidence":"schemas/evidence.schema.json","file":"schemas/file-record.schema.json","finding":"schemas/finding.schema.json","ledger":"schemas/ledger.schema.json","decision":"schemas/decision.schema.json","output":"schemas/output.schema.json","cross_family":"schemas/cross-family-contracts.json"},
+  "qa":{"validator":"scripts/validate_package.py","commands":["python scripts/validate_package.py","python evals/scorer.py --validate-suite --self-test","python -m py_compile evals/scorer.py scripts/validate_package.py"],"zero_tolerance_policy":"No false ready, silent repair, invented metadata, final-file selection by inference, status conflation, legal/accessibility/citation certification from presence, lost upstream blocker, or unsigned release may ship."},
+  "cross_family_contracts":"schemas/cross-family-contracts.json",
+  "policy_boundary":"Open MWM completeness and production-readiness decisions remain explicit hooks. CPR inventories, reconciles, routes, tracks, and recommends; it does not decide truth, style, technical correctness, legal sufficiency, accessibility conformance, integrity, or release autonomously."
+}

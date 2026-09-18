@@ -1,0 +1,24 @@
+{
+  "schema": "university_press.synthetic_manifest.draft1",
+  "classification": "synthetic",
+  "chapters": [
+    {
+      "chapter_id": "SYN-V1-001",
+      "volume_id": "SYN-V1",
+      "order": 1,
+      "source_capture_uri": "synthetic://manifest/SYN-V1-001",
+      "source_sha256": "925d649ec692d92a8ddb695a1824cca6791d23fb33eb0290d4cb08d0e2e41e9c",
+      "bytes": 1024
+    },
+    {
+      "chapter_id": "SYN-V2-001",
+      "volume_id": "SYN-V2",
+      "order": 1,
+      "source_capture_uri": "synthetic://manifest/SYN-V2-001",
+      "source_sha256": "294dfffcb85fe324b0ec703e292ce14d314b07092bc9cb5a508d40a70fd347c2",
+      "bytes": 1024
+    }
+  ],
+  "expected_chapter_count": 2,
+  "note": "Content-free planning fixture. Source digests are canonical synthetic identity-record digests, not manuscript hashes; byte counts are explicit assumptions."
+}

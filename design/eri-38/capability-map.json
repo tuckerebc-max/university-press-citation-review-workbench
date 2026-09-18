@@ -1,0 +1,2329 @@
+{
+  "schema": "university_press.capability_map.draft1",
+  "map_id": "UPW-CAPABILITIES-ERI38-20260918",
+  "status": "design_candidate_not_canonical",
+  "authority": false,
+  "jurisdiction": "Tech Triangle",
+  "ontology": "center of work",
+  "execution_capacity": "Navy Yard",
+  "domain_families": [
+    "RCI",
+    "SGI",
+    "TE",
+    "CE",
+    "SEI",
+    "CPR",
+    "PPR"
+  ],
+  "control_family": "EQA",
+  "normalization": "One candidate routing map; upstream packages remain unchanged. Legacy maps are inputs only and must not be read directly by the future planner.",
+  "promotion": "none",
+  "counts": {
+    "domain_families": 7,
+    "domain_packages_present": 6,
+    "control_packages_present": 1,
+    "declared_rules": 199,
+    "open_hooks": 74,
+    "declared_fixtures": 310,
+    "declared_critical_fixtures": 9
+  },
+  "missing_critical_set_policy": "Allow authorized diagnostic execution after contract admission; label family critical coverage undeclared; no production-eligible clearance until owner-approved family critical coverage and results exist. Workbench safety tests do not replace editorial efficacy tests.",
+  "families": [
+    {
+      "family_id": "RCI",
+      "name": "Reference & Citation Integrity",
+      "role": "domain",
+      "repository": "https://github.com/tuckerebc-max/reference-citation-integrity",
+      "capabilities": [
+        "citation_identity"
+      ],
+      "covers": "chapter text, references, rules, source permissions -> citation/reference ledger, findings, source/status queue, release effect",
+      "refuses": [
+        "copyediting",
+        "claim_support_adjudication",
+        "source_quality_certification",
+        "identity_change",
+        "publication"
+      ],
+      "declared_inbound_summary": "chapter text, references, rules, source permissions",
+      "declared_outbound_summary": "citation/reference ledger, findings, source/status queue, release effect",
+      "default_lane_class": "chat_reasoning",
+      "open_hook_ids": [
+        "RCI-DH-001",
+        "RCI-DH-002",
+        "RCI-DH-003",
+        "RCI-DH-004",
+        "RCI-DH-005",
+        "RCI-DH-006",
+        "RCI-DH-007",
+        "RCI-DH-008",
+        "RCI-DH-009"
+      ],
+      "execution_pin": {
+        "status": "inherited_legacy_lock_only",
+        "value": {
+          "commit": "a49e9f686898030684134ba7a7f84ac8b68fc4dc",
+          "package_version": "0.1.0",
+          "specification_version": "0.1.0-draft",
+          "source": "https://github.com/tuckerebc-max/reference-citation-integrity",
+          "tree_sha256": "762875bbd7c8a5a7e1884d18a6acabe096ff7a56a0b66a8ce7a1592f40c78732"
+        },
+        "evidence_ref": "sources/workbench/skills.lock.json",
+        "installed_snapshot_equals_pin": "unknown"
+      },
+      "runtime_targets": {
+        "codex": {
+          "status": "entry_note_observed",
+          "live_canary": "not_run",
+          "evidence": "agents/openai.yaml in installed source; not a runtime validation",
+          "legacy_wiring": "observed_in_workbench_source"
+        },
+        "claude": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "hermes": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "gemini": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "glm": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        }
+      },
+      "package": {
+        "id": "MWM-RCI-PACKAGE",
+        "version": "0.1.0",
+        "manifest_ref": "sources/families/RCI/package_manifest.json"
+      },
+      "specification": {
+        "id": "MWM-RCI-SPEC",
+        "version": "0.1.0-draft",
+        "path": "sources/families/RCI/01_SPECIFICATION.md",
+        "observed_sha256": "1da26a4d698478c34dc733b79009295efc40f3837b0484a6691c63ed3a3dbbff",
+        "manifest_declared_sha256": null
+      },
+      "maturity": {
+        "presence": "specified",
+        "package_status": "draft-for-editorial-review",
+        "definition": "drafted",
+        "activation": "unknown",
+        "acceptance": "not_granted"
+      },
+      "evaluation": {
+        "rule_count": 23,
+        "fixture_count": 51,
+        "critical_fixture_ids": [],
+        "package_suite_run": "not_run",
+        "workbench_conformance": "not_run"
+      },
+      "inbound": [
+        {
+          "peer_family": "EQA",
+          "direction": "inbound",
+          "artifact": "run_manifest",
+          "description": "run_manifest",
+          "fields": [
+            "run_id",
+            "manuscript_file",
+            "manuscript_version",
+            "project_profile",
+            "exception_register",
+            "source_materials",
+            "prior_run_id",
+            "run_mode"
+          ],
+          "schema_refs": [
+            "run-manifest.schema.json"
+          ],
+          "restrictions": {
+            "rci_may_reinterpret": false
+          },
+          "original_declaration": {
+            "from": "Editorial QA & Orchestration",
+            "artifact": "run_manifest",
+            "schema": "run-manifest.schema.json",
+            "allowed_fields": [
+              "run_id",
+              "manuscript_file",
+              "manuscript_version",
+              "project_profile",
+              "exception_register",
+              "source_materials",
+              "prior_run_id",
+              "run_mode"
+            ],
+            "rci_may_reinterpret": false
+          }
+        },
+        {
+          "peer_family": "SGI",
+          "direction": "inbound",
+          "artifact": "active_project_profile",
+          "description": "active_project_profile",
+          "fields": [
+            "rule_package_version",
+            "approved_exceptions",
+            "decision_log_ids"
+          ],
+          "schema_refs": [
+            "decision-record.schema.json"
+          ],
+          "restrictions": {
+            "rci_may_reinterpret": false
+          },
+          "original_declaration": {
+            "from": "Style-Guide Implementation",
+            "artifact": "active_project_profile",
+            "schema": "decision-record.schema.json",
+            "allowed_fields": [
+              "rule_package_version",
+              "approved_exceptions",
+              "decision_log_ids"
+            ],
+            "rci_may_reinterpret": false
+          }
+        }
+      ],
+      "outbound": [
+        {
+          "peer_family": "SEI",
+          "direction": "outbound",
+          "artifact": "source_identity_evidence",
+          "description": "source_identity_evidence",
+          "fields": [
+            "source_type",
+            "identity",
+            "identifiers",
+            "metadata_evidence",
+            "relations",
+            "verification_status"
+          ],
+          "schema_refs": [
+            "source-record.schema.json"
+          ],
+          "restrictions": {
+            "consumer_may_not_infer": [
+              "claim_support",
+              "claim_truth",
+              "source_quality"
+            ]
+          },
+          "original_declaration": {
+            "to": "Scholarly/Editorial Integrity",
+            "artifact": "source_identity_evidence",
+            "schema": "source-record.schema.json",
+            "consumer_may_use": [
+              "source_type",
+              "identity",
+              "identifiers",
+              "metadata_evidence",
+              "relations",
+              "verification_status"
+            ],
+            "consumer_may_not_infer": [
+              "claim_support",
+              "claim_truth",
+              "source_quality"
+            ]
+          }
+        },
+        {
+          "peer_family": "CPR",
+          "direction": "outbound",
+          "artifact": "rci_status_summary",
+          "description": "rci_status_summary",
+          "fields": [
+            "release_status",
+            "summary",
+            "blocking_findings",
+            "decision_log_ids"
+          ],
+          "schema_refs": [
+            "run-result.schema.json"
+          ],
+          "restrictions": {
+            "consumer_may_not_reinterpret": [
+              "claim_support",
+              "permissions",
+              "copyediting_status"
+            ]
+          },
+          "original_declaration": {
+            "to": "Chapter Completeness & Production Readiness",
+            "artifact": "rci_status_summary",
+            "schema": "run-result.schema.json",
+            "consumer_may_use": [
+              "release_status",
+              "summary",
+              "blocking_findings",
+              "decision_log_ids"
+            ],
+            "consumer_may_not_reinterpret": [
+              "claim_support",
+              "permissions",
+              "copyediting_status"
+            ]
+          }
+        },
+        {
+          "peer_family": "PPR",
+          "direction": "outbound",
+          "artifact": "citation_reference_baseline",
+          "description": "citation_reference_baseline",
+          "fields": [
+            "source_records",
+            "ledger_entries",
+            "renderer",
+            "findings"
+          ],
+          "schema_refs": [
+            "run-result.schema.json"
+          ],
+          "restrictions": {
+            "consumer_may_not_reinterpret": [
+              "pre_typeset_identity_without_fixity_check"
+            ]
+          },
+          "original_declaration": {
+            "to": "Proof & Post-Typesetting Review",
+            "artifact": "citation_reference_baseline",
+            "schema": "run-result.schema.json",
+            "consumer_may_use": [
+              "source_records",
+              "ledger_entries",
+              "renderer",
+              "findings"
+            ],
+            "consumer_may_not_reinterpret": [
+              "pre_typeset_identity_without_fixity_check"
+            ]
+          }
+        },
+        {
+          "peer_family": "EQA",
+          "direction": "outbound",
+          "artifact": "validated_run_result",
+          "description": "validated_run_result",
+          "fields": [
+            "release_status",
+            "findings",
+            "decision_records",
+            "evaluation_set"
+          ],
+          "schema_refs": [
+            "run-result.schema.json"
+          ],
+          "restrictions": {
+            "consumer_may_not_reinterpret": [
+              "source_identity_without_evidence",
+              "unresolved_policy_as_approved_rule"
+            ]
+          },
+          "original_declaration": {
+            "to": "Editorial QA & Orchestration",
+            "artifact": "validated_run_result",
+            "schema": "run-result.schema.json",
+            "consumer_may_use": [
+              "release_status",
+              "findings",
+              "decision_records",
+              "evaluation_set"
+            ],
+            "consumer_may_not_reinterpret": [
+              "source_identity_without_evidence",
+              "unresolved_policy_as_approved_rule"
+            ]
+          }
+        }
+      ],
+      "boundary_invariants": [
+        "RCI establishes source identity and citation/reference relationships; it does not judge claim support.",
+        "RCI may propose deterministic formatting mechanics only when the active decision hook enables them.",
+        "No downstream family may silently substitute, delete, or merge an RCI source record.",
+        "A change to an RCI rule, schema, or decision hook requires a regression fixture and changelog entry."
+      ],
+      "legacy_interface_id": "MWM-EDITORIAL-CROSS-FAMILY-RCI",
+      "provenance": {
+        "evidence_basis": "installed_package_snapshot",
+        "remote_alignment": "not_checked",
+        "source_manifest": "source-index.json"
+      }
+    },
+    {
+      "family_id": "SGI",
+      "name": "Style-Guide Implementation",
+      "role": "domain",
+      "repository": "https://github.com/tuckerebc-max/style-guide-implementation",
+      "capabilities": [
+        "adopted_style"
+      ],
+      "covers": "chapter profile, rule registry, exceptions, text/layout -> rule ledger, conflicts, exceptions, compliance status",
+      "refuses": [
+        "copyediting",
+        "author_voice_change",
+        "unknown_term_replacement",
+        "unadopted_external_rule_enforcement",
+        "publication"
+      ],
+      "declared_inbound_summary": "chapter profile, rule registry, exceptions, text/layout",
+      "declared_outbound_summary": "rule ledger, conflicts, exceptions, compliance status",
+      "default_lane_class": "chat_reasoning",
+      "open_hook_ids": [
+        "SGI-DH-001",
+        "SGI-DH-002",
+        "SGI-DH-003",
+        "SGI-DH-004",
+        "SGI-DH-005",
+        "SGI-DH-006",
+        "SGI-DH-007",
+        "SGI-DH-008",
+        "SGI-DH-009",
+        "SGI-DH-010"
+      ],
+      "execution_pin": null,
+      "runtime_targets": {
+        "codex": {
+          "status": "entry_note_observed",
+          "live_canary": "not_run",
+          "evidence": "agents/openai.yaml in installed source; not a runtime validation"
+        },
+        "claude": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "hermes": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "gemini": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "glm": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        }
+      },
+      "package": {
+        "id": "MWM-EDITORIAL-SGI",
+        "version": "0.1.0",
+        "manifest_ref": "sources/families/SGI/package_manifest.json"
+      },
+      "specification": {
+        "id": "MWM-SGI-SPEC",
+        "version": "0.1.0-draft",
+        "path": "sources/families/SGI/01_SPECIFICATION.md",
+        "observed_sha256": "f6912ccda00ac0ced6fc166e5f7c7bc7f7c04c2d98d33c72052b17be061b2313",
+        "manifest_declared_sha256": "BAC905635461D84C84EDF1C49AE268B38B136B70C84319B2E622A9EAE9EEBC9A"
+      },
+      "maturity": {
+        "presence": "specified",
+        "package_status": "draft-for-editorial-review",
+        "definition": "drafted",
+        "activation": "unknown",
+        "acceptance": "not_granted"
+      },
+      "evaluation": {
+        "rule_count": 22,
+        "fixture_count": 42,
+        "critical_fixture_ids": [],
+        "package_suite_run": "not_run",
+        "workbench_conformance": "not_run"
+      },
+      "inbound": [
+        {
+          "peer_family": "EQA",
+          "direction": "inbound",
+          "artifact": "run_manifest",
+          "description": "run_manifest",
+          "fields": [
+            "run_id",
+            "manuscript_file",
+            "manuscript_version",
+            "project_profile",
+            "rule_registry_version",
+            "exception_register",
+            "stage",
+            "surfaces",
+            "language_profile",
+            "prior_run_id"
+          ],
+          "schema_refs": [
+            "run-manifest.schema.json"
+          ],
+          "restrictions": {
+            "rci_may_reinterpret": false
+          },
+          "original_declaration": {
+            "from": "Editorial QA & Orchestration",
+            "artifact": "run_manifest",
+            "schema": "run-manifest.schema.json",
+            "allowed_fields": [
+              "run_id",
+              "manuscript_file",
+              "manuscript_version",
+              "project_profile",
+              "rule_registry_version",
+              "exception_register",
+              "stage",
+              "surfaces",
+              "language_profile",
+              "prior_run_id"
+            ],
+            "rci_may_reinterpret": false
+          }
+        },
+        {
+          "peer_family": "RCI",
+          "direction": "inbound",
+          "artifact": "delegated_style_rules",
+          "description": "delegated_style_rules",
+          "fields": [
+            "rule_id",
+            "authority",
+            "scope",
+            "policy_status",
+            "lifecycle_state"
+          ],
+          "schema_refs": [
+            "rule-record.schema.json"
+          ],
+          "restrictions": {
+            "consumer_may_reinterpret": false
+          },
+          "original_declaration": {
+            "from": "Reference & Citation Integrity",
+            "artifact": "delegated_style_rules",
+            "schema": "rule-record.schema.json",
+            "allowed_fields": [
+              "rule_id",
+              "authority",
+              "scope",
+              "policy_status",
+              "lifecycle_state"
+            ],
+            "consumer_may_reinterpret": false
+          }
+        }
+      ],
+      "outbound": [
+        {
+          "peer_family": "CE",
+          "direction": "outbound",
+          "artifact": "active_style_and_term_profile",
+          "description": "active_style_and_term_profile",
+          "fields": [
+            "active_rules",
+            "policy_status",
+            "term_status",
+            "protected_contexts",
+            "exceptions"
+          ],
+          "schema_refs": [
+            "rule-record.schema.json",
+            "terminology-record.schema.json",
+            "exception-record.schema.json"
+          ],
+          "restrictions": {
+            "consumer_may_not_infer": [
+              "substantive_term_correctness",
+              "grammar_edits",
+              "author_voice_change"
+            ]
+          },
+          "original_declaration": {
+            "to": "Copyediting",
+            "artifact": "active_style_and_term_profile",
+            "schemas": [
+              "rule-record.schema.json",
+              "terminology-record.schema.json",
+              "exception-record.schema.json"
+            ],
+            "consumer_may_use": [
+              "active_rules",
+              "policy_status",
+              "term_status",
+              "protected_contexts",
+              "exceptions"
+            ],
+            "consumer_may_not_infer": [
+              "substantive_term_correctness",
+              "grammar_edits",
+              "author_voice_change"
+            ]
+          }
+        },
+        {
+          "peer_family": "TE",
+          "direction": "outbound",
+          "artifact": "ownership_handoff",
+          "description": "ownership_handoff",
+          "fields": [
+            "routed_findings",
+            "surfaces",
+            "stage"
+          ],
+          "schema_refs": [
+            "run-result.schema.json"
+          ],
+          "restrictions": {
+            "consumer_may_not_infer": [
+              "technical_object_correctness"
+            ]
+          },
+          "original_declaration": {
+            "to": "Technical Editing",
+            "artifact": "ownership_handoff",
+            "schema": "run-result.schema.json",
+            "consumer_may_use": [
+              "routed_findings",
+              "surfaces",
+              "stage"
+            ],
+            "consumer_may_not_infer": [
+              "technical_object_correctness"
+            ]
+          }
+        },
+        {
+          "peer_family": "CPR",
+          "direction": "outbound",
+          "artifact": "sgi_release_summary",
+          "description": "sgi_release_summary",
+          "fields": [
+            "release_status",
+            "summary",
+            "findings",
+            "decision_records"
+          ],
+          "schema_refs": [
+            "run-result.schema.json"
+          ],
+          "restrictions": {
+            "consumer_may_not_infer": [
+              "claim_support",
+              "citation_integrity",
+              "permissions"
+            ]
+          },
+          "original_declaration": {
+            "to": "Chapter Completeness & Production Readiness",
+            "artifact": "sgi_release_summary",
+            "schema": "run-result.schema.json",
+            "consumer_may_use": [
+              "release_status",
+              "summary",
+              "findings",
+              "decision_records"
+            ],
+            "consumer_may_not_infer": [
+              "claim_support",
+              "citation_integrity",
+              "permissions"
+            ]
+          }
+        },
+        {
+          "peer_family": "EQA",
+          "direction": "outbound",
+          "artifact": "validated_run_result",
+          "description": "validated_run_result",
+          "fields": [
+            "release_status",
+            "findings",
+            "maintenance_changes",
+            "evaluation_set"
+          ],
+          "schema_refs": [
+            "run-result.schema.json"
+          ],
+          "restrictions": {
+            "consumer_may_not_reinterpret": [
+              "unresolved_hook_as_approved_policy"
+            ]
+          },
+          "original_declaration": {
+            "to": "Editorial QA & Orchestration",
+            "artifact": "validated_run_result",
+            "schema": "run-result.schema.json",
+            "consumer_may_use": [
+              "release_status",
+              "findings",
+              "maintenance_changes",
+              "evaluation_set"
+            ],
+            "consumer_may_not_reinterpret": [
+              "unresolved_hook_as_approved_policy"
+            ]
+          }
+        }
+      ],
+      "boundary_invariants": [
+        "SGI applies adopted MWM rules; it does not silently import external conventions.",
+        "Preferred and permitted variation are not required violations.",
+        "Unknown domain terminology is routed, not replaced from model inference.",
+        "Any active rule change requires fixtures, impact review, and changelog capture."
+      ],
+      "legacy_interface_id": "MWM-SGI-CROSS-FAMILY",
+      "provenance": {
+        "evidence_basis": "installed_package_snapshot",
+        "remote_alignment": "not_checked",
+        "source_manifest": "source-index.json"
+      }
+    },
+    {
+      "family_id": "TE",
+      "name": "Technical Editing",
+      "role": "domain",
+      "repository": "https://github.com/tuckerebc-max/technical-editing",
+      "capabilities": [
+        "technical_objects"
+      ],
+      "covers": "structured inventory, template, visual objects, technical rules -> object/hierarchy/cross-reference findings and status",
+      "refuses": [
+        "copyediting",
+        "quantitative_meaning_change",
+        "rights_clearance",
+        "citation_identity_judgment",
+        "full_accessibility_certification",
+        "publication"
+      ],
+      "declared_inbound_summary": "structured inventory, template, visual objects, technical rules",
+      "declared_outbound_summary": "object/hierarchy/cross-reference findings and status",
+      "default_lane_class": "chat_reasoning",
+      "open_hook_ids": [
+        "TE-DH-001",
+        "TE-DH-002",
+        "TE-DH-003",
+        "TE-DH-004",
+        "TE-DH-005",
+        "TE-DH-006",
+        "TE-DH-007",
+        "TE-DH-008",
+        "TE-DH-009",
+        "TE-DH-010"
+      ],
+      "execution_pin": null,
+      "runtime_targets": {
+        "codex": {
+          "status": "entry_note_observed",
+          "live_canary": "not_run",
+          "evidence": "agents/openai.yaml in installed source; not a runtime validation"
+        },
+        "claude": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "hermes": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "gemini": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "glm": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        }
+      },
+      "package": {
+        "id": "MWM-EDITORIAL-TE",
+        "version": "0.1.0",
+        "manifest_ref": "sources/families/TE/package_manifest.json"
+      },
+      "specification": {
+        "id": "MWM-TE-SPEC",
+        "version": "0.1.0-draft",
+        "path": "sources/families/TE/01_SPECIFICATION.md",
+        "observed_sha256": "4ed5958ace355bab4205b1a11a44855ee86def5d9360fafdc687d9dc712701e0",
+        "manifest_declared_sha256": "C4F38AEAC338850C682CE392CF6D04685EB381DCCC9A219D03FF3A5B3A13A16C"
+      },
+      "maturity": {
+        "presence": "specified",
+        "package_status": "draft-for-editorial-review",
+        "definition": "drafted",
+        "activation": "unknown",
+        "acceptance": "not_granted"
+      },
+      "evaluation": {
+        "rule_count": 30,
+        "fixture_count": 42,
+        "critical_fixture_ids": [],
+        "package_suite_run": "not_run",
+        "workbench_conformance": "not_run"
+      },
+      "inbound": [
+        {
+          "peer_family": "EQA",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "run mode, stage, output format, and ownership map",
+          "fields": [
+            "run_id",
+            "stage",
+            "output_format",
+            "ownership_map"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Editorial QA & Orchestration",
+            "contract": "run mode, stage, output format, and ownership map",
+            "required_fields": [
+              "run_id",
+              "stage",
+              "output_format",
+              "ownership_map"
+            ]
+          }
+        },
+        {
+          "peer_family": "SGI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "active style/profile versions for labels, capitalization, and delegated technical conventions",
+          "fields": [
+            "style_registry_version",
+            "rule_ids_when_relevant"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Style-Guide Implementation",
+            "contract": "active style/profile versions for labels, capitalization, and delegated technical conventions",
+            "required_fields": [
+              "style_registry_version",
+              "rule_ids_when_relevant"
+            ]
+          }
+        },
+        {
+          "peer_family": "RCI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "source/citation identity and reference relationship identifiers",
+          "fields": [
+            "source_or_credit",
+            "citation_dependency_when_relevant"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Reference & Citation Integrity",
+            "contract": "source/citation identity and reference relationship identifiers",
+            "required_fields": [
+              "source_or_credit",
+              "citation_dependency_when_relevant"
+            ]
+          }
+        }
+      ],
+      "outbound": [
+        {
+          "peer_family": "SGI",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "technical structure and object-label facts; TE does not decide language style",
+          "fields": [
+            "object_ids",
+            "labels",
+            "structure_findings",
+            "style_route"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Style-Guide Implementation",
+            "contract": "technical structure and object-label facts; TE does not decide language style",
+            "payload_fields": [
+              "object_ids",
+              "labels",
+              "structure_findings",
+              "style_route"
+            ]
+          }
+        },
+        {
+          "peer_family": "RCI",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "structural source/credit and URL relationship flags; RCI retains citation identity ownership",
+          "fields": [
+            "object_id",
+            "source_locator",
+            "citation_dependency",
+            "technical_finding_id"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Reference & Citation Integrity",
+            "contract": "structural source/credit and URL relationship flags; RCI retains citation identity ownership",
+            "payload_fields": [
+              "object_id",
+              "source_locator",
+              "citation_dependency",
+              "technical_finding_id"
+            ]
+          }
+        },
+        {
+          "peer_family": "SEI",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "substantive meaning, data, equation, statistical-symbol, or terminology questions",
+          "fields": [
+            "object_id",
+            "original_value",
+            "observed_state",
+            "decision_request"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Scholarly/Editorial Integrity",
+            "contract": "substantive meaning, data, equation, statistical-symbol, or terminology questions",
+            "payload_fields": [
+              "object_id",
+              "original_value",
+              "observed_state",
+              "decision_request"
+            ]
+          }
+        },
+        {
+          "peer_family": "CPR",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "missing required component and production handoff dependencies",
+          "fields": [
+            "object_completeness",
+            "asset_status",
+            "permissions_status",
+            "handoff_dependency"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Chapter Completeness & Production Readiness",
+            "contract": "missing required component and production handoff dependencies",
+            "payload_fields": [
+              "object_completeness",
+              "asset_status",
+              "permissions_status",
+              "handoff_dependency"
+            ]
+          }
+        },
+        {
+          "peer_family": "PPR",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "proof-dependent object, numbering, field, and layout checks",
+          "fields": [
+            "object_ids",
+            "dependency_graph",
+            "proof_rerun_conditions"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Proof & Post-Typesetting Review",
+            "contract": "proof-dependent object, numbering, field, and layout checks",
+            "payload_fields": [
+              "object_ids",
+              "dependency_graph",
+              "proof_rerun_conditions"
+            ]
+          }
+        },
+        {
+          "peer_family": "EQA",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "run result, release status, blockers, and cross-family handoff ledger",
+          "fields": [
+            "run_id",
+            "release_status",
+            "finding_ids",
+            "handoff_dependencies"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Editorial QA & Orchestration",
+            "contract": "run result, release status, blockers, and cross-family handoff ledger",
+            "payload_fields": [
+              "run_id",
+              "release_status",
+              "finding_ids",
+              "handoff_dependencies"
+            ]
+          }
+        }
+      ],
+      "boundary_invariants": [
+        "TE does not rewrite quantitative meaning",
+        "TE does not infer rights or identity",
+        "TE does not replace SGI language authority",
+        "TE does not verify citation identity",
+        "TE does not claim full accessibility conformance",
+        "TE does not authorize publication"
+      ],
+      "legacy_interface_id": "MWM-TE-CROSS-FAMILY-CONTRACTS",
+      "provenance": {
+        "evidence_basis": "installed_package_snapshot",
+        "remote_alignment": "not_checked",
+        "source_manifest": "source-index.json"
+      }
+    },
+    {
+      "family_id": "CE",
+      "name": "Copyediting",
+      "role": "domain",
+      "repository": "https://github.com/tuckerebc-max/copyediting",
+      "capabilities": [
+        "copyediting"
+      ],
+      "covers": "approved style context, text, conventions, threshold -> copyedit log, proposed changes, questions, handoff status",
+      "refuses": [
+        "all_execution_capability_absent"
+      ],
+      "declared_inbound_summary": "approved style context, text, conventions, threshold",
+      "declared_outbound_summary": "copyedit log, proposed changes, questions, handoff status",
+      "default_lane_class": "offline_batch",
+      "open_hook_ids": [],
+      "execution_pin": null,
+      "runtime_targets": {
+        "codex": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "claude": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "hermes": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "gemini": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "glm": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        }
+      },
+      "package": null,
+      "specification": null,
+      "maturity": {
+        "presence": "absent",
+        "package_status": "absent",
+        "definition": "proposed",
+        "activation": "absent",
+        "acceptance": "not_granted"
+      },
+      "evaluation": {
+        "rule_count": null,
+        "fixture_count": null,
+        "critical_fixture_ids": [],
+        "package_suite_run": "not_run",
+        "workbench_conformance": "not_run"
+      },
+      "inbound": [],
+      "outbound": [],
+      "provenance": {
+        "evidence_basis": "commission_report_only",
+        "remote_alignment": "unknown"
+      },
+      "missing_capability_effect": "Required copyediting claim held; report absence; SGI and TE never substitute. PPR substantive review requires an accepted copyedited baseline from an authorized external process or is blocked."
+    },
+    {
+      "family_id": "SEI",
+      "name": "Scholarly/Editorial Integrity",
+      "role": "domain",
+      "repository": "https://github.com/tuckerebc-max/scholarly-editorial-integrity",
+      "capabilities": [
+        "scholarly_integrity"
+      ],
+      "covers": "claims, citations, sources, integrity protocol -> signals/findings, source-fit questions, escalation cases",
+      "refuses": [
+        "copyediting",
+        "intent_inference",
+        "formal_allegation",
+        "authorship_adjudication",
+        "unavailable_source_certification",
+        "publication"
+      ],
+      "declared_inbound_summary": "claims, citations, sources, integrity protocol",
+      "declared_outbound_summary": "signals/findings, source-fit questions, escalation cases",
+      "default_lane_class": "chat_reasoning",
+      "open_hook_ids": [
+        "SEI-DH-001",
+        "SEI-DH-002",
+        "SEI-DH-003",
+        "SEI-DH-004",
+        "SEI-DH-005",
+        "SEI-DH-006",
+        "SEI-DH-007",
+        "SEI-DH-008",
+        "SEI-DH-009"
+      ],
+      "execution_pin": {
+        "status": "inherited_legacy_lock_only",
+        "value": {
+          "commit": "098080247ab21173bbbe3da3ab90aa3cf860e38c",
+          "package_version": "0.1.0",
+          "specification_version": "0.1.0-draft",
+          "source": "https://github.com/tuckerebc-max/scholarly-editorial-integrity",
+          "local_patch": "Canonicalize CRLF to LF for the governing-spec hash in scripts/validate_package.py (Windows portability only).",
+          "tree_sha256": "3541c855b02635ea3a60a918ec354a0948e59ea32fba8462e049fc611738a655"
+        },
+        "evidence_ref": "sources/workbench/skills.lock.json",
+        "installed_snapshot_equals_pin": "unknown"
+      },
+      "runtime_targets": {
+        "codex": {
+          "status": "entry_note_observed",
+          "live_canary": "not_run",
+          "evidence": "agents/openai.yaml in installed source; not a runtime validation",
+          "legacy_wiring": "observed_in_workbench_source"
+        },
+        "claude": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "hermes": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "gemini": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "glm": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        }
+      },
+      "package": {
+        "id": "MWM-EDITORIAL-SEI",
+        "version": "0.1.0",
+        "manifest_ref": "sources/families/SEI/package_manifest.json"
+      },
+      "specification": {
+        "id": "MWM-SEI-SPEC",
+        "version": "0.1.0-draft",
+        "path": "sources/families/SEI/01_SPECIFICATION.md",
+        "observed_sha256": "09ba870077d191afe5cece45f2ca5de0b370d11bae175bfe6b524e66aecc6927",
+        "manifest_declared_sha256": "79E5A4FE73DFDD1422362F161BC9323BF02A7A52F8F3B82FA9267E72D8F48AD0"
+      },
+      "maturity": {
+        "presence": "specified",
+        "package_status": "draft-for-editorial-owner-review",
+        "definition": "drafted",
+        "activation": "unknown",
+        "acceptance": "not_granted"
+      },
+      "evaluation": {
+        "rule_count": 30,
+        "fixture_count": 42,
+        "critical_fixture_ids": [],
+        "package_suite_run": "not_run",
+        "workbench_conformance": "not_run"
+      },
+      "inbound": [
+        {
+          "peer_family": "RCI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "resolved citation/reference graph, source identity, locators, and access/status records",
+          "fields": [
+            "citation_graph_status",
+            "source_ids",
+            "reference_ids"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Reference & Citation Integrity",
+            "contract": "resolved citation/reference graph, source identity, locators, and access/status records",
+            "required_fields": [
+              "citation_graph_status",
+              "source_ids",
+              "reference_ids"
+            ]
+          }
+        },
+        {
+          "peer_family": "SGI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "MWM authority, protected text, disclosure language, and terminology boundaries",
+          "fields": [
+            "rule_registry_version",
+            "protected_context_policy"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Style-Guide Implementation",
+            "contract": "MWM authority, protected text, disclosure language, and terminology boundaries",
+            "required_fields": [
+              "rule_registry_version",
+              "protected_context_policy"
+            ]
+          }
+        },
+        {
+          "peer_family": "TE",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "technical object IDs, table/figure/source relationships, and production dependencies",
+          "fields": [
+            "technical_object_ids_when_relevant"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Technical Editing",
+            "contract": "technical object IDs, table/figure/source relationships, and production dependencies",
+            "required_fields": [
+              "technical_object_ids_when_relevant"
+            ]
+          }
+        },
+        {
+          "peer_family": "EQA",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "stage, trigger, confidentiality permissions, owner, and release mode",
+          "fields": [
+            "run_id",
+            "stage",
+            "case_owner"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Editorial QA & Orchestration",
+            "contract": "stage, trigger, confidentiality permissions, owner, and release mode",
+            "required_fields": [
+              "run_id",
+              "stage",
+              "case_owner"
+            ]
+          }
+        }
+      ],
+      "outbound": [
+        {
+          "peer_family": "RCI",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "claim/source identity or status mismatch and citation/source evidence dependency",
+          "fields": [
+            "finding_id",
+            "source_id",
+            "access_status",
+            "source_status_effect"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Reference & Citation Integrity",
+            "contract": "claim/source identity or status mismatch and citation/source evidence dependency",
+            "payload_fields": [
+              "finding_id",
+              "source_id",
+              "access_status",
+              "source_status_effect"
+            ]
+          }
+        },
+        {
+          "peer_family": "TE",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "source/credit, table/figure, object, or production relationship issue",
+          "fields": [
+            "finding_id",
+            "object_id",
+            "source_record",
+            "owner_route"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Technical Editing",
+            "contract": "source/credit, table/figure, object, or production relationship issue",
+            "payload_fields": [
+              "finding_id",
+              "object_id",
+              "source_record",
+              "owner_route"
+            ]
+          }
+        },
+        {
+          "peer_family": "CE",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "meaning-bearing sentence, quotation, disclosure, or source-language issue",
+          "fields": [
+            "finding_id",
+            "exact_text",
+            "protected_status",
+            "decision_owner"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Copyediting",
+            "contract": "meaning-bearing sentence, quotation, disclosure, or source-language issue",
+            "payload_fields": [
+              "finding_id",
+              "exact_text",
+              "protected_status",
+              "decision_owner"
+            ]
+          }
+        },
+        {
+          "peer_family": "CPR",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "missing disclosure, contributor, source-status, or release component",
+          "fields": [
+            "finding_id",
+            "required_component",
+            "release_effect"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Chapter Completeness & Production Readiness",
+            "contract": "missing disclosure, contributor, source-status, or release component",
+            "payload_fields": [
+              "finding_id",
+              "required_component",
+              "release_effect"
+            ]
+          }
+        },
+        {
+          "peer_family": "EQA",
+          "direction": "outbound",
+          "artifact": null,
+          "description": "integrity ledger, decisions, cases, confidentiality incidents, and release status",
+          "fields": [
+            "run_id",
+            "finding_ids",
+            "decision_ids",
+            "release_status"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Editorial QA & Orchestration",
+            "contract": "integrity ledger, decisions, cases, confidentiality incidents, and release status",
+            "payload_fields": [
+              "run_id",
+              "finding_ids",
+              "decision_ids",
+              "release_status"
+            ]
+          }
+        }
+      ],
+      "boundary_invariants": [
+        "No intent inference",
+        "No formal allegation without authorized record",
+        "No authorship arbitration",
+        "No source-unavailable certification",
+        "No unapproved confidential processing",
+        "No silent meaning/status change"
+      ],
+      "legacy_interface_id": "MWM-SEI-CROSS-FAMILY-CONTRACTS",
+      "provenance": {
+        "evidence_basis": "installed_package_snapshot",
+        "remote_alignment": "not_checked",
+        "source_manifest": "source-index.json"
+      }
+    },
+    {
+      "family_id": "CPR",
+      "name": "Chapter Completeness & Production Readiness",
+      "role": "domain",
+      "repository": "https://github.com/tuckerebc-max/chapter-completeness-production-readiness",
+      "capabilities": [
+        "component_readiness"
+      ],
+      "covers": "required-component matrix, profile, upstream statuses -> completeness gate, gaps, production readiness",
+      "refuses": [
+        "copyediting",
+        "metadata_invention",
+        "final_file_selection_by_inference",
+        "presence_as_quality",
+        "rights_clearance",
+        "publication"
+      ],
+      "declared_inbound_summary": "required-component matrix, profile, upstream statuses",
+      "declared_outbound_summary": "completeness gate, gaps, production readiness",
+      "default_lane_class": "offline_batch",
+      "open_hook_ids": [
+        "CPR-DH-001",
+        "CPR-DH-002",
+        "CPR-DH-003",
+        "CPR-DH-004",
+        "CPR-DH-005",
+        "CPR-DH-006",
+        "CPR-DH-007",
+        "CPR-DH-008",
+        "CPR-DH-009",
+        "CPR-DH-010",
+        "CPR-DH-011",
+        "CPR-DH-012"
+      ],
+      "execution_pin": null,
+      "runtime_targets": {
+        "codex": {
+          "status": "entry_note_observed",
+          "live_canary": "not_run",
+          "evidence": "agents/openai.yaml in installed source; not a runtime validation"
+        },
+        "claude": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "hermes": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "gemini": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "glm": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        }
+      },
+      "package": {
+        "id": "MWM-EDITORIAL-CPR",
+        "version": "0.1.0",
+        "manifest_ref": "sources/families/CPR/package_manifest.json"
+      },
+      "specification": {
+        "id": "MWM-CPR-SPEC",
+        "version": "0.1.0-draft",
+        "path": "sources/families/CPR/01_SPECIFICATION.md",
+        "observed_sha256": "24f790b87364aafa4b2a738209e91964370978892c2e6c4c0c80dc8e5da64492",
+        "manifest_declared_sha256": "F8223A92CBBF8F6047321E63633F5202FEC14478CE26282DAF3801094D992CE1"
+      },
+      "maturity": {
+        "presence": "specified",
+        "package_status": "draft-for-editorial-owner-review",
+        "definition": "drafted",
+        "activation": "unknown",
+        "acceptance": "not_granted"
+      },
+      "evaluation": {
+        "rule_count": 30,
+        "fixture_count": 38,
+        "critical_fixture_ids": [],
+        "package_suite_run": "not_run",
+        "workbench_conformance": "not_run"
+      },
+      "inbound": [
+        {
+          "peer_family": "RCI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "RCI retains citation/source judgment.",
+          "fields": [
+            "run_id",
+            "chapter_version",
+            "citation_reference_status",
+            "finding_ids",
+            "release_effect"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "RCI retains citation/source judgment."
+          },
+          "original_declaration": {
+            "family": "Reference & Citation Integrity",
+            "ids": [
+              "RCI"
+            ],
+            "required_fields": [
+              "run_id",
+              "chapter_version",
+              "citation_reference_status",
+              "finding_ids",
+              "release_effect"
+            ],
+            "ownership": "RCI retains citation/source judgment."
+          }
+        },
+        {
+          "peer_family": "SGI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "SGI retains style-rule judgment.",
+          "fields": [
+            "run_id",
+            "rule_version",
+            "status",
+            "exceptions"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "SGI retains style-rule judgment."
+          },
+          "original_declaration": {
+            "family": "Style-Guide Implementation",
+            "ids": [
+              "SGI"
+            ],
+            "required_fields": [
+              "run_id",
+              "rule_version",
+              "status",
+              "exceptions"
+            ],
+            "ownership": "SGI retains style-rule judgment."
+          }
+        },
+        {
+          "peer_family": "TE",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "TE retains technical-object and structural judgment.",
+          "fields": [
+            "run_id",
+            "object_registry_status",
+            "cross_reference_status",
+            "finding_ids",
+            "release_effect"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "TE retains technical-object and structural judgment."
+          },
+          "original_declaration": {
+            "family": "Technical Editing",
+            "ids": [
+              "TE"
+            ],
+            "required_fields": [
+              "run_id",
+              "object_registry_status",
+              "cross_reference_status",
+              "finding_ids",
+              "release_effect"
+            ],
+            "ownership": "TE retains technical-object and structural judgment."
+          }
+        },
+        {
+          "peer_family": "CE",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "CE retains prose intervention judgment.",
+          "fields": [
+            "run_id",
+            "handoff_status",
+            "meaning_preservation_status",
+            "finding_ids",
+            "release_effect"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "CE retains prose intervention judgment."
+          },
+          "original_declaration": {
+            "family": "Copyediting",
+            "ids": [
+              "CE"
+            ],
+            "required_fields": [
+              "run_id",
+              "handoff_status",
+              "meaning_preservation_status",
+              "finding_ids",
+              "release_effect"
+            ],
+            "ownership": "CE retains prose intervention judgment."
+          }
+        },
+        {
+          "peer_family": "SEI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "SEI retains integrity-signal and routing judgment.",
+          "fields": [
+            "run_id",
+            "disclosure_status",
+            "source_status",
+            "finding_ids",
+            "release_effect"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "SEI retains integrity-signal and routing judgment."
+          },
+          "original_declaration": {
+            "family": "Scholarly/Editorial Integrity",
+            "ids": [
+              "SEI"
+            ],
+            "required_fields": [
+              "run_id",
+              "disclosure_status",
+              "source_status",
+              "finding_ids",
+              "release_effect"
+            ],
+            "ownership": "SEI retains integrity-signal and routing judgment."
+          }
+        },
+        {
+          "peer_family": "EQA",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "EQA retains orchestration authority.",
+          "fields": [
+            "orchestration_run_id",
+            "dependency_graph_status",
+            "stage"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "EQA retains orchestration authority."
+          },
+          "original_declaration": {
+            "family": "Editorial QA & Orchestration",
+            "ids": [
+              "EQA"
+            ],
+            "required_fields": [
+              "orchestration_run_id",
+              "dependency_graph_status",
+              "stage"
+            ],
+            "ownership": "EQA retains orchestration authority."
+          }
+        }
+      ],
+      "outbound": [
+        {
+          "peer_family": "EQA",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "run_id",
+            "profile_id",
+            "component_summary",
+            "file_manifest",
+            "finding_ids",
+            "upstream_statuses",
+            "release_recommendation",
+            "human_signatory_state"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Editorial QA & Orchestration",
+            "fields": [
+              "run_id",
+              "profile_id",
+              "component_summary",
+              "file_manifest",
+              "finding_ids",
+              "upstream_statuses",
+              "release_recommendation",
+              "human_signatory_state"
+            ]
+          }
+        },
+        {
+          "peer_family": "RCI",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "reference_component_presence",
+            "citation_target_presence",
+            "upstream_gap_ids"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Reference & Citation Integrity",
+            "fields": [
+              "reference_component_presence",
+              "citation_target_presence",
+              "upstream_gap_ids"
+            ]
+          }
+        },
+        {
+          "peer_family": "TE",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "asset_component_records",
+            "cross_reference_presence",
+            "file_version_status"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Technical Editing",
+            "fields": [
+              "asset_component_records",
+              "cross_reference_presence",
+              "file_version_status"
+            ]
+          }
+        },
+        {
+          "peer_family": "CE",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "clean_package_status",
+            "handoff_version",
+            "open_dependency_ids"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Copyediting",
+            "fields": [
+              "clean_package_status",
+              "handoff_version",
+              "open_dependency_ids"
+            ]
+          }
+        },
+        {
+          "peer_family": "SEI",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "declaration_component_status",
+            "integrity_dependency_ids",
+            "protected_record_access_status"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Scholarly/Editorial Integrity",
+            "fields": [
+              "declaration_component_status",
+              "integrity_dependency_ids",
+              "protected_record_access_status"
+            ]
+          }
+        }
+      ],
+      "boundary_invariants": [
+        "CPR owns presence, applicability, linkage, version lineage, and stage readiness only.",
+        "present_unverified cannot become verified or approved without the owning downstream evidence.",
+        "not_applicable requires a condition, rationale, and authority.",
+        "CPR cannot invent metadata, select a final file, silently repair conflicts, or certify legal, accessibility, substantive, citation, or integrity status.",
+        "A material unresolved upstream dependency prevents ready or ready_with_tracked_items.",
+        "Release or handoff requires a named human signatory unless MWM explicitly delegates authority."
+      ],
+      "legacy_interface_id": "MWM-CPR-CONTRACTS",
+      "provenance": {
+        "evidence_basis": "installed_package_snapshot",
+        "remote_alignment": "not_checked",
+        "source_manifest": "source-index.json"
+      }
+    },
+    {
+      "family_id": "PPR",
+      "name": "Proof & Post-Typesetting Review",
+      "role": "domain",
+      "repository": "https://github.com/tuckerebc-max/proof-post-typesetting-review",
+      "capabilities": [
+        "proof_survival"
+      ],
+      "covers": "fixed baseline, proofs/outputs, correction log, format targets -> proof findings, reproof status, fixity/version record, release recommendation",
+      "refuses": [
+        "copyediting",
+        "substantive_rewrite",
+        "difference_as_automatic_defect",
+        "unreproved_correction_closure",
+        "publication"
+      ],
+      "declared_inbound_summary": "fixed baseline, proofs/outputs, correction log, format targets",
+      "declared_outbound_summary": "proof findings, reproof status, fixity/version record, release recommendation",
+      "default_lane_class": "chat_reasoning",
+      "open_hook_ids": [
+        "PPR-DH-001",
+        "PPR-DH-002",
+        "PPR-DH-003",
+        "PPR-DH-004",
+        "PPR-DH-005",
+        "PPR-DH-006",
+        "PPR-DH-007",
+        "PPR-DH-008",
+        "PPR-DH-009",
+        "PPR-DH-010"
+      ],
+      "execution_pin": null,
+      "runtime_targets": {
+        "codex": {
+          "status": "entry_note_observed",
+          "live_canary": "not_run",
+          "evidence": "agents/openai.yaml in installed source; not a runtime validation"
+        },
+        "claude": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "hermes": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "gemini": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "glm": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        }
+      },
+      "package": {
+        "id": "MWM-EDITORIAL-PPR",
+        "version": "0.1.0",
+        "manifest_ref": "sources/families/PPR/package_manifest.json"
+      },
+      "specification": {
+        "id": "MWM-PPR-SPEC",
+        "version": "0.1.0-draft",
+        "path": "sources/families/PPR/01_SPECIFICATION.md",
+        "observed_sha256": "e9c8ad5ad85109f94e6ff02be3c49c20fedb585c53bfe2873763105f7ae2f043",
+        "manifest_declared_sha256": "ED5C836FD35019152894A1536AA5A0160B798DE3440E593A5B1957C63BA18F04"
+      },
+      "maturity": {
+        "presence": "specified",
+        "package_status": "draft-for-editorial-owner-review",
+        "definition": "drafted",
+        "activation": "unknown",
+        "acceptance": "not_granted"
+      },
+      "evaluation": {
+        "rule_count": 31,
+        "fixture_count": 45,
+        "critical_fixture_ids": [],
+        "package_suite_run": "not_run",
+        "workbench_conformance": "not_run"
+      },
+      "inbound": [
+        {
+          "peer_family": "RCI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "RCI retains source and citation integrity.",
+          "fields": [
+            "run_id",
+            "visible_reference_status",
+            "finding_ids",
+            "release_effect"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "RCI retains source and citation integrity."
+          },
+          "original_declaration": {
+            "family": "Reference & Citation Integrity",
+            "ids": [
+              "RCI"
+            ],
+            "required_fields": [
+              "run_id",
+              "visible_reference_status",
+              "finding_ids",
+              "release_effect"
+            ],
+            "ownership": "RCI retains source and citation integrity."
+          }
+        },
+        {
+          "peer_family": "SGI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "SGI retains style authority.",
+          "fields": [
+            "run_id",
+            "approved_style_status",
+            "exceptions"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "SGI retains style authority."
+          },
+          "original_declaration": {
+            "family": "Style-Guide Implementation",
+            "ids": [
+              "SGI"
+            ],
+            "required_fields": [
+              "run_id",
+              "approved_style_status",
+              "exceptions"
+            ],
+            "ownership": "SGI retains style authority."
+          }
+        },
+        {
+          "peer_family": "TE",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "TE retains technical-object semantics.",
+          "fields": [
+            "run_id",
+            "object_status",
+            "cross_reference_status",
+            "finding_ids"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "TE retains technical-object semantics."
+          },
+          "original_declaration": {
+            "family": "Technical Editing",
+            "ids": [
+              "TE"
+            ],
+            "required_fields": [
+              "run_id",
+              "object_status",
+              "cross_reference_status",
+              "finding_ids"
+            ],
+            "ownership": "TE retains technical-object semantics."
+          }
+        },
+        {
+          "peer_family": "CE",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "CE retains prose intervention authority.",
+          "fields": [
+            "run_id",
+            "approved_copyedit_version",
+            "meaning_preservation_status"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "CE retains prose intervention authority."
+          },
+          "original_declaration": {
+            "family": "Copyediting",
+            "ids": [
+              "CE"
+            ],
+            "required_fields": [
+              "run_id",
+              "approved_copyedit_version",
+              "meaning_preservation_status"
+            ],
+            "ownership": "CE retains prose intervention authority."
+          }
+        },
+        {
+          "peer_family": "SEI",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "SEI retains integrity status.",
+          "fields": [
+            "run_id",
+            "source_status",
+            "integrity_findings",
+            "release_effect"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "SEI retains integrity status."
+          },
+          "original_declaration": {
+            "family": "Scholarly/Editorial Integrity",
+            "ids": [
+              "SEI"
+            ],
+            "required_fields": [
+              "run_id",
+              "source_status",
+              "integrity_findings",
+              "release_effect"
+            ],
+            "ownership": "SEI retains integrity status."
+          }
+        },
+        {
+          "peer_family": "CPR",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "CPR retains package completeness judgment.",
+          "fields": [
+            "run_id",
+            "package_version",
+            "asset_manifest",
+            "release_recommendation"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "CPR retains package completeness judgment."
+          },
+          "original_declaration": {
+            "family": "Chapter Completeness & Production Readiness",
+            "ids": [
+              "CPR"
+            ],
+            "required_fields": [
+              "run_id",
+              "package_version",
+              "asset_manifest",
+              "release_recommendation"
+            ],
+            "ownership": "CPR retains package completeness judgment."
+          }
+        },
+        {
+          "peer_family": "EQA",
+          "direction": "inbound",
+          "artifact": null,
+          "description": "EQA retains orchestration authority.",
+          "fields": [
+            "orchestration_run_id",
+            "stage",
+            "dependency_graph_status"
+          ],
+          "schema_refs": [],
+          "restrictions": {
+            "ownership": "EQA retains orchestration authority."
+          },
+          "original_declaration": {
+            "family": "Editorial QA & Orchestration",
+            "ids": [
+              "EQA"
+            ],
+            "required_fields": [
+              "orchestration_run_id",
+              "stage",
+              "dependency_graph_status"
+            ],
+            "ownership": "EQA retains orchestration authority."
+          }
+        }
+      ],
+      "outbound": [
+        {
+          "peer_family": "EQA",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "baseline_id",
+            "proof_id",
+            "fixity_events",
+            "findings",
+            "corrections",
+            "release_decision",
+            "signatory"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Editorial QA & Orchestration",
+            "fields": [
+              "baseline_id",
+              "proof_id",
+              "fixity_events",
+              "findings",
+              "corrections",
+              "release_decision",
+              "signatory"
+            ]
+          }
+        },
+        {
+          "peer_family": "TE",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "visual_object_findings",
+            "navigation_findings",
+            "reproof_scope"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Technical Editing",
+            "fields": [
+              "visual_object_findings",
+              "navigation_findings",
+              "reproof_scope"
+            ]
+          }
+        },
+        {
+          "peer_family": "RCI",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "visible_reference_survival_findings",
+            "upstream_route_ids"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Reference & Citation Integrity",
+            "fields": [
+              "visible_reference_survival_findings",
+              "upstream_route_ids"
+            ]
+          }
+        },
+        {
+          "peer_family": "CPR",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "final_output_identity",
+            "package_delta",
+            "release_effect"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Chapter Completeness & Production Readiness",
+            "fields": [
+              "final_output_identity",
+              "package_delta",
+              "release_effect"
+            ]
+          }
+        },
+        {
+          "peer_family": "SEI",
+          "direction": "outbound",
+          "artifact": null,
+          "description": null,
+          "fields": [
+            "status_issue_routes",
+            "protected_record_incident_ids"
+          ],
+          "schema_refs": [],
+          "restrictions": {},
+          "original_declaration": {
+            "family": "Scholarly/Editorial Integrity",
+            "fields": [
+              "status_issue_routes",
+              "protected_record_incident_ids"
+            ]
+          }
+        }
+      ],
+      "boundary_invariants": [
+        "PPR compares approved baselines with proof/output and records visible differences; it does not rewrite or adjudicate substantive content.",
+        "A difference is not a defect without baseline and approved-variation context.",
+        "An accepted correction is not resolved without incorporation and reproof evidence.",
+        "PPR cannot certify legal permissions, source validity, accessibility conformance, or integrity from visual review alone.",
+        "Original released records and fixity remain preserved for post-publication updates.",
+        "Release requires a named human signatory and final fixity/provenance."
+      ],
+      "legacy_interface_id": "MWM-PPR-CONTRACTS",
+      "provenance": {
+        "evidence_basis": "installed_package_snapshot",
+        "remote_alignment": "not_checked",
+        "source_manifest": "source-index.json"
+      }
+    },
+    {
+      "family_id": "EQA",
+      "name": "Editorial QA & Orchestration",
+      "role": "control",
+      "repository": "https://github.com/tuckerebc-max/editorial-qa-orchestration",
+      "capabilities": [
+        "editorial_control"
+      ],
+      "covers": "immutable invocation, authority/rules, family reports, route and decision evidence -> dependency_graph, route_decisions, comparison_records, confidence_records, decision_packets, provenance_events, release_package, receipt",
+      "refuses": [
+        "family_judgment_substitution",
+        "policy_invention",
+        "human_acceptance",
+        "publication"
+      ],
+      "declared_inbound_summary": "immutable invocation, authority/rules, family reports, route and decision evidence",
+      "declared_outbound_summary": "dependency_graph, route_decisions, comparison_records, confidence_records, decision_packets, provenance_events, release_package, receipt",
+      "default_lane_class": "offline_batch",
+      "open_hook_ids": [
+        "EQA-DH-001",
+        "EQA-DH-002",
+        "EQA-DH-003",
+        "EQA-DH-004",
+        "EQA-DH-005",
+        "EQA-DH-006",
+        "EQA-DH-007",
+        "EQA-DH-008",
+        "EQA-DH-009",
+        "EQA-DH-010",
+        "EQA-DH-011",
+        "EQA-DH-012",
+        "EQA-DH-013",
+        "EQA-DH-014"
+      ],
+      "execution_pin": null,
+      "runtime_targets": {
+        "codex": {
+          "status": "entry_note_observed",
+          "live_canary": "not_run",
+          "evidence": "agents/openai.yaml in installed source; not a runtime validation"
+        },
+        "claude": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "hermes": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "gemini": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        },
+        "glm": {
+          "status": "proposed_entry_only",
+          "live_canary": "not_run"
+        }
+      },
+      "package": {
+        "id": "MWM-EDITORIAL-EQA",
+        "version": "0.1.0",
+        "manifest_ref": "sources/families/EQA/package_manifest.json"
+      },
+      "specification": {
+        "id": "MWM-EQA-SPEC",
+        "version": "0.1.0-draft",
+        "path": "sources/families/EQA/01_SPECIFICATION.md",
+        "observed_sha256": "5051f54ee181a5a356a01a89cbdf869c73f75e4b196b254ddb537a390bf8185a",
+        "manifest_declared_sha256": "DA00567892A41E8ABB4EF441A43D696F89A3754FF88A19C8856D8EF6703A54C0"
+      },
+      "maturity": {
+        "presence": "specified",
+        "package_status": "draft-for-editorial-owner-review",
+        "definition": "drafted",
+        "activation": "unknown",
+        "acceptance": "not_granted"
+      },
+      "evaluation": {
+        "rule_count": 33,
+        "fixture_count": 50,
+        "critical_fixture_ids": [
+          "EQA-11",
+          "EQA-17",
+          "EQA-19",
+          "EQA-25",
+          "EQA-27",
+          "EQA-36",
+          "EQA-43",
+          "EQA-46",
+          "EQA-50"
+        ],
+        "package_suite_run": "not_run",
+        "workbench_conformance": "not_run"
+      },
+      "inbound": [],
+      "outbound": [],
+      "boundary_invariants": [
+        "EQA coordinates and routes; each family retains its domain judgment and owner.",
+        "Family outputs need schema, evidence, coverage, status, and release effect before node completion.",
+        "Critical blocks cannot be averaged away.",
+        "Disagreement and source reports are preserved.",
+        "No release without human authorization, fixity/provenance, and receipt.",
+        "Post-publication cases remain separate from ordinary pre-publication editing."
+      ],
+      "legacy_interface_id": "MWM-EQA-CONTRACTS",
+      "provenance": {
+        "evidence_basis": "installed_package_snapshot",
+        "remote_alignment": "not_checked",
+        "source_manifest": "source-index.json"
+      },
+      "global_domain_interfaces": [
+        {
+          "family": "Reference & Citation Integrity",
+          "id": "RCI",
+          "input_contract": "chapter text, references, rules, source permissions",
+          "output_contract": "citation/reference ledger, findings, source/status queue, release effect",
+          "owner": "RCI owner"
+        },
+        {
+          "family": "Style-Guide Implementation",
+          "id": "SGI",
+          "input_contract": "chapter profile, rule registry, exceptions, text/layout",
+          "output_contract": "rule ledger, conflicts, exceptions, compliance status",
+          "owner": "SGI owner"
+        },
+        {
+          "family": "Technical Editing",
+          "id": "TE",
+          "input_contract": "structured inventory, template, visual objects, technical rules",
+          "output_contract": "object/hierarchy/cross-reference findings and status",
+          "owner": "TE owner"
+        },
+        {
+          "family": "Copyediting",
+          "id": "CE",
+          "input_contract": "approved style context, text, conventions, threshold",
+          "output_contract": "copyedit log, proposed changes, questions, handoff status",
+          "owner": "CE owner"
+        },
+        {
+          "family": "Scholarly/Editorial Integrity",
+          "id": "SEI",
+          "input_contract": "claims, citations, sources, integrity protocol",
+          "output_contract": "signals/findings, source-fit questions, escalation cases",
+          "owner": "SEI owner"
+        },
+        {
+          "family": "Chapter Completeness & Production Readiness",
+          "id": "CPR",
+          "input_contract": "required-component matrix, profile, upstream statuses",
+          "output_contract": "completeness gate, gaps, production readiness",
+          "owner": "CPR owner"
+        },
+        {
+          "family": "Proof & Post-Typesetting Review",
+          "id": "PPR",
+          "input_contract": "fixed baseline, proofs/outputs, correction log, format targets",
+          "output_contract": "proof findings, reproof status, fixity/version record, release recommendation",
+          "owner": "PPR owner"
+        }
+      ]
+    }
+  ]
+}

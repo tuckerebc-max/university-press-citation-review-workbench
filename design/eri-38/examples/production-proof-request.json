@@ -1,0 +1,43 @@
+{
+  "schema": "university_press.batch_request.draft1",
+  "stage_profile": "production_proof_review",
+  "manifest_sha256": "1ef9887a72535c0b4ad244b44c364aa81b6fcc3b5ad86d2a2343903a199392ee",
+  "classification": "synthetic",
+  "mode": "design_simulation",
+  "chapters": [
+    {
+      "chapter_id": "SYN-V1-001",
+      "volume_id": "SYN-V1",
+      "order": 1,
+      "source_capture_uri": "synthetic://manifest/SYN-V1-001",
+      "source_sha256": "925d649ec692d92a8ddb695a1824cca6791d23fb33eb0290d4cb08d0e2e41e9c",
+      "bytes": 1024
+    },
+    {
+      "chapter_id": "SYN-V2-001",
+      "volume_id": "SYN-V2",
+      "order": 1,
+      "source_capture_uri": "synthetic://manifest/SYN-V2-001",
+      "source_sha256": "294dfffcb85fe324b0ec703e292ce14d314b07092bc9cb5a508d40a70fd347c2",
+      "bytes": 1024
+    }
+  ],
+  "context_refs": {
+    "rules": "synthetic://rules",
+    "source_permissions": "synthetic://permissions",
+    "policy": "synthetic://policy",
+    "stage_inputs": [
+      "synthetic://baseline",
+      "synthetic://proof",
+      "synthetic://component-profile"
+    ]
+  },
+  "authority_refs": {
+    "dock_lineage": null,
+    "G0": null,
+    "G1": null,
+    "route_approval": null,
+    "pin_approval": null
+  },
+  "output_root_ref": "operator-supplied-private-directory"
+}

@@ -1,0 +1,1404 @@
+{
+  "status": "all_open",
+  "count": 74,
+  "decisions_made_by_this_design": 0,
+  "hooks": [
+    {
+      "hook_id": "RCI-DH-001",
+      "family_id": "RCI",
+      "status": "open",
+      "question": "Which APA edge cases does MWM adopt when chapter guidance is silent?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "ESCALATE affected record; do not claim APA certainty",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "RCI-DH-001",
+        "name": "apa_edge_case_adoption",
+        "status": "unresolved",
+        "question": "Which APA edge cases does MWM adopt when chapter guidance is silent?",
+        "allowed_values": [
+          "explicit_rule_package_reference"
+        ],
+        "default_behavior": "ESCALATE affected record; do not claim APA certainty",
+        "required_for": [
+          "RCI-04",
+          "RCI-06"
+        ],
+        "decision_owner": "MWM editorial adjudication",
+        "records_required": [
+          "decision_log_id",
+          "rule_id",
+          "effective_version",
+          "regression_fixture_ids"
+        ]
+      },
+      "source_ref": "sources/families/RCI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "RCI-DH-002",
+      "family_id": "RCI",
+      "status": "open",
+      "question": "Which persistent-identifier fallbacks satisfy MWM for datasets?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "BLOCK or ESCALATE when a required dataset identifier is absent; never infer an identifier",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "RCI-DH-002",
+        "name": "dataset_persistent_identifier_fallbacks",
+        "status": "unresolved",
+        "question": "Which persistent-identifier fallbacks satisfy MWM for datasets?",
+        "allowed_values": [
+          "explicit_project_policy_value"
+        ],
+        "default_behavior": "BLOCK or ESCALATE when a required dataset identifier is absent; never infer an identifier",
+        "required_for": [
+          "RCI-03",
+          "RCI-05",
+          "RCI-07"
+        ],
+        "decision_owner": "MWM editorial adjudication",
+        "records_required": [
+          "decision_log_id",
+          "accepted_identifier_types",
+          "effective_version",
+          "regression_fixture_ids"
+        ]
+      },
+      "source_ref": "sources/families/RCI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "RCI-DH-003",
+      "family_id": "RCI",
+      "status": "open",
+      "question": "Which source wins when official source material and providers disagree on a material field?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Preserve competing values and ESCALATE; provider data cannot silently win",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "RCI-DH-003",
+        "name": "metadata_source_of_record",
+        "status": "unresolved",
+        "question": "Which source wins when official source material and providers disagree on a material field?",
+        "allowed_values": [
+          "explicit_project_hierarchy"
+        ],
+        "default_behavior": "Preserve competing values and ESCALATE; provider data cannot silently win",
+        "required_for": [
+          "RCI-03",
+          "RCI-05"
+        ],
+        "decision_owner": "MWM editorial adjudication",
+        "records_required": [
+          "decision_log_id",
+          "source_hierarchy",
+          "effective_version",
+          "regression_fixture_ids"
+        ]
+      },
+      "source_ref": "sources/families/RCI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "RCI-DH-004",
+      "family_id": "RCI",
+      "status": "open",
+      "question": "When are retrieval/access dates required for web sources?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Do not add or remove an access date automatically; FLAG or ESCALATE affected records",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "RCI-DH-004",
+        "name": "access_date_policy",
+        "status": "unresolved",
+        "question": "When are retrieval/access dates required for web sources?",
+        "allowed_values": [
+          "explicit_project_policy_value"
+        ],
+        "default_behavior": "Do not add or remove an access date automatically; FLAG or ESCALATE affected records",
+        "required_for": [
+          "RCI-04",
+          "RCI-06"
+        ],
+        "decision_owner": "MWM editorial adjudication",
+        "records_required": [
+          "decision_log_id",
+          "scope",
+          "effective_version",
+          "regression_fixture_ids"
+        ]
+      },
+      "source_ref": "sources/families/RCI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "RCI-DH-005",
+      "family_id": "RCI",
+      "status": "open",
+      "question": "How should versions, corrections, translations, preprints, and related works be represented in the exchange format?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Preserve distinct source records and typed relations; do not merge",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "RCI-DH-005",
+        "name": "source_relation_representation",
+        "status": "unresolved",
+        "question": "How should versions, corrections, translations, preprints, and related works be represented in the exchange format?",
+        "allowed_values": [
+          "explicit_project_intermediate_schema"
+        ],
+        "default_behavior": "Preserve distinct source records and typed relations; do not merge",
+        "required_for": [
+          "RCI-01",
+          "RCI-03",
+          "RCI-07"
+        ],
+        "decision_owner": "MWM editorial adjudication",
+        "records_required": [
+          "decision_log_id",
+          "relation_vocabulary",
+          "effective_version",
+          "regression_fixture_ids"
+        ]
+      },
+      "source_ref": "sources/families/RCI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "RCI-DH-006",
+      "family_id": "RCI",
+      "status": "open",
+      "question": "Which deterministic, reversible, identity-preserving transformations may be applied automatically?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "AUTO_FIX is disabled unless the active run profile enables the named transform; otherwise SUGGEST or FLAG",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "RCI-DH-006",
+        "name": "auto_fix_whitelist",
+        "status": "unresolved",
+        "question": "Which deterministic, reversible, identity-preserving transformations may be applied automatically?",
+        "allowed_values": [
+          "explicit_project_whitelist"
+        ],
+        "default_behavior": "AUTO_FIX is disabled unless the active run profile enables the named transform; otherwise SUGGEST or FLAG",
+        "required_for": [
+          "RCI-04",
+          "RCI-05",
+          "RCI-06"
+        ],
+        "decision_owner": "MWM editorial adjudication",
+        "records_required": [
+          "decision_log_id",
+          "transform_ids",
+          "effective_version",
+          "regression_fixture_ids"
+        ]
+      },
+      "source_ref": "sources/families/RCI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "RCI-DH-007",
+      "family_id": "RCI",
+      "status": "open",
+      "question": "How are notes and endnotes treated across manuscript types?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Require scope in the run manifest; if omitted, return partial coverage and not_ready for release",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "RCI-DH-007",
+        "name": "notes_and_endnotes_scope",
+        "status": "unresolved",
+        "question": "How are notes and endnotes treated across manuscript types?",
+        "allowed_values": [
+          "explicit_manuscript_type_profile"
+        ],
+        "default_behavior": "Require scope in the run manifest; if omitted, return partial coverage and not_ready for release",
+        "required_for": [
+          "RCI-01",
+          "RCI-02",
+          "RCI-06"
+        ],
+        "decision_owner": "MWM editorial adjudication",
+        "records_required": [
+          "decision_log_id",
+          "manuscript_type",
+          "scope",
+          "effective_version",
+          "regression_fixture_ids"
+        ]
+      },
+      "source_ref": "sources/families/RCI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "RCI-DH-008",
+      "family_id": "RCI",
+      "status": "open",
+      "question": "Which software release, version, creator, and identifier fields are required by MWM?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Preserve software identity uncertainty and ESCALATE when version or identifier is material and missing",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "RCI-DH-008",
+        "name": "software_reference_policy",
+        "status": "unresolved",
+        "question": "Which software release, version, creator, and identifier fields are required by MWM?",
+        "allowed_values": [
+          "explicit_project_policy_value"
+        ],
+        "default_behavior": "Preserve software identity uncertainty and ESCALATE when version or identifier is material and missing",
+        "required_for": [
+          "RCI-03",
+          "RCI-04",
+          "RCI-07"
+        ],
+        "decision_owner": "MWM editorial adjudication",
+        "records_required": [
+          "decision_log_id",
+          "required_fields",
+          "effective_version",
+          "regression_fixture_ids"
+        ]
+      },
+      "source_ref": "sources/families/RCI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "RCI-DH-009",
+      "family_id": "RCI",
+      "status": "open",
+      "question": "What evidence threshold permits accepting a probable Crossref/DataCite or other provider match?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Provider match remains a candidate; no material correction or closure without decisive evidence",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "RCI-DH-009",
+        "name": "provider_match_threshold",
+        "status": "unresolved",
+        "question": "What evidence threshold permits accepting a probable Crossref/DataCite or other provider match?",
+        "allowed_values": [
+          "explicit_field_level_threshold"
+        ],
+        "default_behavior": "Provider match remains a candidate; no material correction or closure without decisive evidence",
+        "required_for": [
+          "RCI-03",
+          "RCI-05"
+        ],
+        "decision_owner": "MWM editorial adjudication",
+        "records_required": [
+          "decision_log_id",
+          "required_matching_fields",
+          "effective_version",
+          "regression_fixture_ids"
+        ]
+      },
+      "source_ref": "sources/families/RCI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-001",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "What language/spelling profile applies by component?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Require explicit profile before language-sensitive enforcement",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-001",
+        "name": "language_profile",
+        "status": "unresolved",
+        "question": "What language/spelling profile applies by component?",
+        "default_behavior": "Require explicit profile before language-sensitive enforcement",
+        "required_for": [
+          "SGI-LANG-001"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-002",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "What heading capitalization and formal-title exceptions does MWM adopt?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Flag or escalate; do not infer from external guide",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-002",
+        "name": "heading_capitalization",
+        "status": "unresolved",
+        "question": "What heading capitalization and formal-title exceptions does MWM adopt?",
+        "default_behavior": "Flag or escalate; do not infer from external guide",
+        "required_for": [
+          "SGI-02",
+          "SGI-PROT-001"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-003",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "Which dictionary or spelling authority governs when the MWM profile is silent?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Do not auto-fix language variants without an adopted authority",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-003",
+        "name": "dictionary_authority",
+        "status": "unresolved",
+        "question": "Which dictionary or spelling authority governs when the MWM profile is silent?",
+        "default_behavior": "Do not auto-fix language variants without an adopted authority",
+        "required_for": [
+          "SGI-LANG-001"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-004",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "Who approves MWM terminology and how are domain experts involved?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Unknown domain terms enter review queue; no model synonym replacement",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-004",
+        "name": "terminology_register_process",
+        "status": "unresolved",
+        "question": "Who approves MWM terminology and how are domain experts involved?",
+        "default_behavior": "Unknown domain terms enter review queue; no model synonym replacement",
+        "required_for": [
+          "SGI-TERM-001",
+          "SGI-TERM-002"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-005",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "Which author conventions are permitted and how are they recorded?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Preserve consistent conventions but escalate material ambiguity",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-005",
+        "name": "author_convention_boundary",
+        "status": "unresolved",
+        "question": "Which author conventions are permitted and how are they recorded?",
+        "default_behavior": "Preserve consistent conventions but escalate material ambiguity",
+        "required_for": [
+          "SGI-AUTHOR-001"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-006",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "Which style decisions belong to Technical Editing rather than SGI?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Route structural/technical ownership questions to Technical Editing",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-006",
+        "name": "technical_editing_ownership",
+        "status": "unresolved",
+        "question": "Which style decisions belong to Technical Editing rather than SGI?",
+        "default_behavior": "Route structural/technical ownership questions to Technical Editing",
+        "required_for": [
+          "SGI-ROUTE-001"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-007",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "Who approves chapter exceptions and what is the review/expiry cadence?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Unrecorded exceptions are not valid for release",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-007",
+        "name": "exception_approval_path",
+        "status": "unresolved",
+        "question": "Who approves chapter exceptions and what is the review/expiry cadence?",
+        "default_behavior": "Unrecorded exceptions are not valid for release",
+        "required_for": [
+          "SGI-EXC-001"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-008",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "Which impact categories and cadence apply to rule changes?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Require conservative impact review before activation",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-008",
+        "name": "maintenance_impact_categories",
+        "status": "unresolved",
+        "question": "Which impact categories and cadence apply to rule changes?",
+        "default_behavior": "Require conservative impact review before activation",
+        "required_for": [
+          "SGI-CHANGE-001"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-009",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "How are terminology choices inside quotations and cited source titles handled?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "Protect source text and route explanatory questions",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-009",
+        "name": "quoted_cited_terminology",
+        "status": "unresolved",
+        "question": "How are terminology choices inside quotations and cited source titles handled?",
+        "default_behavior": "Protect source text and route explanatory questions",
+        "required_for": [
+          "SGI-PROT-001",
+          "SGI-TERM-002"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SGI-DH-010",
+      "family_id": "SGI",
+      "status": "open",
+      "question": "Which domains, if any, are delegated to APA or another external authority?",
+      "owner": "MWM editorial adjudication",
+      "source_default": "External guidance remains noncontrolling until delegation is recorded",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "id": "SGI-DH-010",
+        "name": "external_delegation",
+        "status": "unresolved",
+        "question": "Which domains, if any, are delegated to APA or another external authority?",
+        "default_behavior": "External guidance remains noncontrolling until delegation is recorded",
+        "required_for": [
+          "SGI-AUTH-002"
+        ],
+        "owner": "MWM editorial adjudication"
+      },
+      "source_ref": "sources/families/SGI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-001",
+      "family_id": "TE",
+      "status": "open",
+      "question": "Which fields are required for every MWM figure and table record?",
+      "owner": "MWM editorial authority",
+      "source_default": "Record available fields and mark missing requirements not_ready.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-001",
+        "question": "Which fields are required for every MWM figure and table record?",
+        "owner": "MWM editorial authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Record available fields and mark missing requirements not_ready."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-002",
+      "family_id": "TE",
+      "status": "open",
+      "question": "Are live Word fields required at author handoff, or may static references be accepted?",
+      "owner": "MWM production authority",
+      "source_default": "Test field state; do not silently convert or accept static text.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-002",
+        "question": "Are live Word fields required at author handoff, or may static references be accepted?",
+        "owner": "MWM production authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Test field state; do not silently convert or accept static text."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-003",
+      "family_id": "TE",
+      "status": "open",
+      "question": "Which output-format accessibility standard and test method is active?",
+      "owner": "MWM accessibility/production authority",
+      "source_default": "Flag format-specific accessibility gaps without claiming conformance.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-003",
+        "question": "Which output-format accessibility standard and test method is active?",
+        "owner": "MWM accessibility/production authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Flag format-specific accessibility gaps without claiming conformance."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-004",
+      "family_id": "TE",
+      "status": "open",
+      "question": "What caption/title placement and separation profile applies?",
+      "owner": "MWM production/design authority",
+      "source_default": "Record observed placement and escalate conflicts.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-004",
+        "question": "What caption/title placement and separation profile applies?",
+        "owner": "MWM production/design authority",
+        "blocking_if_unresolved": false,
+        "default_behavior": "Record observed placement and escalate conflicts."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-005",
+      "family_id": "TE",
+      "status": "open",
+      "question": "What is the alt-text versus long-description workflow and owner?",
+      "owner": "MWM accessibility authority",
+      "source_default": "Flag missing description records and route; never write semantic alt text from inference.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-005",
+        "question": "What is the alt-text versus long-description workflow and owner?",
+        "owner": "MWM accessibility authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Flag missing description records and route; never write semantic alt text from inference."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-006",
+      "family_id": "TE",
+      "status": "open",
+      "question": "Who owns permissions decisions and what evidence threshold is sufficient?",
+      "owner": "MWM rights authority",
+      "source_default": "Set rights status unknown or pending and escalate.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-006",
+        "question": "Who owns permissions decisions and what evidence threshold is sufficient?",
+        "owner": "MWM rights authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Set rights status unknown or pending and escalate."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-007",
+      "family_id": "TE",
+      "status": "open",
+      "question": "Which statistical and measurement notation rules are adopted for each domain?",
+      "owner": "MWM editorial/domain authority",
+      "source_default": "Preserve original notation and route ambiguity.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-007",
+        "question": "Which statistical and measurement notation rules are adopted for each domain?",
+        "owner": "MWM editorial/domain authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Preserve original notation and route ambiguity."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-008",
+      "family_id": "TE",
+      "status": "open",
+      "question": "Which note types, locations, and appendix relationships are required?",
+      "owner": "MWM chapter/production authority",
+      "source_default": "Record structure and flag unscoped note/appendix behavior.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-008",
+        "question": "Which note types, locations, and appendix relationships are required?",
+        "owner": "MWM chapter/production authority",
+        "blocking_if_unresolved": false,
+        "default_behavior": "Record structure and flag unscoped note/appendix behavior."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-009",
+      "family_id": "TE",
+      "status": "open",
+      "question": "What production architecture governs cross-document references and compilation?",
+      "owner": "MWM production authority",
+      "source_default": "Do not infer cross-document target/update behavior.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-009",
+        "question": "What production architecture governs cross-document references and compilation?",
+        "owner": "MWM production authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Do not infer cross-document target/update behavior."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "TE-DH-010",
+      "family_id": "TE",
+      "status": "open",
+      "question": "Are automatic asset resolution, dimensions, and width checks required, and at what stage?",
+      "owner": "MWM production authority",
+      "source_default": "Record metadata and flag unconfigured checks.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "TE-DH-010",
+        "question": "Are automatic asset resolution, dimensions, and width checks required, and at what stage?",
+        "owner": "MWM production authority",
+        "blocking_if_unresolved": false,
+        "default_behavior": "Record metadata and flag unconfigured checks."
+      },
+      "source_ref": "sources/families/TE/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SEI-DH-001",
+      "family_id": "SEI",
+      "status": "open",
+      "question": "What volume-level disclosure matrix applies?",
+      "owner": "MWM editorial authority",
+      "source_default": "Record applicability as unknown and query; do not infer a conflict or ethics failure.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "SEI-DH-001",
+        "question": "What volume-level disclosure matrix applies?",
+        "owner": "MWM editorial authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Record applicability as unknown and query; do not infer a conflict or ethics failure."
+      },
+      "source_ref": "sources/families/SEI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SEI-DH-002",
+      "family_id": "SEI",
+      "status": "open",
+      "question": "What is the MWM material-risk threshold and mandatory hold classes?",
+      "owner": "MWM senior editorial authority",
+      "source_default": "Use conservative hold for central/high-risk cases.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "SEI-DH-002",
+        "question": "What is the MWM material-risk threshold and mandatory hold classes?",
+        "owner": "MWM senior editorial authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Use conservative hold for central/high-risk cases."
+      },
+      "source_ref": "sources/families/SEI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SEI-DH-003",
+      "family_id": "SEI",
+      "status": "open",
+      "question": "Who is the editorial integrity lead and what are institutional/publisher referral routes?",
+      "owner": "MWM senior editorial authority",
+      "source_default": "Mark owner unassigned and block closure of serious concerns.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "SEI-DH-003",
+        "question": "Who is the editorial integrity lead and what are institutional/publisher referral routes?",
+        "owner": "MWM senior editorial authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Mark owner unassigned and block closure of serious concerns."
+      },
+      "source_ref": "sources/families/SEI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SEI-DH-004",
+      "family_id": "SEI",
+      "status": "open",
+      "question": "Is CRediT required, optional, or used only for flagged cases?",
+      "owner": "MWM editorial authority",
+      "source_default": "Compare available contributor records without deciding entitlement.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "SEI-DH-004",
+        "question": "Is CRediT required, optional, or used only for flagged cases?",
+        "owner": "MWM editorial authority",
+        "blocking_if_unresolved": false,
+        "default_behavior": "Compare available contributor records without deciding entitlement."
+      },
+      "source_ref": "sources/families/SEI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SEI-DH-005",
+      "family_id": "SEI",
+      "status": "open",
+      "question": "Which source-status services and release-time lookup procedure are approved?",
+      "owner": "MWM reference/editorial authority",
+      "source_default": "Record access/status source and date; do not certify unknown status.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "SEI-DH-005",
+        "question": "Which source-status services and release-time lookup procedure are approved?",
+        "owner": "MWM reference/editorial authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Record access/status source and date; do not certify unknown status."
+      },
+      "source_ref": "sources/families/SEI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SEI-DH-006",
+      "family_id": "SEI",
+      "status": "open",
+      "question": "How are preprints, retracted sources, translations, and overlapping publications treated?",
+      "owner": "MWM editorial authority",
+      "source_default": "Preserve status and role; route central cases.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "SEI-DH-006",
+        "question": "How are preprints, retracted sources, translations, and overlapping publications treated?",
+        "owner": "MWM editorial authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Preserve status and role; route central cases."
+      },
+      "source_ref": "sources/families/SEI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SEI-DH-007",
+      "family_id": "SEI",
+      "status": "open",
+      "question": "Which AI tools, confidentiality rules, and disclosure language are approved?",
+      "owner": "MWM security/editorial authority",
+      "source_default": "No external processing of protected content; query AI disclosure.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "SEI-DH-007",
+        "question": "Which AI tools, confidentiality rules, and disclosure language are approved?",
+        "owner": "MWM security/editorial authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "No external processing of protected content; query AI disclosure."
+      },
+      "source_ref": "sources/families/SEI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SEI-DH-008",
+      "family_id": "SEI",
+      "status": "open",
+      "question": "What evidence-retention period and access controls apply to integrity cases?",
+      "owner": "MWM editorial/security authority",
+      "source_default": "Preserve minimum authorized case record and escalate access uncertainty.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "SEI-DH-008",
+        "question": "What evidence-retention period and access controls apply to integrity cases?",
+        "owner": "MWM editorial/security authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Preserve minimum authorized case record and escalate access uncertainty."
+      },
+      "source_ref": "sources/families/SEI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "SEI-DH-009",
+      "family_id": "SEI",
+      "status": "open",
+      "question": "What remedy language is approved for correction, expression of concern, withdrawal, and retraction?",
+      "owner": "MWM senior editorial authority",
+      "source_default": "Do not propose a public-status remedy beyond a neutral hold/referral.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "SEI-DH-009",
+        "question": "What remedy language is approved for correction, expression of concern, withdrawal, and retraction?",
+        "owner": "MWM senior editorial authority",
+        "blocking_if_unresolved": true,
+        "default_behavior": "Do not propose a public-status remedy beyond a neutral hold/referral."
+      },
+      "source_ref": "sources/families/SEI/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-001",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "What is the approved MWM component profile by chapter type and stage?",
+      "owner": "MWM editorial owner",
+      "source_default": "No profile means blocked_profile.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-001",
+        "question": "What is the approved MWM component profile by chapter type and stage?",
+        "owner": "MWM editorial owner",
+        "default": "No profile means blocked_profile."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-002",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "Who owns metadata, front/back matter, biographies, and index terms?",
+      "owner": "MWM editorial owner",
+      "source_default": "Route unresolved ownership; do not infer an owner.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-002",
+        "question": "Who owns metadata, front/back matter, biographies, and index terms?",
+        "owner": "MWM editorial owner",
+        "default": "Route unresolved ownership; do not infer an owner."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-003",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "Which abstract, keyword, and discoverability fields are required at chapter and full-work levels?",
+      "owner": "MWM editorial owner",
+      "source_default": "Check only explicitly required scope; later fields may track.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-003",
+        "question": "Which abstract, keyword, and discoverability fields are required at chapter and full-work levels?",
+        "owner": "MWM editorial owner",
+        "default": "Check only explicitly required scope; later fields may track."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-004",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "Which author, affiliation, contact, ORCID/ROR, and contributor fields are required?",
+      "owner": "MWM editorial owner",
+      "source_default": "Record missing fields; never invent values.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-004",
+        "question": "Which author, affiliation, contact, ORCID/ROR, and contributor fields are required?",
+        "owner": "MWM editorial owner",
+        "default": "Record missing fields; never invent values."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-005",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "What accessibility target, alt-text policy, table requirement, and testing owner apply?",
+      "owner": "Accessibility/production owner",
+      "source_default": "Readiness records target and review status; no conformance claim without specialized evidence.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-005",
+        "question": "What accessibility target, alt-text policy, table requirement, and testing owner apply?",
+        "owner": "Accessibility/production owner",
+        "default": "Readiness records target and review status; no conformance claim without specialized evidence."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-006",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "What figure/table asset formats, resolution, color, and naming conventions are adopted?",
+      "owner": "Production/technical owner",
+      "source_default": "Check only a versioned local profile; otherwise route.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-006",
+        "question": "What figure/table asset formats, resolution, color, and naming conventions are adopted?",
+        "owner": "Production/technical owner",
+        "default": "Check only a versioned local profile; otherwise route."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-007",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "What permission-log fields and evidence standards apply, and who decides rights sufficiency?",
+      "owner": "Rights/permissions owner",
+      "source_default": "Presence and linkage only; rights sufficiency remains routed.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-007",
+        "question": "What permission-log fields and evidence standards apply, and who decides rights sufficiency?",
+        "owner": "Rights/permissions owner",
+        "default": "Presence and linkage only; rights sufficiency remains routed."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-008",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "Which conditional data, software, AI, ethics, consent, funding, and supplement gates activate?",
+      "owner": "MWM editorial owner with SEI/production owners",
+      "source_default": "Require explicit activation condition and owner.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-008",
+        "question": "Which conditional data, software, AI, ethics, consent, funding, and supplement gates activate?",
+        "owner": "MWM editorial owner with SEI/production owners",
+        "default": "Require explicit activation condition and owner."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-009",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "What clean-file, version-naming, package-manifest, and supersession rules apply?",
+      "owner": "Production coordinator",
+      "source_default": "Ambiguous current file blocks the relevant handoff.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-009",
+        "question": "What clean-file, version-naming, package-manifest, and supersession rules apply?",
+        "owner": "Production coordinator",
+        "default": "Ambiguous current file blocks the relevant handoff."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-010",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "Is a structured metadata export required beyond DOCX and companion sheets?",
+      "owner": "MWM editorial/production owner",
+      "source_default": "Do not require XML or another export without adoption decision.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-010",
+        "question": "Is a structured metadata export required beyond DOCX and companion sheets?",
+        "owner": "MWM editorial/production owner",
+        "default": "Do not require XML or another export without adoption decision."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-011",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "How do cross-family severities map to stage-specific release effects?",
+      "owner": "Editorial QA/orchestration owner",
+      "source_default": "Preserve upstream release effects; unresolved high-risk dependencies block readiness.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-011",
+        "question": "How do cross-family severities map to stage-specific release effects?",
+        "owner": "Editorial QA/orchestration owner",
+        "default": "Preserve upstream release effects; unresolved high-risk dependencies block readiness."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "CPR-DH-012",
+      "family_id": "CPR",
+      "status": "open",
+      "question": "Who is the human signatory for each handoff and final release?",
+      "owner": "MWM editorial owner",
+      "source_default": "No signatory means blocked_release.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "CPR-DH-012",
+        "question": "Who is the human signatory for each handoff and final release?",
+        "owner": "MWM editorial owner",
+        "default": "No signatory means blocked_release."
+      },
+      "source_ref": "sources/families/CPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-001",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "What is the approved proof baseline and correction-grid/annotation protocol?",
+      "owner": "MWM editorial/production owner",
+      "source_default": "Missing baseline or protocol blocks substantive review.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-001",
+        "question": "What is the approved proof baseline and correction-grid/annotation protocol?",
+        "owner": "MWM editorial/production owner",
+        "default": "Missing baseline or protocol blocks substantive review."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-002",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "Which proof-stage corrections are allowed and which need senior approval?",
+      "owner": "MWM editorial owner",
+      "source_default": "Substantive or meaning-bearing changes route/hold.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-002",
+        "question": "Which proof-stage corrections are allowed and which need senior approval?",
+        "owner": "MWM editorial owner",
+        "default": "Substantive or meaning-bearing changes route/hold."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-003",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "Who owns the approved variation/design log?",
+      "owner": "Production owner",
+      "source_default": "Differences without variation authority remain queries.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-003",
+        "question": "Who owns the approved variation/design log?",
+        "owner": "Production owner",
+        "default": "Differences without variation authority remain queries."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-004",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "Who collates contributor corrections and accepts/rejects them?",
+      "owner": "Volume editor/production coordinator",
+      "source_default": "No decision owner means correction remains open.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-004",
+        "question": "Who collates contributor corrections and accepts/rejects them?",
+        "owner": "Volume editor/production coordinator",
+        "default": "No decision owner means correction remains open."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-005",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "Which final formats and accessibility targets are in scope?",
+      "owner": "Production/accessibility owner",
+      "source_default": "Check known formats; do not claim conformance without target and specialist evidence.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-005",
+        "question": "Which final formats and accessibility targets are in scope?",
+        "owner": "Production/accessibility owner",
+        "default": "Check known formats; do not claim conformance without target and specialist evidence."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-006",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "How are proof previews compared with approved high-resolution final assets?",
+      "owner": "Production/technical owner",
+      "source_default": "Low-resolution proof preview does not establish final asset quality.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-006",
+        "question": "How are proof previews compared with approved high-resolution final assets?",
+        "owner": "Production/technical owner",
+        "default": "Low-resolution proof preview does not establish final asset quality."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-007",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "What reproof scope is mandatory for page, index, TOC, and cross-reference changes?",
+      "owner": "Production owner",
+      "source_default": "Affected objects and dependent navigation are rechecked.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-007",
+        "question": "What reproof scope is mandatory for page, index, TOC, and cross-reference changes?",
+        "owner": "Production owner",
+        "default": "Affected objects and dependent navigation are rechecked."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-008",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "What post-publication correction/version/status taxonomy and notice process apply?",
+      "owner": "Senior editorial/metadata owner",
+      "source_default": "Preserve original and route authorized decisions; do not adjudicate status.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-008",
+        "question": "What post-publication correction/version/status taxonomy and notice process apply?",
+        "owner": "Senior editorial/metadata owner",
+        "default": "Preserve original and route authorized decisions; do not adjudicate status."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-009",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "What fixity/provenance retention and access controls apply?",
+      "owner": "Production/records owner",
+      "source_default": "Record stable IDs and approved access; protect unpublished proofs.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-009",
+        "question": "What fixity/provenance retention and access controls apply?",
+        "owner": "Production/records owner",
+        "default": "Record stable IDs and approved access; protect unpublished proofs."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "PPR-DH-010",
+      "family_id": "PPR",
+      "status": "open",
+      "question": "How are proof confidentiality incidents handled?",
+      "owner": "Security/editorial owner",
+      "source_default": "Contain, preserve evidence, and route as an incident before continuing.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "PPR-DH-010",
+        "question": "How are proof confidentiality incidents handled?",
+        "owner": "Security/editorial owner",
+        "default": "Contain, preserve evidence, and route as an incident before continuing."
+      },
+      "source_ref": "sources/families/PPR/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-001",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "What is the canonical editorial stage model and dependency graph?",
+      "owner": "MWM editorial owner",
+      "source_default": "Use proposed graph provisionally; material uncertainty blocks release routing.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-001",
+        "question": "What is the canonical editorial stage model and dependency graph?",
+        "owner": "MWM editorial owner",
+        "default": "Use proposed graph provisionally; material uncertainty blocks release routing."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-002",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "What is the approved authority-precedence table among MWM and delegated sources?",
+      "owner": "MWM editorial owner",
+      "source_default": "Report material conflict; do not infer precedence.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-002",
+        "question": "What is the approved authority-precedence table among MWM and delegated sources?",
+        "owner": "MWM editorial owner",
+        "default": "Report material conflict; do not infer precedence."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-003",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "Who owns volume, chapter, family, production, QA, and final release decisions?",
+      "owner": "MWM editorial owner",
+      "source_default": "Owner may be pending at intake; release owner is required before release.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-003",
+        "question": "Who owns volume, chapter, family, production, QA, and final release decisions?",
+        "owner": "MWM editorial owner",
+        "default": "Owner may be pending at intake; release owner is required before release."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-004",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "Which local or external model and tool routes are approved for which data classes?",
+      "owner": "Editorial/security owner",
+      "source_default": "Unapproved route is refused and escalated.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-004",
+        "question": "Which local or external model and tool routes are approved for which data classes?",
+        "owner": "Editorial/security owner",
+        "default": "Unapproved route is refused and escalated."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-005",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "What manuscript confidentiality, retention, and access rules apply?",
+      "owner": "MWM/security owner",
+      "source_default": "Minimize evidence and use approved local route until decided.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-005",
+        "question": "What manuscript confidentiality, retention, and access rules apply?",
+        "owner": "MWM/security owner",
+        "default": "Minimize evidence and use approved local route until decided."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-006",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "How are confidence, disagreement, severity, and residual-risk thresholds calibrated?",
+      "owner": "EQA owner/editorial owner",
+      "source_default": "Use categorical conservative escalation for high-risk objects.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-006",
+        "question": "How are confidence, disagreement, severity, and residual-risk thresholds calibrated?",
+        "owner": "EQA owner/editorial owner",
+        "default": "Use categorical conservative escalation for high-risk objects."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-007",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "Which findings require independent review?",
+      "owner": "EQA owner/editorial owner",
+      "source_default": "Independent review for high-risk, high-uncertainty, or disagreement-sensitive issues.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-007",
+        "question": "Which findings require independent review?",
+        "owner": "EQA owner/editorial owner",
+        "default": "Independent review for high-risk, high-uncertainty, or disagreement-sensitive issues."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-008",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "What output formats and accessibility targets are required?",
+      "owner": "Production/accessibility owner",
+      "source_default": "State format-specific coverage; no generalization.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-008",
+        "question": "What output formats and accessibility targets are required?",
+        "owner": "Production/accessibility owner",
+        "default": "State format-specific coverage; no generalization."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-009",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "Which findings block release versus permit tracked residual risk?",
+      "owner": "Editorial/release owner",
+      "source_default": "Critical blocks always hold; tracked items require policy and owner acceptance.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-009",
+        "question": "Which findings block release versus permit tracked residual risk?",
+        "owner": "Editorial/release owner",
+        "default": "Critical blocks always hold; tracked items require policy and owner acceptance."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-010",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "What proof correction, reproof, and post-publication status policies apply?",
+      "owner": "Production/senior editorial owner",
+      "source_default": "PPR and post-publication cases retain separate states.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-010",
+        "question": "What proof correction, reproof, and post-publication status policies apply?",
+        "owner": "Production/senior editorial owner",
+        "default": "PPR and post-publication cases retain separate states."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-011",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "How are fixity, provenance, and retention implemented?",
+      "owner": "Records/production owner",
+      "source_default": "Retain IDs, events, hashes/stable identifiers, access, and supersession.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-011",
+        "question": "How are fixity, provenance, and retention implemented?",
+        "owner": "Records/production owner",
+        "default": "Retain IDs, events, hashes/stable identifiers, access, and supersession."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-012",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "What evaluation cadence and regression rule apply?",
+      "owner": "EQA owner",
+      "source_default": "Regress on every material spec/interface/rule/route/format/failure change.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-012",
+        "question": "What evaluation cadence and regression rule apply?",
+        "owner": "EQA owner",
+        "default": "Regress on every material spec/interface/rule/route/format/failure change."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-013",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "What editor-facing and author-facing report formats are required?",
+      "owner": "MWM editorial owner",
+      "source_default": "Output coverage, evidence, open blocks, next actions, and owner language.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-013",
+        "question": "What editor-facing and author-facing report formats are required?",
+        "owner": "MWM editorial owner",
+        "default": "Output coverage, evidence, open blocks, next actions, and owner language."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    },
+    {
+      "hook_id": "EQA-DH-014",
+      "family_id": "EQA",
+      "status": "open",
+      "question": "How do appeals and accepted exceptions enter continuous improvement?",
+      "owner": "EQA/editorial owner",
+      "source_default": "Append appeal/exception, fixture/regression impact, and approval; do not erase prior decision.",
+      "design_assumption": "Use this supplied conservative default only inside the requested review scope. A missing material policy is awaiting_human or hold; no owner decision is inferred.",
+      "source_record": {
+        "hook_id": "EQA-DH-014",
+        "question": "How do appeals and accepted exceptions enter continuous improvement?",
+        "owner": "EQA/editorial owner",
+        "default": "Append appeal/exception, fixture/regression impact, and approval; do not erase prior decision."
+      },
+      "source_ref": "sources/families/EQA/02_RULES/decision_hooks.json"
+    }
+  ]
+}

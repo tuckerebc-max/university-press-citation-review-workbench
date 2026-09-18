@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/cross-family-contracts.json",
+  "contract_id":"MWM-EQA-CONTRACTS",
+  "version":"0.1.0",
+  "family_order":["RCI","SGI","TE","CE","SEI","CPR","PPR","EQA"],
+  "family_interfaces":[
+    {"family":"Reference & Citation Integrity","id":"RCI","input_contract":"chapter text, references, rules, source permissions","output_contract":"citation/reference ledger, findings, source/status queue, release effect","owner":"RCI owner"},
+    {"family":"Style-Guide Implementation","id":"SGI","input_contract":"chapter profile, rule registry, exceptions, text/layout","output_contract":"rule ledger, conflicts, exceptions, compliance status","owner":"SGI owner"},
+    {"family":"Technical Editing","id":"TE","input_contract":"structured inventory, template, visual objects, technical rules","output_contract":"object/hierarchy/cross-reference findings and status","owner":"TE owner"},
+    {"family":"Copyediting","id":"CE","input_contract":"approved style context, text, conventions, threshold","output_contract":"copyedit log, proposed changes, questions, handoff status","owner":"CE owner"},
+    {"family":"Scholarly/Editorial Integrity","id":"SEI","input_contract":"claims, citations, sources, integrity protocol","output_contract":"signals/findings, source-fit questions, escalation cases","owner":"SEI owner"},
+    {"family":"Chapter Completeness & Production Readiness","id":"CPR","input_contract":"required-component matrix, profile, upstream statuses","output_contract":"completeness gate, gaps, production readiness","owner":"CPR owner"},
+    {"family":"Proof & Post-Typesetting Review","id":"PPR","input_contract":"fixed baseline, proofs/outputs, correction log, format targets","output_contract":"proof findings, reproof status, fixity/version record, release recommendation","owner":"PPR owner"}
+  ],
+  "orchestration_outputs":["dependency_graph","route_decisions","comparison_records","confidence_records","decision_packets","provenance_events","release_package","receipt"],
+  "boundary_invariants":[
+    "EQA coordinates and routes; each family retains its domain judgment and owner.",
+    "Family outputs need schema, evidence, coverage, status, and release effect before node completion.",
+    "Critical blocks cannot be averaged away.",
+    "Disagreement and source reports are preserved.",
+    "No release without human authorization, fixity/provenance, and receipt.",
+    "Post-publication cases remain separate from ordinary pre-publication editing."
+  ]
+}

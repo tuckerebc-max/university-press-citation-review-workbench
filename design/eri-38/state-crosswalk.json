@@ -1,0 +1,57 @@
+{
+  "schema": "university_press.state_crosswalk.draft1",
+  "namespaces_are_not_merged": true,
+  "native_EQA_run_states": {
+    "intake": "input inventory incomplete; no execution authority",
+    "planned": "immutable candidate exists; seal separate",
+    "running": "only an authorized live attempt may report running",
+    "awaiting_human": "named human decision required",
+    "awaiting_input": "required scoped evidence missing",
+    "awaiting_reproof": "accepted correction lacks verified reproof",
+    "ready_with_tracked_items": "requires adopted residual-risk policy and retained receipt",
+    "hold": "affected clearance unsupported by coverage/maturity/policy",
+    "released": "external authorized release observation only; never a CLI effect",
+    "post_publication_case": "separate owner-controlled case; no ordinary release bypass",
+    "blocked": "prohibited effect, critical failure, invalid authority or fixity failure"
+  },
+  "contract_release_recommendations": [
+    "blocked",
+    "hold",
+    "awaiting_input",
+    "awaiting_human",
+    "awaiting_reproof",
+    "ready_for_human_acceptance",
+    "ready_with_tracked_items"
+  ],
+  "new_term": "ready_for_human_acceptance is a claim-scoped recommendation, not the work-item accepted state or a native released transition.",
+  "yard_work_item_states": [
+    "intake",
+    "designed_ready",
+    "committed",
+    "queued",
+    "active",
+    "blocked",
+    "review",
+    "accepted",
+    "released",
+    "closed",
+    "cancelled"
+  ],
+  "yard_attempt_states": [
+    "leased",
+    "running",
+    "waiting",
+    "retryable_failure",
+    "terminal_failure",
+    "expired",
+    "unknown"
+  ],
+  "yard_result_outcomes": [
+    "pass",
+    "fail",
+    "partial",
+    "blocked",
+    "inconclusive"
+  ],
+  "mapping_rule": "Store native family status and scoped recommendation alongside the canonical yard task/result outcome; do not overwrite one namespace with another. A successful reconcile returning hold is an evaluated operation, not an accepted work item."
+}

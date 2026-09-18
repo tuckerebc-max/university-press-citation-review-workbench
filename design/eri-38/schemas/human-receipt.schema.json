@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "university_press.human_receipt.draft1"
+    },
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "actor_type": {
+      "const": "human"
+    },
+    "actor_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action": {
+      "enum": [
+        "approve_plan",
+        "record_edit_decision",
+        "resolve_policy",
+        "adjudicate_integrity",
+        "approve_release_package"
+      ]
+    },
+    "object_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "decision": {
+      "enum": [
+        "approved",
+        "denied",
+        "deferred"
+      ]
+    },
+    "issued_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expires_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authority_evidence_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verification_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "receipt_id",
+    "actor_type",
+    "actor_ref",
+    "action",
+    "object_sha256",
+    "scope",
+    "decision",
+    "issued_at",
+    "expires_at",
+    "authority_evidence_ref",
+    "verification_ref",
+    "supersedes"
+  ]
+}
